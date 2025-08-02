@@ -1,0 +1,39 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8f8f8;
+  color: #222;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #00247d;
+  color: white;
+  padding: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.8em;
+}
+
+.logo {
+  height: 60px;
+}
+
+main {
+  padding: 2em;
+}
+
+footer {
+  background: #e0e0e0;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  color: #444;
+} 
