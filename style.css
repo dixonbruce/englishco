@@ -11,8 +11,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #00247d;
-  color: white;
+  background: #f8f8f8;
+  color: black;
   padding: 1em;
 }
 
