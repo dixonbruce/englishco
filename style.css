@@ -143,6 +143,11 @@ body {
   min-width: 160px;
 }
 
+/* Show submenu on hover */
+.navbar li.dropdown:hover > .submenu {
+  display: block;
+}
+
 .submenu li {
   padding: 0;
 }
