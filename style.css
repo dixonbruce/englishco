@@ -9,13 +9,37 @@ body {
   color: #222;
 }
 
-header {
+.site-header {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  background: #f8f8f8;
-  color: black;
-  padding: 1em;
+  align-items: center;
+}
+
+.logo-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.contact-info p {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
 }
 
 .navbar ul {
@@ -23,13 +47,7 @@ header {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 20px; /* spacing between menu items */
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.navbar li {
-  margin: 0;
+  gap: 20px;
 }
 
 .navbar a {
