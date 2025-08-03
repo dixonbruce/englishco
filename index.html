@@ -39,6 +39,16 @@
       .then(html => {
         document.getElementById('header-placeholder').innerHTML = html;
       });
-  </script>
+    </script>
+    <script>
+      const links = document.querySelectorAll('.navbar a');
+      const currentUrl = window.location.pathname;
+    
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentUrl) {
+          link.classList.add('active');
+        }
+      });
+    </script>
 </body>
 </html>
