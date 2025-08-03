@@ -50,11 +50,17 @@
       
             // Now that the header is inserted, run the highlight logic
             const links = document.querySelectorAll('.navbar a');
-            const path = window.location.pathname.replace(/\/$/, ''); // remove trailing slash
-      
+           const path = window.location.pathname.replace(/\/$/, '');
+          
             links.forEach(link => {
               const href = link.getAttribute('href').replace(/\/$/, '');
-              if (href === path) {
+            
+              // Match if the link ends with the current path or filename
+              if (
+                href === path ||
+                path.endsWith(href) ||
+                (path === '/' && (href === '/index.html' || href === '/'))
+              ) {
                 link.classList.add('active');
               }
             });
