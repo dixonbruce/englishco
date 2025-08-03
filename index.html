@@ -41,11 +41,17 @@
   
         // Now that the header is inserted, run the highlight logic
         const links = document.querySelectorAll('.navbar a');
-        const path = window.location.pathname.replace(/\/$/, ''); // remove trailing slash
+        const path = window.location.pathname.replace(/\/$/, '');
   
         links.forEach(link => {
           const href = link.getAttribute('href').replace(/\/$/, '');
-          if (href === path) {
+  
+          const match =
+            href === path ||                         // exact match
+            path === '/' && href === '/index.html' ||  // homepage fallback
+            path.endsWith(href);                     // flexible matching
+  
+          if (match) {
             link.classList.add('active');
           }
         });
