@@ -18,6 +18,16 @@ header {
   padding: 1em;
 }
 
+nav a {
+  text-decoration: none;
+  color: #000;
+  padding: 4px 8px;
+}
+
+nav a:hover {
+  color: #c62828;
+}
+
 nav a.active {
   font-weight: bold;
   color: #c62828; /* Or your brand colour */
