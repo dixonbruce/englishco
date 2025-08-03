@@ -22,61 +22,6 @@ body {
   z-index: 1000;
 }
 
-.navbar a {
-  font-size: 17px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.navbar a {
-  position: relative;
-  
-}
-
-.navbar a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #b22222;
-  transition: width 0.3s ease;
-}
-
-.navbar a:hover::after {
-  width: 100%;
-}
-
-.navbar a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #b22222;
-  transition: width 0.3s ease;
-}
-
-.navbar a:hover::after {
-  width: 100%;
-}
-
-.site-header {
-  background-color: #f9fbfd;
-  border-bottom: 1px solid #eee;
-  padding-top: 10px;
-}
-
-.site-header::after {
-  content: "";
-  display: block;
-  height: 4px;
-  background: #b22222;
-  padding-top: 10px;
-}
-
 .top-bar-container {
   max-width: 1024px;
   margin: 0 auto;
@@ -84,11 +29,6 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
-}
-
-.hero-section {
-  background-color: #f0f4f8;
-  padding: 60px 20px;
 }
 
 .whatsapp-link {
@@ -103,11 +43,19 @@ body {
 
 /* 🧭 Main Header */
 .site-header {
-  background-color: #fff;
-
+  background-color: #f9fbfd;
   border-bottom: 1px solid #eee;
+  padding-top: 10px;
 }
 
+.site-header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: #b22222;
+}
+
+/* Header layout */
 .header-container {
   max-width: 1024px;
   margin: 0 auto;
@@ -144,6 +92,10 @@ body {
 }
 
 .navbar a {
+  position: relative;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   text-decoration: none;
   color: #000;
   font-weight: 500;
@@ -151,14 +103,34 @@ body {
   transition: color 0.3s ease;
 }
 
+/* Hover underline animation */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #b22222;
+  transition: width 0.3s ease;
+}
+
 .navbar a:hover {
   color: #b22222;
 }
 
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Active page link */
 .navbar a.active {
   color: #b22222;
   font-weight: bold;
-  border-bottom: 2px solid #b22222;
+}
+
+.navbar a.active::after {
+  width: 100%;
 }
 
 /* ⬇ Page Content Layout */
@@ -170,6 +142,11 @@ h2 {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 20px; /* Optional: adds space on smaller screens */
+}
+
+.hero-section {
+  background-color: #f0f4f8;
+  padding: 60px 20px;
 }
 
 .classroom-img {
