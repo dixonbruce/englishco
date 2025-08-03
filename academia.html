@@ -42,23 +42,35 @@
       <footer>
         <p>&copy; 2025 Little England</p>
       </footer>
-        <script>
-          fetch('/header.html')
-            .then(response => response.text())
-            .then(html => {
-              document.getElementById('header-placeholder').innerHTML = html;
-            });
-          </script>
-          <script>
-            const links = document.querySelectorAll('.navbar a');
-            const currentUrl = window.location.pathname;
-          
-            links.forEach(link => {
-              if (link.getAttribute('href') === currentUrl) {
-                link.classList.add('active');
-              }
-            });
-        </script>
+      <script>
+      fetch('/header.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-placeholder').innerHTML = html;
+        });
+      </script>
+      <script>
+        const links = document.querySelectorAll('.navbar a');
+        const currentUrl = window.location.pathname;
+      
+        links.forEach(link => {
+          if (link.getAttribute('href') === currentUrl) {
+            link.classList.add('active');
+          }
+        });
+      </script>
+      <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('.navbar a');
+        const path = window.location.pathname.replace(/\/$/, ''); // remove trailing slash
+        links.forEach(link => {
+          const href = link.getAttribute('href').replace(/\/$/, '');
+          if (href === path) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
     </div>
   </div>
 </body>
