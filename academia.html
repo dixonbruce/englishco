@@ -32,3 +32,27 @@
   <script>
     fetch('/header.html')
       .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+
+        const links = document.querySelectorAll('.navbar a');
+        const currentPath = window.location.pathname
+          .replace(/\/$/, '')
+          .replace(/\/index$/, '')
+          .replace(/\.html$/, '');
+
+        links.forEach(link => {
+          const href = link.getAttribute('href')
+            .replace(/\/$/, '')
+            .replace(/\/index$/, '')
+            .replace(/\.html$/, '');
+
+          if (href === currentPath) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
+
+</body>
+</html>
