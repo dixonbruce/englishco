@@ -18,22 +18,29 @@
   </main>
   <footer>
     <p>&copy; 2025 Little England</p>
-  </footer>
+  </footer>    
   <script>
     fetch('/header.html')
       .then(response => response.text())
       .then(html => {
         document.getElementById('header-placeholder').innerHTML = html;
-      });
-    </script>
-    <script>
-      const links = document.querySelectorAll('.navbar a');
-      const currentUrl = window.location.pathname;
-    
-      links.forEach(link => {
-        if (link.getAttribute('href') === currentUrl) {
-          link.classList.add('active');
-        }
+  
+        const links = document.querySelectorAll('.navbar a');
+        const currentPath = window.location.pathname
+          .replace(/\/$/, '')         // remove trailing slash
+          .replace(/\/index$/, '')    // treat "/index" as "/"
+          .replace(/\.html$/, '');    // treat "/page.html" as "/page"
+  
+        links.forEach(link => {
+          const href = link.getAttribute('href')
+            .replace(/\/$/, '')
+            .replace(/\/index$/, '')
+            .replace(/\.html$/, '');
+  
+          if (href === currentPath) {
+            link.classList.add('active');
+          }
+        });
       });
   </script>
 </body>
