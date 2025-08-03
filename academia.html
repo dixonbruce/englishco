@@ -7,66 +7,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="hero-section">
-    <div class="container">
-      <div id="header-placeholder"></div>
+
+  <div class="container">
+    <div id="header-placeholder"></div>
+
+    <div class="hero-section">
       <main>
         <section>
-                  
-          <p>
-            <strong>      
-              Aulas modernas y confortables
-            </strong>
-          </p>
-          <p>
-            Nuestras aulas son amplias, luminosas y bien ventiladas, diseñadas para ofrecer un entorno de aprendizaje ideal.
-          </p>
-          <p>
-            Cada sala está equipada con proyectores interactivos, sistemas de audio de alta calidad y tratamiento acústico para minimizar la reverberación y garantizar una comunicación clara.
-          </p>
-          <p>
-            <img src="https://1drv.ms/i/c/004033137c03ccea/IQRinDbYJFUAQ4kmIPI2uCGbAbG8Bb4sWArUYJJR_y8aszI?width=1024" alt="Aula de la academia" class="classroom-img">
-          </p>
-          <p>
-            <img src="https://1drv.ms/i/c/004033137c03ccea/IQTPH5J1vT8fQJyViVLRP3UDAX87hfA1eCH9QkXbKO9wRbc?width=1024" alt="Otra vista del aula" class="classroom-img">
-          </p>
-          <p>
-            <img src="https://1drv.ms/i/c/004033137c03ccea/IQS9sJ4eVwRqQotkaUyoRVy-ARoaBgaefg5oLq4Xm99sRyU?width=1024" alt="Foto adicional del aula" class="classroom-img">
-          </p>
-          
-    
-    
-    
+          <p><strong>Aulas modernas y confortables</strong></p>
+          <p>Nuestras aulas son amplias, luminosas y bien ventiladas, diseñadas para ofrecer un entorno de aprendizaje ideal.</p>
+          <p>Cada sala está equipada con proyectores interactivos, sistemas de audio de alta calidad y tratamiento acústico para minimizar la reverberación y garantizar una comunicación clara.</p>
+          <p><img src="https://1drv.ms/i/c/004033137c03ccea/IQRinDbYJFUAQ4kmIPI2uCGbAbG8Bb4sWArUYJJR_y8aszI?width=1024" alt="Aula de la academia" class="classroom-img"></p>
+          <p><img src="https://1drv.ms/i/c/004033137c03ccea/IQTPH5J1vT8fQJyViVLRP3UDAX87hfA1eCH9QkXbKO9wRbc?width=1024" alt="Otra vista del aula" class="classroom-img"></p>
+          <p><img src="https://1drv.ms/i/c/004033137c03ccea/IQS9sJ4eVwRqQotkaUyoRVy-ARoaBgaefg5oLq4Xm99sRyU?width=1024" alt="Foto adicional del aula" class="classroom-img"></p>
         </section>
       </main>
-      <footer>
-        <p>&copy; 2025 Little England</p>
-      </footer>
-      <script>
-        fetch('/header.html')
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
-      
-            const links = document.querySelectorAll('.navbar a');
-            const currentPath = window.location.pathname
-              .replace(/\/$/, '')         // remove trailing slash
-              .replace(/\/index$/, '')    // treat "/index" as "/"
-              .replace(/\.html$/, '');    // treat "/page.html" as "/page"
-      
-            links.forEach(link => {
-              const href = link.getAttribute('href')
-                .replace(/\/$/, '')
-                .replace(/\/index$/, '')
-                .replace(/\.html$/, '');
-      
-              if (href === currentPath) {
-                link.classList.add('active');
-              }
-            });
-          });
-      </script>
-    </div>
-  </div>
-</body>
-</html>
+    </div> <!-- End hero-section -->
+
+    <footer>
+      <p>&copy; 2025 Little England</p>
+    </footer>
+  </div> <!-- End container -->
+
+  <script>
+    fetch('/header.html')
+      .then(response => response.text())
