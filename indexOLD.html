@@ -1,106 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
+
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Little England</title>
-  <meta name="description" content="Academia de inglés en Playa de Arinaga. Clases divertidas, dinámicas y comunicativas para niños, adolescentes y adultos. Preparación de exámenes, cursos intensivos y conversación.">
-  <meta name="keywords" content="academia de inglés, Playa de Arinaga, clases de inglés, inglés para niños, exámenes Cambridge, cursos intensivos, clases de conversación">
-  <meta name="author" content="Little England">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
-    }
-
-    header {
-      background-color: #fff; /* Light blue sampled from logo */
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      max-width: 180px;
-      height: auto;
-    }
-
-    .header-contact {
-      color: black;
-      background-color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-align: right;
-      flex: 1;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      .header-contact {
-        text-align: center;
-        margin-top: 10px;
-      }
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #d10000;
-    }
-
-    .classroom-img {
-      width: 100%;
-      display: block;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      margin-top: 20px;
-      border-radius: 8px;
-    }
-
-    .whatsapp-link {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #25D366;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    footer {
-      background: #f0f0f0;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-  </style>
+  <title>Little England – Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img class="logo" src="https://1drv.ms/i/c/004033137c03ccea/IQR514fyXc_LRLvgXCV-XZBZAdVT5PAIV3-z_8iJij--UaU" alt="Little England - Academia de Inglés">
-    <p class="header-contact">📞 646 555 552 | 📍 Calle Gravina 47-49, Playa de Arinaga</p>
-  </header>
-
+  <div id="header-placeholder"></div>
+  <main>
   <section id="about">
     <h2>Quiénes Somos</h2>
     <p>En <strong>Little England</strong> ofrecemos clases de inglés divertidas, eficaces y adaptadas a cada nivel. Nuestro enfoque es cercano, profesional y centrado en el aprendizaje real de nuestros alumnos. Las clases son <strong>dinámicas, comunicativas y amenas</strong>, con una metodología basada en la práctica constante y la participación activa.</p>
@@ -121,15 +29,39 @@
       <li>🗣️ Clases de conversación</li>
     </ul>
   </section>
-
-  <section id="contact">
-    <h2>Contacto</h2>
-    <a href="https://wa.me/34646555552" class="whatsapp-link" target="_blank">Enviar mensaje por WhatsApp</a>
-    <iframe src="https://www.google.com/maps?q=Calle+Gravina+47-49,+Playa+de+Arinaga&output=embed"></iframe>
-  </section>
-
+  </main>
   <footer>
-    &copy; 2025 Little England | Las Palmas | Todos los derechos reservados
+    <p>&copy; 2025 Little England</p>
   </footer>
+  <script>
+    fetch('/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+  
+        const links = document.querySelectorAll('.navbar a');
+        let path = window.location.pathname;
+  
+        // Treat "/" and "/index.html" as equivalent
+        if (path === '/' || path === '/index.html') {
+          path = '/index';
+        } else {
+          path = path.replace(/\.html$/, '');
+        }
+  
+        links.forEach(link => {
+          let href = link.getAttribute('href');
+          if (href === '/index.html') {
+            href = '/index';
+          } else {
+            href = href.replace(/\.html$/, '');
+          }
+  
+          if (href === path) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
 </body>
 </html>
