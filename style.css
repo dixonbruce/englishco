@@ -30,6 +30,7 @@ body {
 
 .navbar a {
   position: relative;
+  
 }
 
 .navbar a::after {
@@ -47,6 +48,33 @@ body {
   width: 100%;
 }
 
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #b22222;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.site-header {
+  background-color: #f9fbfd;
+  border-bottom: 1px solid #eee;
+}
+
+.site-header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: #b22222;
+}
+
 .top-bar-container {
   max-width: 1024px;
   margin: 0 auto;
@@ -54,6 +82,11 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
+}
+
+.hero-section {
+  background-color: #f0f4f8;
+  padding: 60px 20px;
 }
 
 .whatsapp-link {
