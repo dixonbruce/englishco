@@ -7,16 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img class="logo" src="https://1drv.ms/i/c/004033137c03ccea/IQR514fyXc_LRLvgXCV-XZBZAdVT5PAIV3-z_8iJij--UaU" alt="Little England - Academia de Inglés">   
-        <p class="header-contact">📞 646 555 552 | 📍 Calle Gravina 47-49, Playa de Arinaga</p>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="cursos.html">Cursos</a>
-      <a href="academia.html">Academia</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+  <div id="header-placeholder"></div>
   <main>
   <section id="about">
     <h2>Quiénes Somos</h2>
@@ -42,5 +33,12 @@
   <footer>
     <p>&copy; 2025 Little England</p>
   </footer>
+    <script>
+    fetch('/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
