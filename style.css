@@ -264,6 +264,47 @@ h2 {
   height: auto;
 }
 
+
+
+.age-groups {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.age-group {
+  position: relative;
+  flex: 1 1 50%;
+  overflow: hidden;
+}
+
+.age-group img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(85%);
+}
+
+.age-group .overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.age-group h3 {
+  margin: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.age-group p {
+  margin: 5px 0 0;
+  font-size: 18px;
+}
+
 main {
   padding: 2em;
 }
