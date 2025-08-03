@@ -43,17 +43,30 @@
       .then(response => response.text())
       .then(html => {
         document.getElementById('header-placeholder').innerHTML = html;
-      });
-    </script>
-    <script>
-      const links = document.querySelectorAll('.navbar a');
-      const currentUrl = window.location.pathname;
-    
-      links.forEach(link => {
-        if (link.getAttribute('href') === currentUrl) {
-          link.classList.add('active');
+  
+        const links = document.querySelectorAll('.navbar a');
+        let path = window.location.pathname;
+  
+        // Treat "/" and "/index.html" as equivalent
+        if (path === '/' || path === '/index.html') {
+          path = '/index';
+        } else {
+          path = path.replace(/\.html$/, '');
         }
+  
+        links.forEach(link => {
+          let href = link.getAttribute('href');
+          if (href === '/index.html') {
+            href = '/index';
+          } else {
+            href = href.replace(/\.html$/, '');
+          }
+  
+          if (href === path) {
+            link.classList.add('active');
+          }
+        });
       });
-</script>
+  </script>
 </body>
 </html>
