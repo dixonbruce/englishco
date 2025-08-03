@@ -71,7 +71,7 @@ body {
 .site-header::after {
   content: "";
   display: block;
-  height: 4px;
+  /*height: 4px;
   background: #b22222;
 }
 
