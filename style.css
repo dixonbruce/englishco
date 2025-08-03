@@ -2,6 +2,8 @@
 
 body {
   margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
   font-family: system-ui, sans-serif;
   background: #f8f8f8;
   color: #222;
@@ -16,8 +18,18 @@ header {
   padding: 1em;
 }
 
+nav a.active {
+  font-weight: bold;
+  color: #c62828; /* Or your brand colour */
+  border-bottom: 2px solid #c62828; /* Optional underline effect */
+}
+
+h2 {
+  margin-top: 40px;
+}
+
 .container {
-  max-width: 960px;
+  max-width: 1024px;
   margin: 0 auto;
   /*padding: 0 20px; /* Optional: adds space on smaller screens */
 }
@@ -27,6 +39,14 @@ header {
   max-width: 960px;
   margin: 0 auto;
   /*padding: 0 20px; /* Optional: adds space on smaller screens */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+
 }
 
 
