@@ -12,7 +12,7 @@ body {
 
 /* 🔝 Sticky Top Bar */
 .top-bar {
-  background-color: #f4f4f4;
+  background: linear-gradient(to right, #ffffff, #f4f4f4);
   padding: 6px 0;
   font-size: 14px;
   color: #333;
@@ -20,6 +20,31 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.navbar a {
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.navbar a {
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #b22222;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
 }
 
 .top-bar-container {
