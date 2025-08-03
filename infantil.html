@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Little England – Infantil</title>
+  <title>Little England – La Academia</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <div id="header-placeholder"></div>   
+  <div id="header-placeholder"></div>
   <div class="container">
+
+
+    <div class="hero-section">
+      <main>
     <main>
       <section>
         <h1>Nuestros Servicios</h1>
@@ -34,39 +37,38 @@
         </ul>
       </section>
     </main>
-  </div>
-  <footer>
-    <p>&copy; 2025 Little England</p>
-  </footer>
+      </main>
+    </div> <!-- End hero-section -->
+
+    <footer>
+      <p>&copy; 2025 Little England</p>
+    </footer>
+  </div> <!-- End container -->
+
   <script>
     fetch('/header.html')
       .then(response => response.text())
       .then(html => {
         document.getElementById('header-placeholder').innerHTML = html;
-  
+
         const links = document.querySelectorAll('.navbar a');
-        let path = window.location.pathname;
-  
-        // Treat "/" and "/index.html" as equivalent
-        if (path === '/' || path === '/index.html') {
-          path = '/index';
-        } else {
-          path = path.replace(/\.html$/, '');
-        }
-  
+        const currentPath = window.location.pathname
+          .replace(/\/$/, '')
+          .replace(/\/index$/, '')
+          .replace(/\.html$/, '');
+
         links.forEach(link => {
-          let href = link.getAttribute('href');
-          if (href === '/index.html') {
-            href = '/index';
-          } else {
-            href = href.replace(/\.html$/, '');
-          }
-  
-          if (href === path) {
+          const href = link.getAttribute('href')
+            .replace(/\/$/, '')
+            .replace(/\/index$/, '')
+            .replace(/\.html$/, '');
+
+          if (href === currentPath) {
             link.classList.add('active');
           }
         });
       });
   </script>
+
 </body>
 </html>
