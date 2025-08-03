@@ -48,19 +48,19 @@
           .then(html => {
             document.getElementById('header-placeholder').innerHTML = html;
       
-            // Now that the header is inserted, run the highlight logic
             const links = document.querySelectorAll('.navbar a');
-           const path = window.location.pathname.replace(/\/$/, '');
-          
+            const currentPath = window.location.pathname
+              .replace(/\/$/, '')         // remove trailing slash
+              .replace(/\/index$/, '')    // treat "/index" as "/"
+              .replace(/\.html$/, '');    // treat "/page.html" as "/page"
+      
             links.forEach(link => {
-              const href = link.getAttribute('href').replace(/\/$/, '');
-            
-              // Match if the link ends with the current path or filename
-              if (
-                href === path ||
-                path.endsWith(href) ||
-                (path === '/' && (href === '/index.html' || href === '/'))
-              ) {
+              const href = link.getAttribute('href')
+                .replace(/\/$/, '')
+                .replace(/\/index$/, '')
+                .replace(/\.html$/, '');
+      
+              if (href === currentPath) {
                 link.classList.add('active');
               }
             });
