@@ -40,18 +40,24 @@
         document.getElementById('header-placeholder').innerHTML = html;
   
         const links = document.querySelectorAll('.navbar a');
-        const currentPath = window.location.pathname
-          .replace(/\/$/, '')         // remove trailing slash
-          .replace(/\/index$/, '')    // treat "/index" as "/"
-          .replace(/\.html$/, '');    // treat "/page.html" as "/page"
+        let path = window.location.pathname;
+  
+        // Treat "/" and "/index.html" as equivalent
+        if (path === '/' || path === '/index.html') {
+          path = '/index';
+        } else {
+          path = path.replace(/\.html$/, '');
+        }
   
         links.forEach(link => {
-          const href = link.getAttribute('href')
-            .replace(/\/$/, '')
-            .replace(/\/index$/, '')
-            .replace(/\.html$/, '');
+          let href = link.getAttribute('href');
+          if (href === '/index.html') {
+            href = '/index';
+          } else {
+            href = href.replace(/\.html$/, '');
+          }
   
-          if (href === currentPath) {
+          if (href === path) {
             link.classList.add('active');
           }
         });
