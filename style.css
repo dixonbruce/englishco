@@ -125,7 +125,7 @@ body {
 
 /* Active page link */
 .navbar a.active {
-  color: #b22222;
+  color: #b22222 !important;
   font-weight: bold;
 }
 
