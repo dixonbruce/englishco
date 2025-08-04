@@ -174,7 +174,7 @@ body {
 /* Hero Section */
 .hero {
   background: linear-gradient(to right, #fefefe, #f0f4f8);
-  padding: 80px 20px;
+  padding: 20px 20px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
