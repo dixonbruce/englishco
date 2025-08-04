@@ -102,7 +102,6 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Hover underline animation */
 .navbar a::after {
   content: '';
   position: absolute;
@@ -115,6 +114,60 @@ body {
 }
 
 .navbar a:hover {
+  color: #b22222;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Active page link */
+.navbar a.active {
+  color: #b22222 !important;
+  font-weight: bold;
+}
+
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* Dropdown menu styling */
+.navbar li {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.navbar li.dropdown:hover > .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 0;
+}
+
+.submenu a {
+  display: block;
+  padding: 8px 16px;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.submenu a:hover {
+  background-color: #f2f2f2;
   color: #b22222;
 }
 
@@ -177,69 +230,7 @@ body {
   color: #333;
 }
 
-.navbar a:hover::after {
-  width: 100%;
-}
-
-
-/* Dropdown menu styling */
-.navbar li {
-  position: relative;
-}
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  z-index: 1000;
-  min-width: 160px;
-}
-
-/* Show submenu on hover */
-.navbar li.dropdown:hover > .submenu {
-  display: block;
-}
-
-.submenu li {
-  padding: 0;
-}
-
-.submenu a {
-  display: block;
-  padding: 8px 16px;
-  color: #000;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.submenu a:hover {
-  background-color: #f2f2f2;
-  color: #b22222;
-}
-
-/* Show submenu on hover */
-.navbar li.dropdown:hover > .submenu {
-  display: block;
-}
-
-
-/* Active page link */
-.navbar a.active {
-  color: #b22222 !important;
-  font-weight: bold;
-}
-
-.navbar a.active::after {
-  width: 100%;
-}
-
-/* ⬇ Page Content Layout */
+/* Page Content Layout */
 h2 {
   margin-top: 40px;
 }
@@ -247,7 +238,7 @@ h2 {
 .container {
   max-width: 1024px;
   margin: 0 auto;
-  padding: 0 20px; /* Optional: adds space on smaller screens */
+  padding: 0 20px;
 }
 
 .hero-section {
@@ -264,13 +255,17 @@ h2 {
   height: auto;
 }
 
-
-
+/* Age Group Grid */
 .age-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .age-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .age-box {
@@ -295,8 +290,8 @@ h2 {
   bottom: 20px;
   left: 20px;
   color: white;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  opacity: 1; /* Always visible */
+  transition: none; /* No transition */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
@@ -305,6 +300,7 @@ h2 {
   filter: brightness(70%);
 }
 
+/* Always visible text, so remove fade-in on hover */
 .age-box:hover .overlay {
   opacity: 1;
 }
@@ -320,17 +316,6 @@ h2 {
   font-size: 16px;
 }
 
-@media (max-width: 768px) {
-  .age-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-main {
-  padding: 2em;
-}
-
 /* Footer */
 footer {
   background: #e0e0e0;
@@ -338,4 +323,8 @@ footer {
   padding: 1em;
   font-size: 0.9em;
   color: #444;
+}
+
+main {
+  padding: 2em;
 }
