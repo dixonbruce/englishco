@@ -424,3 +424,21 @@ main {
     padding: 1em 1.5em;
   }
 }
+
+@media (max-width: 768px) {
+  .your-container-class {
+    padding: 0 10px; /* Reduce horizontal padding */
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .image-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+}
