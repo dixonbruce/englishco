@@ -181,6 +181,24 @@ body {
   color: #b22222;
 }
 
+.dropdown input[type="checkbox"] {
+  display: none;
+}
+
+.dropdown .submenu {
+  display: none;
+}
+
+.dropdown input[type="checkbox"]:checked + label + .submenu {
+  display: block;
+}
+
+/* Optional: cursor styling */
+.dropdown label.no-link {
+  cursor: pointer;
+  display: inline-block;
+}
+
 /* Hero Section */
 .hero {
   background: linear-gradient(to right, #fefefe, #f0f4f8);
