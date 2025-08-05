@@ -64,6 +64,14 @@ body {
   align-items: center;
 }
 
+.no-link {
+  cursor: pointer;
+  padding: 0.5em;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .logo-contact {
   display: flex;
   flex-direction: column;
