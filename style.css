@@ -65,14 +65,14 @@ body {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
+
   justify-content: space-between;
   align-items: center;
 }
 
 .logo-contact {
   display: flex;
-  flex-direction: column;
+
   gap: 10px;
 }
 
