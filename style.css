@@ -298,6 +298,17 @@ h2 {
   .age-grid {
     grid-template-columns: 1fr;
   }
+  .container {
+    padding: 0 10px; /* or even 0 5px if you want it tighter */
+  }
+
+  .hero {
+    padding: 10px 10px; /* reduce hero padding */
+  }
+
+  .hero-content {
+    padding: 0; /* ensure no extra padding */
+  }
 }
 
 .age-box {
