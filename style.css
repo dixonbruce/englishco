@@ -2,6 +2,11 @@
 /* style.css */
 
 /* Base styles */
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   font-size: 18px;
