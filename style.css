@@ -98,7 +98,8 @@ body {
   gap: 20px;
 }
 
-.navbar a {
+.navbar a,
+.navbar .no-link {
   position: relative;
   font-size: 17px;
   letter-spacing: 0.5px;
@@ -108,6 +109,7 @@ body {
   font-weight: 500;
   padding-bottom: 4px;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .navbar a::after {
