@@ -1,33 +1,87 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Little England – La Academia</title>
+  <title>English CO – Primaria (6–11 años)</title>
+  <meta name="description" content="Curso de inglés para Primaria (6–11 años) en Playa de Arinaga. Grupos reducidos, metodología práctica con juegos, canciones y actividades. Listening y speaking desde el primer día." />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* mínimos por si tu CSS no los incluye aún (puedes moverlos a style.css) */
+    .stack { display: grid; gap: 1.2rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0 1rem; }
+    .badge { display: inline-block; border: 1px solid rgba(0,0,0,.12); border-radius: 999px; padding: .35rem .6rem; font-size: .85rem; }
+    .feature-card { border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: 1rem; background: #fff; }
+    .feature-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+    .feature-list li::before { content: "• "; }
+    .cta { display: inline-flex; align-items: center; justify-content: center; padding: .8rem 1.1rem; border-radius: 10px; text-decoration: none; font-weight: 600; background: #0a7cff; color: #fff; }
+    .classroom-img { max-width: 680px; width: 100%; border-radius: 12px; display: block; margin: .5rem 0 1rem; }
+    .hero h1 { margin-bottom: .4rem; }
+  </style>
 </head>
 <body>
   <div id="header-placeholder"></div>
 
   <div class="container">
     <section class="hero">
-      <div class="hero-content">
-        <h1>Primaria (6–12 años)</h1>
+      <div class="hero-content stack">
+        <h1>Primaria (6–11 años)</h1>
         <img src="primaria_estudiantes.png" alt="Estudiantes de primaria" class="classroom-img" />
+
         <p>
-          En esta etapa, los niños están llenos de curiosidad y energía—¡y nuestras clases de inglés están diseñadas para estar a la altura! Los cursos de primaria son divertidos, dinámicos y, sobre todo, comunicativos.
+          En <strong>English CO</strong> ofrecemos un curso de inglés especialmente diseñado para alumnos de primaria (6–11 años). 
+          Las clases son <strong>dinámicas y motivadoras</strong>, con un enfoque 100% comunicativo para que el aprendizaje sea natural desde el primer día.
         </p>
+
+        <div class="badges">
+          <span class="badge">Grupos reducidos</span>
+          <span class="badge">Metodología práctica</span>
+          <span class="badge">Listening &amp; Speaking primero</span>
+          <span class="badge">Iniciación a la escritura</span>
+        </div>
+
         <p>
-          A través de juegos interactivos, actividades en grupo, canciones y cuentos, los alumnos aprenden a expresarse con confianza en inglés. Damos prioridad a las habilidades orales y de comprensión auditiva, introduciendo poco a poco la lectura y la escritura de forma natural.
+          A través de <strong>juegos, canciones, actividades en grupo y cuentos</strong>, los alumnos desarrollan vocabulario, 
+          ganan soltura al hablar y mejoran la comprensión auditiva. Introducimos la lectura y la escritura de forma 
+          progresiva, respetando el ritmo de cada niño para que todos avancen con confianza.
         </p>
+
+        <div class="feature-card">
+          <h2 style="margin-top:0;">Cómo son las clases</h2>
+          <ul class="feature-list">
+            <li><strong>Juegos, canciones y dinámicas</strong> para interiorizar vocabulario y estructuras.</li>
+            <li><strong>Listening y speaking</strong> trabajados desde el primer día para ganar confianza.</li>
+            <li><strong>Iniciación progresiva a la escritura</strong>, adaptada a la edad y nivel.</li>
+            <li><strong>Atención personalizada</strong> gracias a grupos muy reducidos.</li>
+            <li>Ambiente <strong>positivo y participativo</strong> que anima a hablar sin miedo.</li>
+          </ul>
+        </div>
+
+        <h2>Metodología: Oyeron – Vieron – Hicieron</h2>
         <p>
-          Nuestro enfoque fomenta la participación, amplía el vocabulario y ayuda a los niños a utilizar el inglés en situaciones reales desde el primer día. Creamos un ambiente relajado y positivo, donde cada niño se siente cómodo para hablar y avanzar a su ritmo.
+          Una regla sencilla y efectiva que guía nuestra forma de trabajar:
+        </p>
+        <ul class="feature-list">
+          <li><strong>Oír</strong>: escuchar inglés natural y correcto para reconocer sonidos y pronunciación.</li>
+          <li><strong>Ver</strong>: comprender el uso del vocabulario en contextos reales y cotidianos.</li>
+          <li><strong>Hacer</strong>: ponerlo en práctica con actividades comunicativas para consolidar la fluidez.</li>
+        </ul>
+
+        <p>
+          Nuestro objetivo es que tu hijo/a <strong>disfrute</strong> aprendiendo inglés, 
+          amplíe su vocabulario y se exprese con mayor soltura en situaciones reales, 
+          sentando una base sólida para las siguientes etapas.
+        </p>
+
+        <p>
+          <a class="cta" href="/contacto.html">Solicitar información / prueba de nivel</a>
         </p>
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 Little England</p>
+      <p>&copy; 2025 English CO</p>
     </footer>
   </div>
 
@@ -48,12 +102,10 @@
             .replace(/\/$/, '')
             .replace(/\/index$/, '')
             .replace(/\.html$/, '');
-
-          if (href === currentPath) {
-            link.classList.add('active');
-          }
+          if (href === currentPath) link.classList.add('active');
         });
       });
   </script>
 </body>
 </html>
+```
