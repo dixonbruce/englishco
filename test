@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little England – Quiénes somos</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* --- minimal essentials; keep or move to style.css --- */
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+    /* Ensure fixed header (from header.html) doesn't cover anchors */
+    section { scroll-margin-top: 90px; } /* adjust to your header height */
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+    .hero { padding: 120px 0 64px; } /* extra top padding for fixed header */
+    .hero h1 { margin-top: 0; }
+
+    .age-grid {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px; margin: 24px 0 56px;
+    }
+    .age-box { position: relative; display: block; border-radius: 12px; overflow: hidden; }
+    .age-box img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .age-box .overlay {
+      position: absolute; inset: 0; display: grid; place-items: end start;
+      padding: 16px; background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0));
+      color: #fff;
+    }
+    .age-box h3 { margin: 0; letter-spacing: .5px; }
+
+    footer { padding: 40px 0; text-align: center; color: #666; }
+
+    /* Optional: active nav link styling (class .active) */
+    .navbar a.active { color: #0a7cff; }
+    .navbar a { transition: color .2s ease; }
+    @media (max-width: 900px) {
+      .age-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .age-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header will be injected here -->
+  <div id="header-placeholder">
+<nav class="navbar">
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#infantil">Infantil</a>
+  <a href="#primaria">Primaria</a>
+  <a href="#secundaria">Secundaria</a>
+  <a href="#adultos">Adultos</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+</div>
+
+  <main>
+    <!-- INICIO / HERO -->
+    <section id="inicio" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Academia de inglés en Playa de Arinaga (Agüimes) para niños, adolescentes y adultos.</h1>
+          <p>
+            En <strong>Little England</strong> ofrecemos clases de inglés divertidas, eficaces y adaptadas a cada nivel. Nuestro enfoque es cercano, profesional y centrado en el aprendizaje real. Las clases son dinámicas, comunicativas y amenas, con metodología basada en la práctica constante y la participación activa.
+          </p>
+          <h2 id="servicios">Nuestros servicios</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARJETAS DE EDADES (enlaces a secciones internas) -->
+    <section class="container">
+      <div class="age-grid">
+        <a href="#infantil" class="age-box">
+          <img src="/infantil_estudiante.jpg" alt="Estudiantes de infantil" />
+          <div class="overlay"><h3>INFANTIL</h3></div>
+        </a>
+        <a href="#primaria" class="age-box">
+          <img src="/primaria_estudiantes.png" alt="Clase de primaria" />
+          <div class="overlay"><h3>PRIMARIA</h3></div>
+        </a>
+        <a href="#secundaria" class="age-box">
+          <img src="/secundaria.jpg" alt="Clase de secundaria" />
+          <div class="overlay"><h3>SECUNDARIA</h3></div>
+        </a>
+        <a href="#adultos" class="age-box">
+          <img src="/adultos.jpg" alt="Clase para adultos" />
+          <div class="overlay"><h3>ADULTOS</h3></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECCIONES DESTINO -->
+    <section id="infantil" class="container">
+      <h2>Infantil</h2>
+      <p>Juego, canciones y rutinas para introducir vocabulario y estructuras básicas con pronunciación natural.</p>
+    </section>
+
+    <section id="primaria" class="container">
+      <h2>Primaria</h2>
+      <p>Clases comunicativas con proyectos, lectura guiada y práctica oral constante para ganar fluidez y confianza.</p>
+    </section>
+
+    <section id="secundaria" class="container">
+      <h2>Secundaria</h2>
+      <p>Preparación de exámenes, ampliación de vocabulario académico y debate para alcanzar un B1–B2 sólido.</p>
+    </section>
+
+    <section id="adultos" class="container">
+      <h2>Adultos</h2>
+      <p>Conversación práctica orientada a objetivos (trabajo, viajes, certificaciones) con feedback claro y útil.</p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="container" style="margin-top:56px;">
+      <h2>Contacto</h2>
+      <p>Playa de Arinaga, Agüimes – Gran Canaria · Tel: 646 555 552 · Email: info@littleengland.es</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Little England</p>
+    </div>
+  </footer>
+
+  <script>
+    // 1) Cargar el header y convertir sus enlaces a anclas internas
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+
+        // Espera a que el DOM del header exista
+        const nav = document.querySelector('.navbar');
+        if (!nav) return;
+
+        // Mapea rutas antiguas -> anclas nuevas
+        const map = new Map([
+          ['/index.html', '#inicio'],
+          ['/', '#inicio'],
+          ['/quienes.html', '#inicio'],     // opcional
+          ['/servicios.html', '#servicios'],
+          ['/contacto.html', '#contacto'],
+          ['/infantil.html', '#infantil'],
+          ['/primaria.html', '#primaria'],
+          ['/secundaria.html', '#secundaria'],
+          ['/adultos.html', '#adultos']
+        ]);
+
+        nav.querySelectorAll('a[href]').forEach(a => {
+          const href = a.getAttribute('href');
+          if (map.has(href)) a.setAttribute('href', map.get(href));
+        });
+
+        // 2) Scroll-Spy: resalta el enlace activo según la sección visible
+        const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+        const linkById = new Map(
+          links.map(a => [a.getAttribute('href').replace('#',''), a])
+        );
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const id = entry.target.id;
+            const link = linkById.get(id);
+            if (!link) return;
+            if (entry.isIntersecting) {
+              links.forEach(l => l.classList.remove('active'));
+              link.classList.add('active');
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '-40% 0px -50% 0px', // activa cerca del centro
+          threshold: 0
+        });
+
+        document.querySelectorAll('section[id]').forEach(sec => observer.observe(sec));
+
+        // 3) Ajuste: desplazamiento suave y compensar header fijo en clic
+        // (scroll-behavior lo hace, pero prevenimos salto si el header tapa título)
+        links.forEach(link => {
+          link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            e.preventDefault();
+            const header = document.querySelector('.navbar');
+            const offset = header ? header.offsetHeight + 10 : 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+            // opcional: cerrar menú móvil si existe
+          });
+        });
+      });
+  </script>
+</body>
+</html>
