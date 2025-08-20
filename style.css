@@ -90,6 +90,26 @@ body {
   .dropdown .submenu{ position:static; box-shadow:none; border:0; border-radius:0; }
 }
 
+.contact-info {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-info .whatsapp a {
+  color: #25d366; /* WhatsApp green */
+  font-weight: bold;
+}
+
+
 /* Hero Section */
 .hero {
   background: linear-gradient(to right, #fefefe, #f0f4f8);
