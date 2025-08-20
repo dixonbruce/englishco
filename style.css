@@ -89,13 +89,12 @@ body {
   .header-logo{ height:36px; }
   .dropdown .submenu{ position:static; box-shadow:none; border:0; border-radius:0; }
 }
-
 .contact-info {
   font-size: 16px;
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -104,10 +103,10 @@ body {
   color: inherit;
 }
 
-.contact-info .whatsapp a {
-  color: #25d366; /* WhatsApp green */
-  font-weight: bold;
+.contact-info .whatsapp svg {
+  vertical-align: middle;
 }
+
 
 
 /* Hero Section */
