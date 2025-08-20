@@ -70,15 +70,17 @@ body {
   align-items: center;
 }
 
-.logo-contact {
-  display: flex;
-
-  gap: 10px;
+/* Put this on the <img> or inline <svg> logo in the header */
+.header-logo {
+  display:block;              /* removes inline-gap */
+  height:48px;                /* tweak to your header height */
+  width:auto;                 /* keep proportions */
 }
 
-.logo {
-  width: 120px;
-  height: auto;
+/* Optional: control the link/container, not the image */
+.header-brand {
+  display:flex; align-items:center;
+  padding:8px 0;              /* vertical breathing room */
 }
 
 .contact-info p {
