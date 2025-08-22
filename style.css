@@ -83,7 +83,7 @@ h2{margin-top:40px}
   padding:20px var(--padx);
   border-bottom:1px solid #ddd;
 }
-.hero-content{max-width:800px; margin:0 auto}
+.hero-content{ margin:0 auto}
 .hero-content h1{font-size:2.2rem; margin:.2em 0 .5em; color:#222}
 .hero-content p{font-size:1.1rem; color:#333; margin-bottom:1.2em}
 
