@@ -94,7 +94,12 @@ h2{margin-top:40px}
 }
 
 /* ===== Age grid with readable labels ===== */
-.age-grid{display:grid; grid-template-columns:repeat(2,1fr); width:100%}
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;              /* ← add spacing between boxes */
+  width: 100%;
+}
 .age-box{
   position:relative; overflow:hidden; aspect-ratio:16/9;
   display:block; text-decoration:none; color:inherit;
@@ -126,9 +131,9 @@ h2{margin-top:40px}
 .cta-button:hover{background:#921d1d}
 
 /* ===== Small-screen tweaks ===== */
-@media (max-width:768px){
-  .age-grid{grid-template-columns:1fr}
-  .container{padding:0 10px}
-  .hero{padding:10px 10px}
-  .hero-content{padding:0}
+@media (max-width: 768px) {
+  .age-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;            /* slightly smaller gap on mobile */
+  }
 }
