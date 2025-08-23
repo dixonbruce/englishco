@@ -1,111 +1,142 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English CO – Primaria (6–11 años)</title>
-  <meta name="description" content="Curso de inglés para Primaria (6–11 años) en Playa de Arinaga. Grupos reducidos, metodología práctica con juegos, canciones y actividades. Listening y speaking desde el primer día." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Co – Primaria (6–11 años)</title>
+  <meta name="description" content="Curso de inglés para Primaria (6–11 años) en Playa de Arinaga (Agüimes). Grupos reducidos, metodología práctica con juegos y proyectos. Listening y speaking desde el primer día." />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* mínimos por si tu CSS no los incluye aún (puedes moverlos a style.css) */
-    .stack { display: grid; gap: 1.2rem; }
-    .badges { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0 1rem; }
-    .badge { display: inline-block; border: 1px solid rgba(0,0,0,.12); border-radius: 999px; padding: .35rem .6rem; font-size: .85rem; }
-    .feature-card { border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: 1rem; background: #fff; }
-    .feature-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
-    .feature-list li::before { content: "• "; }
-    .cta { display: inline-flex; align-items: center; justify-content: center; padding: .8rem 1.1rem; border-radius: 10px; text-decoration: none; font-weight: 600; background: #0a7cff; color: #fff; }
-    .classroom-img { max-width: 680px; width: 100%; border-radius: 12px; display: block; margin: .5rem 0 1rem; }
-    .hero h1 { margin-bottom: .4rem; }
-  </style>
 </head>
 <body>
-  <div id="header-placeholder"></div>
 
-  <div class="container">
-    <section class="hero">
-      <div class="hero-content stack">
-        <h1>Primaria (6–11 años)</h1>
-        <img src="primaria_estudiantes.png" alt="Estudiantes de primaria" class="classroom-img" />
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="header-brand" aria-label="Inicio English Co">
+        <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
+      </a>
 
-        <p>
-          En <strong>English CO</strong> ofrecemos un curso de inglés especialmente diseñado para alumnos de primaria (6–11 años). 
-          Las clases son <strong>dinámicas y motivadoras</strong>, con un enfoque 100% comunicativo para que el aprendizaje sea natural desde el primer día.
-        </p>
-
-        <div class="badges">
-          <span class="badge">Grupos reducidos</span>
-          <span class="badge">Metodología práctica</span>
-          <span class="badge">Listening &amp; Speaking primero</span>
-          <span class="badge">Iniciación a la escritura</span>
-        </div>
-
-        <p>
-          A través de <strong>juegos, canciones, actividades en grupo y cuentos</strong>, los alumnos desarrollan vocabulario, 
-          ganan soltura al hablar y mejoran la comprensión auditiva. Introducimos la lectura y la escritura de forma 
-          progresiva, respetando el ritmo de cada niño para que todos avancen con confianza.
-        </p>
-
-        <div class="feature-card">
-          <h2 style="margin-top:0;">Cómo son las clases</h2>
-          <ul class="feature-list">
-            <li><strong>Juegos, canciones y dinámicas</strong> para interiorizar vocabulario y estructuras.</li>
-            <li><strong>Listening y speaking</strong> trabajados desde el primer día para ganar confianza.</li>
-            <li><strong>Iniciación progresiva a la escritura</strong>, adaptada a la edad y nivel.</li>
-            <li><strong>Atención personalizada</strong> gracias a grupos muy reducidos.</li>
-            <li>Ambiente <strong>positivo y participativo</strong> que anima a hablar sin miedo.</li>
-          </ul>
-        </div>
-        
-        <h2>Metodología: Oír – Ver – Hacer</h2>
-        <p>
-          Una regla sencilla y efectiva que guía nuestra forma de trabajar:
-        </p>
-        <ul class="feature-list">
-          <li><strong>Oír</strong>: los estudiantes escuchan inglés natural y correcto para reconocer sonidos y pronunciación.</li>
-          <li><strong>Ver</strong>: comprenden el uso del vocabulario en contextos reales y cotidianos.</li>
-          <li><strong>Hacer</strong>: lo ponen en práctica con actividades comunicativas para consolidar la fluidez.</li>
+      <nav class="navbar" role="navigation" aria-label="Principal">
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li class="dropdown">
+            <input type="checkbox" id="toggle-cursos" hidden />
+            <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">Cursos ▾</label>
+            <ul id="submenu-cursos" class="submenu" role="menu">
+              <li role="none"><a role="menuitem" href="/infantil.html">Infantil</a></li>
+              <li role="none"><a role="menuitem" href="/primaria.html" class="active">Primaria</a></li>
+              <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
+              <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
+            </ul>
+          </li>
+          <li><a href="/academia.html">Academia</a></li>
         </ul>
+      </nav>
 
-        <p>
-          Nuestro objetivo es que tu hijo/a <strong>disfrute</strong> aprendiendo inglés, 
-          amplíe su vocabulario y se exprese con mayor soltura en situaciones reales, 
-          sentando una base sólida para las siguientes etapas.
-        </p>
+      <div class="contact-info">
+        <span class="phone">📞 <a href="tel:+34646555552">646 555 552</a></span>
+        <span aria-hidden="true">|</span>
+        <span class="whatsapp">
+          <a href="https://wa.me/34646555552" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true" focusable="false">
+              <path fill="#25d366" d="M16 .6C7.5.6.6 7.5.6 16c0 2.8.7 5.6 2.2 8l-2.3 8.3 8.5-2.2c2.3 1.3 4.9 2 7.6 2 8.5 0 15.4-6.9 15.4-15.4S24.5.6 16 .6zm0 28c-2.5 0-4.9-.7-7-2l-.5-.3-5 .1 1.4-4.9-.3-.5c-1.3-2.1-2-4.5-2-7 0-7.2 5.9-13.1 13.1-13.1 3.5 0 6.8 1.4 9.2 3.9 2.5 2.5 3.9 5.7 3.9 9.2-.1 7.2-6 13.1-13.2 13.1zm7.3-9.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2-.2.4-.8 1.2-1 1.4-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.1-.8.1-.1.4-.5.5-.6.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.7-1.7-1-2.3-.3-.7-.6-.6-.7-.6h-.6c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1.1 2.8 1.3 3c.2.2 2.1 3.2 5.1 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 2.2-.9 2.5-1.7.3-.9.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z"/>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </header>
 
+  <!-- Main -->
+  <main class="container" id="main-content">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Primaria (6–11 años)</h1>
         <p>
-          <a class="cta" href="/contacto.html">Solicitar información / prueba de nivel</a>
+          En <strong>English Co</strong> ofrecemos un curso de inglés especialmente diseñado para alumnado de Primaria.
+          Clases <strong>dinámicas y motivadoras</strong> con enfoque 100% comunicativo para que el aprendizaje sea natural desde el primer día.
         </p>
+        <img src="/primaria_estudiantes.png" alt="Estudiantes de Primaria" class="classroom-img" loading="eager" decoding="async" />
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2025 English CO</p>
-    </footer>
-  </div>
+    <!-- Quick badges -->
+    <section aria-label="Resumen del curso">
+      <h2>Lo esencial</h2>
+      <p class="cta-row" style="gap:8px; flex-wrap:wrap;">
+        <span class="cta-button cta-button--outline">Grupos reducidos</span>
+        <span class="cta-button cta-button--outline">Metodología práctica</span>
+        <span class="cta-button cta-button--outline">Listening &amp; Speaking primero</span>
+        <span class="cta-button cta-button--outline">Lectoescritura progresiva</span>
+      </p>
+    </section>
 
-  <script>
-    fetch('/header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
+    <!-- Features -->
+    <section aria-label="Cómo son las clases">
+      <h2>Cómo son las clases</h2>
+      <ul>
+        <li><strong>Juegos, canciones y dinámicas</strong> para interiorizar vocabulario y estructuras.</li>
+        <li><strong>Listening y speaking</strong> desde el primer día para ganar confianza al comunicarse.</li>
+        <li><strong>Lectura y escritura</strong> introducidas de forma gradual y adaptada a la edad.</li>
+        <li><strong>Atención personalizada</strong> gracias a grupos muy reducidos.</li>
+        <li>Ambiente <strong>positivo y participativo</strong> que anima a hablar sin miedo.</li>
+      </ul>
+    </section>
 
-        const links = document.querySelectorAll('.navbar a');
-        const currentPath = window.location.pathname
-          .replace(/\/$/, '')
-          .replace(/\/index$/, '')
-          .replace(/\.html$/, '');
+    <!-- Method -->
+    <section aria-label="Metodología">
+      <h2>Metodología: Oír – Ver – Hacer</h2>
+      <p>Una regla sencilla y efectiva que guía nuestra forma de trabajar:</p>
+      <ul>
+        <li><strong>Oír</strong>: escuchar inglés natural y correcto para reconocer sonidos y pronunciación.</li>
+        <li><strong>Ver</strong>: comprender vocabulario y estructuras en contextos reales y cotidianos.</li>
+        <li><strong>Hacer</strong>: practicar con actividades comunicativas para consolidar fluidez.</li>
+      </ul>
+    </section>
 
-        links.forEach(link => {
-          const href = link.getAttribute('href')
-            .replace(/\/$/, '')
-            .replace(/\/index$/, '')
-            .replace(/\.html$/, '');
-          if (href === currentPath) link.classList.add('active');
-        });
-      });
-  </script>
+    <!-- Outcomes -->
+    <section aria-label="Objetivos">
+      <h2>Objetivos del curso</h2>
+      <ul>
+        <li>Disfrutar del aprendizaje y <strong>ganar soltura</strong> al hablar.</li>
+        <li>Ampliar vocabulario y mejorar comprensión auditiva.</li>
+        <li>Construir una base sólida para <strong>Secundaria</strong>.</li>
+      </ul>
+
+      <p class="cta-row">
+        <a class="cta-button" href="https://wa.me/34646555552" target="_blank" rel="noopener">Pedir información por WhatsApp</a>
+        <a class="cta-button cta-button--outline" href="tel:+34646555552">Llamar: 646 555 552</a>
+      </p>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="age-grid" aria-label="Otros cursos">
+      <a href="/infantil.html" class="age-box">
+        <img src="/infantil_estudiante.jpg" alt="Curso de Infantil" loading="lazy" decoding="async" />
+        <div class="overlay"><h3>INFANTIL</h3></div>
+      </a>
+      <a href="/secundaria.html" class="age-box">
+        <img src="/secundaria.jpg" alt="Curso de Secundaria" loading="lazy" decoding="async" />
+        <div class="overlay"><h3>SECUNDARIA</h3></div>
+      </a>
+      <a href="/adultos.html" class="age-box">
+        <img src="/adultos.jpg" alt="Curso de Adultos" loading="lazy" decoding="async" />
+        <div class="overlay"><h3>ADULTOS</h3></div>
+      </a>
+      <a href="/index.html" class="age-box">
+        <img src="/primaria_estudiantes.png" alt="Volver al inicio" loading="lazy" decoding="async" />
+        <div class="overlay"><h3>INICIO</h3></div>
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Little England</p>
+    </div>
+  </footer>
+
 </body>
 </html>
-```
