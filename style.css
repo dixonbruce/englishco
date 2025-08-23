@@ -116,7 +116,8 @@ h2::after{
   border-bottom: 1px solid #ddd;
 }
 .hero-content{ margin:0 auto; }
-.hero-content p{ color: var(--muted); margin: .6em 0 1.2em; }
+.hero-content p{ color: var(--text); margin: .6em 0 1.2em; }
+
 
 /* ===== Image helper ===== */
 .classroom-img{
