@@ -9,7 +9,7 @@
   --maxw:1024px;
   --padx:20px;
 
-  /* New: type + spacing tokens */
+  /* Type + spacing */
   --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --lh: 1.55;
   --space-s: clamp(8px, 1.4vw, 14px);
@@ -27,7 +27,10 @@ body{
 
 /* ===== Typography ===== */
 h1{ font-weight:800; letter-spacing:.2px; font-size: clamp(28px, 3.2vw, 40px); color:#222; }
-h2{ font-weight:750; letter-spacing:.2px; font-size: clamp(20px, 2.2vw, 28px); margin: 28px 0 10px; color:#222; position:relative; padding-bottom:6px; }
+h2{
+  font-weight:750; letter-spacing:.2px; font-size: clamp(20px, 2.2vw, 28px);
+  margin: 28px 0 10px; color:#222; position:relative; padding-bottom:6px;
+}
 p, li{ font-size: clamp(16px, 1.2vw, 18px); }
 h2::after{
   content:""; position:absolute; left:0; bottom:0; height:3px; width:68px;
@@ -78,7 +81,7 @@ h2::after{
 }
 .dropdown .submenu a{ display:block; padding:8px 14px; color:var(--text); text-transform:none; }
 .dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
-/* Open via checkbox or keyboard focus; hover intent for mouse */
+/* Open via checkbox / keyboard / hover */
 #toggle-cursos:checked ~ .submenu,
 .dropdown:focus-within .submenu,
 .dropdown:hover .submenu{ display:block; }
@@ -180,11 +183,19 @@ h2::after{
   * { transition: none !important; animation: none !important; }
 }
 
-/* ===== Dark mode ===== */
+/* ===== Dark mode (polished; keeps hero dark too) ===== */
 @media (prefers-color-scheme: dark){
-  :root{ --text:#eee; --muted:#cfd3d8; }
-  body{ background: linear-gradient(to right, #0d1117, #161b22); color: var(--text); }
-  .site-header{ background: rgba(22,27,34,.85); border-bottom-color: #2b2f36; }
-  .hero{ border-bottom-color:#2b2f36; }
-  .age-box{ box-shadow: 0 4px 14px rgba(0,0,0,.4); }
-  .site-footer{ background:#0f141b; bord
+  :root{
+    --text:#e9edf3;
+    --muted:#c6cbd2;
+  }
+
+  body{
+    background: linear-gradient(to right, #0d1117, #131923);
+    color: var(--text);
+  }
+
+  .site-header{
+    background: rgba(16,21,28,.9);
+    border-bottom-color: #273142;
+    backdrop-filter:
