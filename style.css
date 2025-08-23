@@ -116,7 +116,6 @@ h2::after{
   border-bottom: 1px solid #ddd;
 }
 .hero-content{ margin:0 auto; }
-/* NOTE: make hero paragraphs main colour (not muted) */
 .hero-content p{ color: var(--text); margin: .6em 0 1.2em; }
 
 /* ===== Image helper ===== */
@@ -184,7 +183,7 @@ h2::after{
   * { transition: none !important; animation: none !important; }
 }
 
-/* ===== Dark mode (polished; hero is dark too) ===== */
+/* ===== Dark mode (polished; hero and submenu dark too) ===== */
 @media (prefers-color-scheme: dark){
   :root{
     --text:#e9edf3;
@@ -207,12 +206,23 @@ h2::after{
   .navbar a::after{ background:#ff6b72; }
   .navbar a:hover, .navbar .no-link:hover{ color:#bcd2ff; }
 
+  .dropdown .submenu{
+    background: #161b22;
+    border-color: #273142;
+  }
+  .dropdown .submenu a{
+    color: #e9edf3;
+  }
+  .dropdown .submenu a:hover{
+    background: #1f2733;
+    color: #bcd2ff;
+  }
+
   .hero{
     background: linear-gradient(to right, #0f141b, #121a24);
     border-bottom-color:#273142;
   }
   .hero-content h1{ color:#f3f6fb; }
-  /* keep hero text bright in dark mode */
   .hero-content p{ color: var(--text); }
 
   .age-box{
