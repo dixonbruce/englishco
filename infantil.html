@@ -2,67 +2,121 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Little England – La Academia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Co – Infantil (3–5 años)</title>
+  <meta name="description" content="Cursos de inglés para Infantil (3–5 años) en Playa de Arinaga, Agüimes. Clases dinámicas con juegos, canciones y cuentos. Grupos por edad." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="header-placeholder"></div>
-  <div class="container">
 
+  <!-- Header (same as home) -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="header-brand" aria-label="Inicio English Co">
+        <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
+      </a>
 
-  <div class="container">
-  <section class="hero">
-    <div class="hero-content">
-      <p>
-        <h1>Cursos de infantil (3–5 años)</h1>
-      </p>
-      <p>
-        <img src="/infantil_estudiante.jpg" alt="Niños pequeños"  class="classroom-img" />
-      </p>
-      
-       <p>  
-          Descubre el mundo a través del inglés.
-          Aprender inglés en la etapa infantil puede ser una experiencia divertida, afectiva y significativa. En nuestras clases, los más pequeños descubren, juegan y aprenden en un entorno seguro y motivador, donde se sienten acompañados en cada paso.
-          
-          A través de un currículo de 3 niveles, fomentamos habilidades fundamentales para la vida desde una edad temprana, como la cooperación, la escucha activa y el respeto, sentando así las bases para una transición exitosa a Primaria.
-          
-          Nuestras clases están llenas de actividades dinámicas, canciones, juegos, cuentos y movimiento. Todo se imparte en inglés, sumergiendo al alumnado en el idioma desde el primer día y despertando su curiosidad por otras culturas.
-          Los grupos están organizados por edad, asegurando que el aprendizaje y las actividades sean apropiadas para cada etapa del desarrollo.    
-      </p>
+      <nav class="navbar" role="navigation" aria-label="Principal">
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li class="dropdown">
+            <input type="checkbox" id="toggle-cursos" hidden />
+            <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">Cursos ▾</label>
+            <ul id="submenu-cursos" class="submenu" role="menu">
+              <li role="none"><a role="menuitem" href="/infantil.html" class="active">Infantil</a></li>
+              <li role="none"><a role="menuitem" href="/primaria.html">Primaria</a></li>
+              <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
+              <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
+            </ul>
+          </li>
+          <li><a href="/academia.html">Academia</a></li>
+        </ul>
+      </nav>
 
+      <div class="contact-info">
+        <span class="phone">📞 <a href="tel:+34646555552">646 555 552</a></span>
+        <span aria-hidden="true">|</span>
+        <span class="whatsapp">
+          <a href="https://wa.me/34646555552" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true" focusable="false">
+              <path fill="#25d366" d="M16 .6C7.5.6.6 7.5.6 16c0 2.8.7 5.6 2.2 8l-2.3 8.3 8.5-2.2c2.3 1.3 4.9 2 7.6 2 8.5 0 15.4-6.9 15.4-15.4S24.5.6 16 .6zm0 28c-2.5 0-4.9-.7-7-2l-.5-.3-5 .1 1.4-4.9-.3-.5c-1.3-2.1-2-4.5-2-7 0-7.2 5.9-13.1 13.1-13.1 3.5 0 6.8 1.4 9.2 3.9 2.5 2.5 3.9 5.7 3.9 9.2-.1 7.2-6 13.1-13.2 13.1zm7.3-9.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2-.2.4-.8 1.2-1 1.4-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.1-.8.1-.1.4-.5.5-.6.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.7-1.7-1-2.3-.3-.7-.6-.6-.7-.6h-.6c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1.1 2.8 1.3 3c.2.2 2.1 3.2 5.1 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 2.2-.9 2.5-1.7.3-.9.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z"/>
+            </svg>
+          </a>
+        </span>
+      </div>
     </div>
-  </section>
+  </header>
 
-    <footer>
+  <!-- Main -->
+  <main class="container" id="main-content">
+    <!-- Hero (like home) -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Cursos de Infantil (3–5 años)</h1>
+        <p>
+          Aprender inglés en Infantil puede ser una experiencia divertida, afectiva y significativa. En nuestras clases, los más pequeños descubren, juegan y aprenden en un entorno seguro y motivador, con acompañamiento en cada paso.
+        </p>
+        <img src="/infantil_estudiante.jpg" alt="Niños en actividades de inglés infantil" class="classroom-img" />
+      </div>
+    </section>
+
+    <!-- Content blocks (simple, home-like) -->
+    <section aria-label="Sobre el curso">
+      <h2>Cómo trabajamos</h2>
+      <p>
+        Nuestras clases están llenas de actividades dinámicas: canciones, juegos, cuentos y movimiento.
+        Todo se imparte en inglés para favorecer la inmersión desde el primer día y despertar su curiosidad por otras culturas.
+      </p>
+
+      <h2>Organización de grupos</h2>
+      <p>
+        Los grupos se organizan por edad y etapa del desarrollo. Contamos con un currículo de 3 niveles
+        que fomenta la cooperación, la escucha activa y el respeto, sentando las bases para una transición
+        exitosa a Primaria.
+      </p>
+
+      <h2>Objetivos</h2>
+      <ul>
+        <li>Escuchar y reconocer sonidos y rutinas en inglés.</li>
+        <li>Comprender instrucciones sencillas en contexto.</li>
+        <li>Comunicar ideas básicas usando gestos, palabras y estructuras simples.</li>
+        <li>Aprender a través del juego cooperativo y el movimiento.</li>
+      </ul>
+
+      <p>
+        <a class="cta-button" href="https://wa.me/34646555552" target="_blank" rel="noopener">Pedir información por WhatsApp</a>
+        &nbsp;&nbsp;
+        <a class="cta-button" href="tel:+34646555552">Llamar: 646 555 552</a>
+      </p>
+    </section>
+
+    <!-- Cross-links (keeps the home feel of exploration) -->
+    <section class="age-grid" aria-label="Otros cursos">
+      <a href="/primaria.html" class="age-box">
+        <img src="/primaria_estudiantes.png" alt="Curso de Primaria" />
+        <div class="overlay"><h3>PRIMARIA</h3></div>
+      </a>
+      <a href="/secundaria.html" class="age-box">
+        <img src="/secundaria.jpg" alt="Curso de Secundaria" />
+        <div class="overlay"><h3>SECUNDARIA</h3></div>
+      </a>
+      <a href="/adultos.html" class="age-box">
+        <img src="/adultos.jpg" alt="Curso de Adultos" />
+        <div class="overlay"><h3>ADULTOS</h3></div>
+      </a>
+      <a href="/index.html" class="age-box">
+        <img src="/infantil_estudiante.jpg" alt="Volver al inicio" />
+        <div class="overlay"><h3>INICIO</h3></div>
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer (same style as home) -->
+  <footer class="site-footer">
+    <div class="container">
       <p>&copy; 2025 Little England</p>
-    </footer>
-  </div> <!-- End container -->
-
-  <script>
-    fetch('/header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
-
-        const links = document.querySelectorAll('.navbar a');
-        const currentPath = window.location.pathname
-          .replace(/\/$/, '')
-          .replace(/\/index$/, '')
-          .replace(/\.html$/, '');
-
-        links.forEach(link => {
-          const href = link.getAttribute('href')
-            .replace(/\/$/, '')
-            .replace(/\/index$/, '')
-            .replace(/\.html$/, '');
-
-          if (href === currentPath) {
-            link.classList.add('active');
-          }
-        });
-      });
-  </script>
+    </div>
+  </footer>
 
 </body>
 </html>
