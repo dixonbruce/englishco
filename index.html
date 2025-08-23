@@ -2,132 +2,42 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English co – Quien Somos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Co – Quién Somos</title>
+  <meta name="description" content="Academia de inglés en Playa de Arinaga (Agüimes). Cursos divertidos y eficaces para infantil, primaria, secundaria y adultos." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- header.html -->
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="header-brand" aria-label="Inicio English Co">
+        <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
+      </a>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/index.html" class="header-brand">
-      <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo">
-    </a>
+      <nav class="navbar" role="navigation" aria-label="Principal">
+        <ul>
+          <li><a href="/index.html" class="active">Inicio</a></li>
 
-    <nav class="navbar">
-      <ul>
-        <li><a href="/index.html" class="active">Inicio</a></li>
+          <li class="dropdown">
+            <input type="checkbox" id="toggle-cursos" hidden />
+            <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">Cursos ▾</label>
+            <ul id="submenu-cursos" class="submenu" role="menu">
+              <li role="none"><a role="menuitem" href="/infantil.html">Infantil</a></li>
+              <li role="none"><a role="menuitem" href="/primaria.html">Primaria</a></li>
+              <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
+              <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
+            </ul>
+          </li>
 
-        <li class="dropdown">
-          <input type="checkbox" id="toggle-cursos" hidden>
-          <label for="toggle-cursos" class="no-link">Cursos ▾</label>
-          <ul class="submenu">
-            <li><a href="/infantil.html">Infantil</a></li>
-            <li><a href="/primaria.html">Primaria</a></li>
-            <li><a href="/secundaria.html">Secundaria</a></li>
-            <li><a href="/adultos.html">Adultos</a></li>
-          </ul>
-        </li>
+          <li><a href="/academia.html">Academia</a></li>
+        </ul>
+      </nav>
 
-        <li><a href="/academia.html">Academia</a></li>
-      </ul>
-    </nav>
-  <div class="contact-info">
-  <span class="phone">
-    📞 <a href="tel:+34646555552">646 555 552</a>
-  </span> 
-  | 
-  <span class="whatsapp">
-    <a href="https://wa.me/34646555552" target="_blank" aria-label="WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="#25d366">
-        <path d="M16 .6C7.5.6.6 7.5.6 16c0 2.8.7 5.6 2.2 8l-2.3 8.3 8.5-2.2c2.3 1.3 4.9 2 7.6 2 8.5 0 15.4-6.9 15.4-15.4S24.5.6 16 .6zm0 28c-2.5 0-4.9-.7-7-2l-.5-.3-5 .1 1.4-4.9-.3-.5c-1.3-2.1-2-4.5-2-7 0-7.2 5.9-13.1 13.1-13.1 3.5 0 6.8 1.4 9.2 3.9 2.5 2.5 3.9 5.7 3.9 9.2-.1 7.2-6 13.1-13.2 13.1zm7.3-9.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2-.2.4-.8 1.2-1 1.4-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.1-.8.1-.1.4-.5.5-.6.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.7-1.7-1-2.3-.3-.7-.6-.6-.7-.6h-.6c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1.1 2.8 1.3 3c.2.2 2.1 3.2 5.1 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 2.2-.9 2.5-1.7.3-.9.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z"/>
-      </svg>
-    </a>
-  </span>
-</div>
-
-  </div>
-</header>
-  
-  <div class="container">
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Academia de inglés en Playa de Arinaga, Aguimes para niños, adolescentes y adultos.</h1>
-
-      <p>  
-        En <strong>English co</strong> ofrecemos clases de inglés divertidas, eficaces y adaptadas a cada nivel. Nuestro enfoque es cercano, profesional y centrado en el aprendizaje real de nuestros alumnos. Las clases son dinámicas, comunicativas y amenas, con una metodología basada en la práctica constante y la participación activa.
-      </p>
-      <h2>Nuestros servicios</h2>
-    </div>
-  </section>
-
-<section class="age-grid">
-  <a href="/infantil.html" class="age-box">
-    <img src="/infantil_estudiante.jpg" alt="Estudiantes de primaria" />
-    <div class="overlay">
-      <h3>INFANTIL</h3>
-      
-      <!-- <p>3–5 años</p> -->
-    </div>
-  </a>                                                                
-  <a href="/primaria.html" class="age-box">
-    <img src="/primaria_estudiantes.png" alt="Clase de primaria" />
-    <div class="overlay">
-      <h3>PRIMARIA</h3>
-    </div>
-  </a>
-  <a href="/secundaria.html" class="age-box">
-    <img src="/secundaria.jpg" alt="Clase de secundaria" />
-    <div class="overlay">
-      <h3>SECUNDARIA</h3>
-    </div>
-  </a>
-  <a href="/adultos.html" class="age-box">
-    <img src="/adultos.jpg" alt="Clase para adultos" />
-    <div class="overlay">
-      <h3>ADULTOS</h3>
-    </div>
-  </a>
-</section>
-
-
-    <footer>
-      <p>&copy; 2025 Little England</p>
-    </footer>
-  </div> <!-- End container -->
-
-  <script>
-    fetch('/header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
-  
-        const links = document.querySelectorAll('.navbar a');
-        let path = window.location.pathname;
-  
-        // Treat "/" and "/index.html" as equivalent
-        if (path === '/' || path === '/index.html') {
-          path = '/index';
-        } else {
-          path = path.replace(/\.html$/, '');
-        }
-  
-        links.forEach(link => {
-          let href = link.getAttribute('href');
-          if (href === '/index.html') {
-            href = '/index';
-          } else {
-            href = href.replace(/\.html$/, '');
-          }
-  
-          if (href === path) {
-            link.classList.add('active');
-          }
-        });
-      });
-  </script>
-
-</body>
-</html>
+      <div class="contact-info">
+        <span class="phone">📞 <a href="tel:+34646555552">646 555 552</a></span>
+        <span aria-hidden="true">|</span>
+        <span class="whatsapp">
+          <a href="https://wa.me/34646555552" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" hei
