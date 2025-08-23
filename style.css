@@ -1,29 +1,27 @@
 /* =========================================================
-   ENGLISHCO — Full CSS (v3)
-   - Mobile-first
-   - Translucent/blur header with blur
-   - WhatsApp + Phone icons (SVG) sized via CSS
-   - In-body navigation cards
-   - Compact footer
+   ENGLISHCO — Full CSS (v4)
+   - Mobile-first, no JS
+   - Translucent/blur header with icons
+   - Photo navigation cards (2-col on tablets/desktop)
    ========================================================= */
 
 /* ---------- Brand palette & tokens ---------- */
 :root{
-  --ec-navy:#0B3D91;            /* primary brand blue */
+  --ec-navy:#0B3D91;            /* brand blue for text on light */
   --ec-coral:#FF6F61;           /* accent (the "CO") */
-  --ec-ink:#0b1a33;             /* deep ink for dark areas */
+  --ec-ink:#0b1a33;             /* deep ink */
   --ec-ink-70: rgba(11,26,51,.70); /* translucent header bg */
-  --ec-bg:#0b1020;              /* page background (hero area) */
-  --ec-text:#eaf0f7;            /* main light text on dark */
-  --ec-soft:#cdd6e3;            /* muted text on dark */
+  --ec-bg:#0b1020;              /* page background (dark) */
+  --ec-text:#eaf0f7;            /* main light text */
+  --ec-soft:#cdd6e3;            /* muted text */
   --ec-border: rgba(255,255,255,.08);
   --ec-link:#cfe0ff;            /* footer link */
   --ec-accent-blue:#2196F3;     /* phone icon */
   --ec-wa-green:#25D366;        /* WhatsApp icon */
-  --ec-max:1200px;              /* container max width */
+  --ec-max:1200px;              /* centered width */
 }
 
-/* ---------- Base resets ---------- */
+/* ---------- Base ---------- */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -40,10 +38,14 @@ h1,h2,h3{margin:0 0 .5rem; line-height:1.15}
 p{margin:.25rem 0 1rem}
 .container{max-width:var(--ec-max); margin:0 auto; padding:0 16px}
 
+/* Visually hidden (for a11y helpers if needed) */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
 /* =========================================================
    HEADER (sticky, translucent, blurred)
-   - Logo on the left, actions on the right
-   - Icons sized via CSS (no width/height attributes on SVG)
    ========================================================= */
 .ec-topbar{
   position:sticky; top:0; z-index:60;
@@ -58,91 +60,81 @@ p{margin:.25rem 0 1rem}
   display:flex; align-items:center; justify-content:space-between; gap:12px;
 }
 
-/* Brand wordmark */
+/* Wordmark */
 .ec-brand{font-weight:800; font-size:1.45rem; letter-spacing:.4px; text-decoration:none}
 .ec-logo-en{color:#1e3a8a}
 .ec-logo-co{color:var(--ec-coral)}
 
-/* Quick actions (WhatsApp + Phone) */
+/* Quick actions */
 .ec-cta{display:flex; align-items:center; gap:10px; margin-left:auto}
-.ec-cta a{
+.ec-btn{
   display:inline-flex; align-items:center; gap:8px;
   padding:8px 10px; border-radius:12px; text-decoration:none; font-weight:700; line-height:1;
   background:rgba(255,255,255,.06);
   border:1px solid var(--ec-border);
 }
-.ec-cta a:hover{background:rgba(255,255,255,.12)}
+.ec-btn:hover{background:rgba(255,255,255,.12)}
 
-/* SVG icon sizing — if your <svg> had width/height attributes, remove them */
+/* SVG icon sizing (remove width/height attrs on <svg>) */
 .ec-ic{
   width:22px; height:22px; flex:0 0 22px;
   display:inline-block; vertical-align:middle; fill:currentColor;
 }
-.ec-ic.wa{color:var(--ec-wa-green)}   /* WhatsApp brand green */
-.ec-ic.ph{color:var(--ec-accent-blue)}/* Phone accent blue */
+.ec-ic.wa{color:var(--ec-wa-green)}
+.ec-ic.ph{color:var(--ec-accent-blue)}
 
 /* =========================================================
-   HERO (intro block)
+   HERO
    ========================================================= */
-.ec-hero{
-  max-width:var(--ec-max); margin:0 auto;
-  padding:32px 16px 12px;
-}
-.ec-hero h1{
-  font-size:clamp(1.7rem,4.8vw,3.1rem);
-  margin:0 0 .45rem;
-}
-.ec-hero p{
-  font-size:clamp(1rem,2.2vw,1.22rem);
-  opacity:.9; margin:0 0 1.25rem;
-}
+.ec-hero{padding:32px 0 12px}
+.ec-hero .container{max-width:var(--ec-max)}
+.ec-hero h1{font-size:clamp(1.7rem,4.8vw,3.1rem); margin-bottom:.45rem; padding:0 16px}
+.ec-hero p{font-size:clamp(1rem,2.2vw,1.22rem); opacity:.9; padding:0 16px}
 
 /* =========================================================
-   IN-BODY NAVIGATION (cards)
-   - Replaces the old nav menu items
-   ========================================================= *//* ===== Photo nav cards ===== */
+   PHOTO NAV CARDS
+   ========================================================= */
 .ec-photo-cards{
   display:grid; gap:16px;
   grid-template-columns:repeat(1,1fr);
   margin:24px auto;
-  max-width:var(--ec-max);
-  padding:0 16px;
 }
-
 .ec-photo-card{
-  position:relative;
-  display:block;
-  border-radius:12px;
-  overflow:hidden;
-  text-decoration:none;
-  line-height:0; /* remove gaps under images */
-  background:#000;
-  box-shadow:0 4px 14px rgba(0,0,0,.3);
+  position:relative; display:block; line-height:0;
+  border-radius:12px; overflow:hidden; text-decoration:none;
+  background:#000; box-shadow:0 4px 14px rgba(0,0,0,.3);
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .ec-photo-card img{
-  width:100%; height:100%; object-fit:cover;
-  display:block;
-  transition:transform .4s ease;
+  width:100%; height:240px; object-fit:cover;
+  display:block; filter:saturate(105%);
+  transition:transform .35s ease;
 }
-.ec-photo-card:hover img{
-  transform:scale(1.05);
+/* Dark gradient overlay for legibility */
+.ec-photo-card::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.1) 20%, rgba(0,0,0,.45) 100%);
+  pointer-events:none;
 }
-
+.ec-photo-card:hover{transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.ec-photo-card:hover img{transform:scale(1.03)}
 .ec-label{
-  position:absolute; left:12px; bottom:12px;
-  color:#fff; font-size:1.2rem; font-weight:800; letter-spacing:.5px;
+  position:absolute; left:16px; bottom:14px;
+  color:#fff; font-size:1.35rem; font-weight:800; letter-spacing:.5px;
   text-shadow:0 2px 4px rgba(0,0,0,.6);
 }
 
-/* Larger screens: 2-column grid */
+/* 2 columns on >= 640px; taller images on bigger screens */
 @media (min-width:640px){
   .ec-photo-cards{grid-template-columns:repeat(2,1fr)}
+  .ec-photo-card img{height:280px}
+}
+@media (min-width:1024px){
+  .ec-photo-card img{height:320px}
 }
 
-
 /* =========================================================
-   FOOTER (compact links + SEO help)
+   FOOTER
    ========================================================= */
 .ec-footer{
   background:#0f1a2e; border-top:1px solid var(--ec-border);
@@ -153,22 +145,11 @@ p{margin:.25rem 0 1rem}
 .ec-footer a:hover{text-decoration:underline}
 
 /* =========================================================
-   OPTIONAL: Light section (for white backgrounds)
-   Wrap any block with .section-light to invert styles
-   ========================================================= */
-.section-light{background:#fff; color:#10223a}
-.section-light a{color:var(--ec-navy)}
-.section-light .ec-card{background:#fff; color:#10223a; border-color:#e6eaf0}
-.section-light .ec-card p{color:#4a5b72}
-
-/* =========================================================
-   RESPONSIVE TWEAKS
+   DESKTOP TWEAKS
    ========================================================= */
 @media (min-width:768px){
   .ec-topbar .ec-inner{padding:12px 24px}
   .ec-brand{font-size:1.6rem}
-  .ec-hero{padding:54px 24px 18px}
-  .ec-cards{grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px}
-  .ec-cta a{padding:8px 10px}
-  .ec-ic{width:18px; height:18px; flex:0 0 18px} /* slightly smaller on desktop */
+  .ec-btn{padding:8px 10px}
+  .ec-ic{width:18px; height:18px; flex:0 0 18px}
 }
