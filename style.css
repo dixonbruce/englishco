@@ -100,26 +100,46 @@ p{margin:.25rem 0 1rem}
 /* =========================================================
    IN-BODY NAVIGATION (cards)
    - Replaces the old nav menu items
-   ========================================================= */
-.ec-cards{
-  display:grid; gap:12px;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  margin-top:12px;
+   ========================================================= *//* ===== Photo nav cards ===== */
+.ec-photo-cards{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(1,1fr);
+  margin:24px auto;
+  max-width:var(--ec-max);
+  padding:0 16px;
 }
-.ec-card{
-  display:block; text-decoration:none; color:var(--ec-text);
-  background:#0f1e3a;
-  border:1px solid var(--ec-border);
-  border-radius:14px; padding:14px;
-  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+
+.ec-photo-card{
+  position:relative;
+  display:block;
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  line-height:0; /* remove gaps under images */
+  background:#000;
+  box-shadow:0 4px 14px rgba(0,0,0,.3);
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-.ec-card h3{margin:.1rem 0 .25rem; font-size:1.05rem; color:#eaf0f7}
-.ec-card p{margin:0; font-size:.94rem; color:var(--ec-soft)}
-.ec-card:hover{
-  transform:translateY(-1px);
-  box-shadow:0 6px 20px rgba(0,0,0,.18);
-  border-color:rgba(255,255,255,.22);
+.ec-photo-card img{
+  width:100%; height:100%; object-fit:cover;
+  display:block;
+  transition:transform .4s ease;
 }
+.ec-photo-card:hover img{
+  transform:scale(1.05);
+}
+
+.ec-label{
+  position:absolute; left:12px; bottom:12px;
+  color:#fff; font-size:1.2rem; font-weight:800; letter-spacing:.5px;
+  text-shadow:0 2px 4px rgba(0,0,0,.6);
+}
+
+/* Larger screens: 2-column grid */
+@media (min-width:640px){
+  .ec-photo-cards{grid-template-columns:repeat(2,1fr)}
+}
+
 
 /* =========================================================
    FOOTER (compact links + SEO help)
