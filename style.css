@@ -133,6 +133,10 @@ h2::after{
 .contact-info svg{
   width: 24px; height: 24px; flex: 0 0 24px;
 }
+/* make SVGs actually use the CSS color */
+.contact-info svg,
+.contact-info svg path{ fill: currentColor; }
+
 .contact-info .whatsapp svg{ color:#25D366; }
 .contact-info .phone svg{ color:#2196F3; }
 
@@ -262,9 +266,19 @@ h2::after{
   .dropdown .submenu{ background:#161b22; border-color:#273142; }
   .dropdown .submenu a{ color:#e9edf3; }
   .dropdown .submenu a:hover{ background:#1f2733; color:#bcd2ff; }
-  .hero{ background:linear-gradient(to right,#0f141b,#121a24); border-bottom-color:#273142; }
-  .hero-content h1{ color:#f3f6fb; }
-  .hero-content p{ color:var(--text); }
+
+  /* make both hero variants dark in dark mode */
+  .hero,
+  .hero-light{
+    background: linear-gradient(to right,#0f141b,#121a24) !important;
+    border-bottom-color:#273142 !important;
+  }
+  .hero-content h1,
+  .hero-content p,
+  .hero-light .hero-inner,
+  .hero-light h1,
+  .hero-light p{ color:var(--text) !important; }
+
   .cta-button{ box-shadow:0 8px 18px rgba(230,57,70,.28); }
   .cta-button--outline{ background:transparent; color:#d9e4ff; border-color:#5b78e6; }
   .site-footer{ background:#0f141b; border-top-color:#273142; }
