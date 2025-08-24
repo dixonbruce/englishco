@@ -3,76 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnglishCo – Academia de inglés en Playa de Arinaga</title>
+  <title>English Co – Quién Somos</title>
+  <meta name="description" content="Academia de inglés en Playa de Arinaga (Agüimes). Cursos divertidos y eficaces para infantil, primaria, secundaria y adultos." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header: translucent, sticky -->
-  <header class="ec-topbar" role="banner">
-    <div class="ec-inner">
-      <a href="/" class="ec-brand" aria-label="EnglishCo inicio">
-        <span class="ec-logo-en">ENGLISH</span><span class="ec-logo-co">CO</span>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="header-brand" aria-label="Inicio English Co">
+        <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
       </a>
 
-      <!-- Quick actions -->
-      <nav class="ec-cta" aria-label="Contacto">
-        <a href="https://wa.me/34646555552" class="ec-btn" aria-label="WhatsApp 646 555 552">
-          <!-- WhatsApp SVG -->
-          <svg class="ec-ic wa" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.5 3.5A11 11 0 0 0 3.2 17.6L2 22l4.6-1.2A11 11 0 1 0 20.5 3.5ZM12 4.9a7.1 7.1 0 0 1 6.9 8.7 7.2 7.2 0 0 1-8.4 5.1l-.3-.1-2.7.7.7-2.6-.1-.3A7.2 7.2 0 0 1 12 4.9Zm4.1 9.3c-.2.5-1 1-1.4 1-.4 0-1.1 0-2.4-.7-2.1-1.1-3.4-3.6-3.5-3.8-.1-.2-.8-1.1-.8-2s.5-1.3.7-1.4c.2-.1.4-.2.6-.2h.5c.1 0 .3 0 .4.3.2.5.7 1.7.7 1.8 0 .1.1.3 0 .5-.1.2-.2.3-.3.5-.1.1-.2.2-.1.4.1.2.5.9 1.1 1.5.8.8 1.5 1.1 1.7 1.2.2.1.3.1.4 0l.6-.3c.2-.1.3-.1.5 0 .2.2 1.3.6 1.5.7.2.1.4.1.4.3Z"/>
-          </svg>
-          <span class="ec-btn-text">WhatsApp</span>
-        </a>
+      <nav class="navbar" role="navigation" aria-label="Principal">
+        <ul>
+          <li><a href="/index.html" class="active">Inicio</a></li>
 
-        <a href="tel:+34646555552" class="ec-btn" aria-label="Llamar 646 555 552">
-          <!-- Phone SVG -->
-          <svg class="ec-ic ph" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6.6 2.8 9 2a1 1 0 0 1 1.2.6l1.1 3a1 1 0 0 1-.3 1.1L9.7 8.8a13 13 0 0 0 5.5 5.5l2.1-1.3c.3-.2.7-.2 1 .1l3 1.1a1 1 0 0 1 .6 1.2l-.8 2.4c-.2.6-.8 1-1.4 1A17.5 17.5 0 0 1 3 7.9c0-.6.4-1.2 1-1.4l2.6-.7a1 1 0 0 1 1 .1Z"/>
-          </svg>
-          <span class="ec-btn-text">646 555 552</span>
-        </a>
+          <li class="dropdown">
+            <input type="checkbox" id="toggle-cursos" hidden />
+            <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">Cursos ▾</label>
+            <ul id="submenu-cursos" class="submenu" role="menu">
+              <li role="none"><a role="menuitem" href="/infantil.html">Infantil</a></li>
+              <li role="none"><a role="menuitem" href="/primaria.html">Primaria</a></li>
+              <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
+              <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/academia.html">Academia</a></li>
+        </ul>
       </nav>
+
+      <div class="contact-info">
+        <span class="phone">📞 <a href="tel:+34646555552">646 555 552</a></span>
+        <span aria-hidden="true">|</span>
+        <span class="whatsapp">
+          <a href="https://wa.me/34646555552" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true" focusable="false">
+              <path fill="#25d366" d="M16 .6C7.5.6.6 7.5.6 16c0 2.8.7 5.6 2.2 8l-2.3 8.3 8.5-2.2c2.3 1.3 4.9 2 7.6 2 8.5 0 15.4-6.9 15.4-15.4S24.5.6 16 .6zm0 28c-2.5 0-4.9-.7-7-2l-.5-.3-5 .1 1.4-4.9-.3-.5c-1.3-2.1-2-4.5-2-7 0-7.2 5.9-13.1 13.1-13.1 3.5 0 6.8 1.4 9.2 3.9 2.5 2.5 3.9 5.7 3.9 9.2-.1 7.2-6 13.1-13.2 13.1zm7.3-9.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2-.2.4-.8 1.2-1 1.4-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.1-.8.1-.1.4-.5.5-.6.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.7-1.7-1-2.3-.3-.7-.6-.6-.7-.6h-.6c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1.1 2.8 1.3 3c.2.2 2.1 3.2 5.1 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 2.2-.9 2.5-1.7.3-.9.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z"/>
+            </svg>
+          </a>
+        </span>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
-    <!-- Hero -->
-    <section class="ec-hero">
-      <div class="container">
+  <!-- Main -->
+  <main class="container" id="main-content">
+    <section class="hero">
+      <div class="hero-content">
         <h1>Academia de inglés en Playa de Arinaga, Agüimes para niños, adolescentes y adultos.</h1>
-        <p>En <strong>EnglishCo</strong> ofrecemos clases de inglés divertidas, eficaces y adaptadas a cada nivel. Nuestro enfoque es cercano, profesional y centrado en el aprendizaje real.</p>
+        <p>
+          En <strong>English Co</strong> ofrecemos clases de inglés divertidas, eficaces y adaptadas a cada nivel. Nuestro enfoque es cercano, profesional y centrado en el aprendizaje real de nuestros alumnos. Las clases son dinámicas, comunicativas y amenas, con una metodología basada en la práctica constante y la participación activa.
+        </p>
+        <h2>Nuestros servicios</h2>
       </div>
     </section>
 
-    <!-- Big photo navigation cards -->
-    <nav class="ec-photo-cards container" aria-label="Cursos">
-      <a href="/infantil.html" class="ec-photo-card">
-        <img src="images/infantil.jpg" alt="Niña sonriendo en clase de infantil">
-        <span class="ec-label">INFANTIL</span>
+    <section class="age-grid" aria-label="Niveles de cursos">
+      <a href="/infantil.html" class="age-box">
+        <img src="/infantil_estudiante.jpg" alt="Curso de inglés para infantil" />
+        <div class="overlay"><h3>INFANTIL</h3></div>
       </a>
-      <a href="/primaria.html" class="ec-photo-card">
-        <img src="images/primaria.jpg" alt="Niños en clase de primaria">
-        <span class="ec-label">PRIMARIA</span>
+
+      <a href="/primaria.html" class="age-box">
+        <img src="/primaria_estudiantes.png" alt="Curso de inglés para primaria" />
+        <div class="overlay"><h3>PRIMARIA</h3></div>
       </a>
-      <a href="/secundaria.html" class="ec-photo-card">
-        <img src="images/secundaria.jpg" alt="Aula de secundaria">
-        <span class="ec-label">SECUNDARIA</span>
+
+      <a href="/secundaria.html" class="age-box">
+        <img src="/secundaria.jpg" alt="Curso de inglés para secundaria" />
+        <div class="overlay"><h3>SECUNDARIA</h3></div>
       </a>
-      <a href="/adultos.html" class="ec-photo-card">
-        <img src="images/adultos.jpg" alt="Aula para adultos">
-        <span class="ec-label">ADULTOS</span>
+
+      <a href="/adultos.html" class="age-box">
+        <img src="/adultos.jpg" alt="Curso de inglés para adultos" />
+        <div class="overlay"><h3>ADULTOS</h3></div>
       </a>
-    </nav>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="ec-footer">
-    <a href="/cursos/">Cursos</a>
-    <a href="/academia/">La academia</a>
-    <a href="/precios/">Horarios &amp; precios</a>
-    <a href="/contacto/">Contacto</a>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Little England</p>
+    </div>
   </footer>
 
+  <!-- No JS needed; dropdown uses CSS. If you later re-add header.html injection, reintroduce it safely. -->
 </body>
 </html>
