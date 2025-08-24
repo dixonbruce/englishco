@@ -55,23 +55,51 @@ h2::after{
 .header-logo{ height:42px; width:auto; display:block; }
 
 /* ===== Nav ===== */
-.navbar ul{
-  list-style:none; margin:0; padding:0;
-  display:flex; gap:20px; align-items:center; flex-wrap:wrap; justify-content:center;
+/* --- Base --- */
+.navbar { background:#003366; color:#fff; }
+.navbar a { color:#fff; text-decoration:none; }
+.menu, .submenu { list-style:none; margin:0; padding:0; }
+
+/* Desktop layout */
+.menu { display:flex; gap:1rem; align-items:center; padding:0.6rem 1rem; }
+.dropdown { position:relative; }
+.no-link { cursor:pointer; padding:0.4rem 0.2rem; display:inline-block; }
+
+/* Desktop dropdown on hover/focus */
+.submenu {
+  position:absolute; top:100%; left:0;
+  background:#003366; border:1px solid rgba(255,255,255,.15);
+  display:none; min-width:200px; padding:0.4rem 0;
 }
-.navbar a,.navbar .no-link{
-  position:relative; text-decoration:none; color:var(--text); font-weight:600;
-  text-transform:uppercase; letter-spacing:.5px; font-size:17px; padding-bottom:4px;
-  cursor:pointer; transition:color .25s ease;
+.submenu li a { display:block; padding:0.5rem 0.9rem; }
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu { display:block; }
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display:none; gap:4px; width:28px; height:22px;
+  background:none; border:0; padding:0; margin:0.5rem 1rem; cursor:pointer;
 }
-.navbar a:hover,.navbar .no-link:hover{ color:var(--navy); }
-.navbar a::after{
-  content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0;
-  background:var(--red); transition:width .25s ease;
+.hamburger span { display:block; height:3px; background:#fff; border-radius:2px; }
+
+/* --- Mobile (< 768px) --- */
+@media (max-width: 768px) {
+  /* layout swap */
+  .hamburger { display:flex; flex-direction:column; }
+  .menu { display:none; flex-direction:column; gap:0; padding:0 1rem 0.75rem; }
+  .menu.open { display:flex; }
+  .menu > li { border-top:1px solid rgba(255,255,255,.15); }
+  .menu > li > a, .no-link { display:block; padding:0.8rem 0; }
+
+  /* disable hover dropdown; use checkbox accordion */
+  .submenu { position:static; display:none; border:none; background:transparent; padding:0 0 0.5rem; }
+  #toggle-cursos:checked + .no-link + .submenu { display:block; }
 }
-.navbar a:hover::after,.navbar a.active::after{ width:100%; }
-.navbar a.active{ color:var(--red); }
-.navbar li{ position:relative; }
+
+/* Small utils */
+.active { text-decoration:underline; text-underline-offset: .25em; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
 
 /* Dropdown */
 .dropdown .submenu{
