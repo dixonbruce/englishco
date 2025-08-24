@@ -156,6 +156,47 @@ h2::after{
   .dropdown .submenu{ position:static; box-shadow:none; border:0; border-radius:0; }
 }
 
+
+.contact-icons { display:flex; gap:12px; align-items:center; }
+
+/* hidden text helper if you ever add visible labels */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+
+.icon-btn{
+  --size: 44px;                    /* desktop size */
+  inline-size: var(--size);
+  block-size: var(--size);
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(0,0,0,.04);     /* light mode ghost */
+  color: #1e67ff;                  /* default icon color (phone blue) */
+  text-decoration: none;
+  transition: transform .08s ease, border-color .2s, background .2s, opacity .2s;
+}
+.icon-btn:hover{ transform: translateY(-1px); border-color: rgba(0,0,0,.22); }
+.icon-btn svg{ display:block; }
+
+/* WhatsApp brand colour via currentColor */
+.icon-btn--wa{ color:#25D366; }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark){
+  .icon-btn{
+    border-color: rgba(255,255,255,.14);
+    background: rgba(255,255,255,.06);
+  }
+  .icon-btn:hover{ border-color: rgba(255,255,255,.28); }
+}
+
+/* Bigger, touch-friendly on mobile */
+@media (max-width: 768px){
+  .icon-btn{ --size: 52px; }
+  .icon-btn svg{ width:24px; height:24px; }
+}
+
+
 /* ===== Hero ===== */
 .hero{
   background: linear-gradient(to right,#fefefe,#f0f4f8);
