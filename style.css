@@ -111,31 +111,27 @@ h2::after{
 .dropdown:focus-within .submenu,
 .dropdown:hover .submenu{ display:block; }
 
-/* ===== Contact (tightened, no wrapping) ===== */
+/* ===== Contact: icons only ===== */
 .contact-info{
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   margin-left: auto;
-  white-space: nowrap;            /* keeps phone + WhatsApp inline */
-  font-size: 16px;
-  font-weight: 600;
 }
 .contact-info a{
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
-  background: rgba(0,0,0,.04);
+  justify-content: center;
+  width: 42px; height: 42px;      /* large clickable circle */
+  border-radius: 50%;
+  background: rgba(0,0,0,.06);
   border: 1px solid #e5e7eb;
-  line-height: 1;
+  text-decoration: none;
+  transition: background .2s ease;
 }
+.contact-info a:hover{ background: rgba(0,0,0,.12); }
 .contact-info svg{
-  width: 18px; height: 18px; flex: 0 0 18px;
-  vertical-align: middle;
+  width: 24px; height: 24px; flex: 0 0 24px;
 }
 .contact-info .whatsapp svg{ color:#25D366; }
 .contact-info .phone svg{ color:#2196F3; }
@@ -151,7 +147,7 @@ h2::after{
   }
   .header-brand{ grid-area:brand; }
   .navbar{ grid-area:nav; }
-  .contact-info{ grid-area:contact; justify-content:flex-end; gap:8px; }
+  .contact-info{ grid-area:contact; justify-content:flex-end; }
   .header-logo{ height:32px; }
   .dropdown .submenu{ position:static; box-shadow:none; border:0; border-radius:0; }
 }
