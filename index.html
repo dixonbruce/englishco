@@ -15,25 +15,33 @@
       <a href="/index.html" class="header-brand" aria-label="Inicio English Co">
         <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
       </a>
+    <nav class="navbar" role="navigation" aria-label="Principal">
+  <!-- Hamburger (mobile only) -->
+  <button class="hamburger" aria-controls="main-menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+    <span class="sr-only">Menú</span>
+  </button>
 
-      <nav class="navbar" role="navigation" aria-label="Principal">
-        <ul>
-          <li><a href="/index.html" class="active">Inicio</a></li>
+  <ul id="main-menu" class="menu">
+    <li><a href="/index.html" class="active">Inicio</a></li>
 
-          <li class="dropdown">
-            <input type="checkbox" id="toggle-cursos" hidden />
-            <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">Cursos ▾</label>
-            <ul id="submenu-cursos" class="submenu" role="menu">
-              <li role="none"><a role="menuitem" href="/infantil.html">Infantil</a></li>
-              <li role="none"><a role="menuitem" href="/primaria.html">Primaria</a></li>
-              <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
-              <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
-            </ul>
-          </li>
+    <li class="dropdown">
+      <!-- keep your checkbox for mobile expand -->
+      <input type="checkbox" id="toggle-cursos" hidden />
+      <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">
+        Cursos ▾
+      </label>
+      <ul id="submenu-cursos" class="submenu" role="menu">
+        <li role="none"><a role="menuitem" href="/infantil.html">Infantil</a></li>
+        <li role="none"><a role="menuitem" href="/primaria.html">Primaria</a></li>
+        <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
+        <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
+      </ul>
+    </li>
 
-          <li><a href="/academia.html">Academia</a></li>
-        </ul>
-      </nav>
+    <li><a href="/academia.html">Academia</a></li>
+  </ul>
+</nav>
 
       <div class="contact-info">
         <span class="phone">📞 <a href="tel:+34646555552">646 555 552</a></span>
@@ -93,3 +101,21 @@
   <!-- No JS needed; dropdown uses CSS. If you later re-add header.html injection, reintroduce it safely. -->
 </body>
 </html>
+
+<script>
+  // Toggle main menu (mobile)
+  const btn = document.querySelector('.hamburger');
+  const menu = document.getElementById('main-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+  });
+
+  // Reflect submenu expanded state for a11y (mobile)
+  const chk = document.getElementById('toggle-cursos');
+  const lab = document.querySelector('label[for="toggle-cursos"]');
+  chk.addEventListener('change', () => {
+    lab.setAttribute('aria-expanded', String(chk.checked));
+  });
+</script>
