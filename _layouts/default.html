@@ -1,18 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title | default: site.title }}</title>
-  <meta name="description" content="{{ page.description | default: '' }}">
+  <meta name="description" content="{{ page.description | default: '' }}" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   {% include header.html %}
-  <main class="container">
+
+  <main id="main-content">
     {{ content }}
   </main>
+
   {% include footer.html %}
+  <script src="/script.js"></script>
 </body>
 </html>
