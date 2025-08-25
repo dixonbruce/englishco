@@ -84,6 +84,70 @@ h2::after{
   backdrop-filter: saturate(140%) blur(6px);
 }
 
+/* === Navigation Bar === */
+/* === Navigation Bar === */
+.site-header nav {
+  display: flex;
+  align-items: center;       /* vertical centring */
+  gap: 1.2rem;
+}
+
+.site-header nav a {
+  font-size: 1.1rem;         /* slightly bigger */
+  font-weight: 500;
+  text-decoration: none;
+  color: #111;
+  padding: 0.6rem 0.8rem;    /* larger hit area */
+  transition: color 0.2s ease;
+}
+
+.site-header nav a:hover {
+  color: var(--red);
+}
+
+/* Dropdown (Cursos) inherits same style */
+.site-header nav .dropdown > a {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* === Phone number & icons === */
+.site-header .contact-links {
+  display: flex;
+  align-items: center;       /* aligns icons & number */
+  gap: 0.6rem;
+  margin-left: auto;         /* push to right */
+}
+
+.site-header .phone-link {
+  font-size: 1.15rem;        /* make number stand out */
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.site-header .phone-link:hover {
+  color: var(--red);
+}
+
+/* WhatsApp icon match size */
+.site-header .contact-links img,
+.site-header .contact-links svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.top-bar .phone-link:hover,
+.site-header .phone-link:hover {
+  color: var(--red);
+}
+
+
+
 /* Header grid:
    [logo] [nav expands] [contact buttons] */
 .header-inner{
