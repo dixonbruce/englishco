@@ -1,65 +1,43 @@
-cunda<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Little England – La Academia</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="header-placeholder"></div>
-  <div class="container">
+---
+layout: default
+title: "English Co – Adolescentes"
+description: "Curso de inglés para Adolescentes en Playa de Arinaga"
+section: "cursos"
+---
 
 
-  <div class="container">
-  <section class="hero">
-    <div class="hero-content">
-      <p>
-        <h1>Cursos de Adolescentes</h1>
-      </p>
-      <p>
+
+<!-- Main -->
+  <main class="container" id="main-content">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Clases de inglés para adolescentes</h1>
+
+        <p>
         <img src="/secundaria_aula.png" alt="Aula secundaria"  class="classroom-img" />
       </p>
-      
-      <section class="adolescentes">
-        <h2>Clases de inglés para adolescentes</h2>
+
         <p>Desarrollamos la fluidez, la confianza y el pensamiento crítico a través de actividades comunicativas reales, debates y trabajo en equipo.</p>
         <p>Preparamos a los alumnos para los exámenes oficiales (<strong>A2, B1, B2, C1, C2</strong>) con materiales específicos y seguimiento personalizado.</p>
         <p>Un inglés práctico y auténtico para su presente y su futuro académico y profesional.</p>
-      </section>
+        <img src="/infantil_estudiante.jpg" alt="Niños en actividades de inglés infantil" class="classroom-img" />
+      </div>
+    </section>
 
-    </div>
-  </section>
+   
 
-    <footer>
-      <p>&copy; 2025 Little England</p>
-    </footer>
-  </div> <!-- End container -->
+</section>
 
-  <script>
-    fetch('/header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
 
-        const links = document.querySelectorAll('.navbar a');
-        const currentPath = window.location.pathname
-          .replace(/\/$/, '')
-          .replace(/\/index$/, '')
-          .replace(/\.html$/, '');
+  </main>
 
-        links.forEach(link => {
-          const href = link.getAttribute('href')
-            .replace(/\/$/, '')
-            .replace(/\/index$/, '')
-            .replace(/\.html$/, '');
 
-          if (href === currentPath) {
-            link.classList.add('active');
-          }
-        });
-      });
-  </script>
 
-</body>
-</html>
+
+
+
+
+
+
+     
