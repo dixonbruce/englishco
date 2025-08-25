@@ -1,12 +1,12 @@
 /* =========================================================
-   ENGLISHCO – GLOBAL STYLESHEET
+   ENGLISHCO – GLOBAL STYLESHEET (unified, production-ready)
    Structure:
    01) Reset / Base / CSS variables
    02) Typography
    03) Utilities
    04) Header & Brand
-   05) Navigation (desktop + dropdown + mobile)
-   06) Contact (phone/WhatsApp; show number on desktop)
+   05) Navigation (desktop + dropdown + mobile)  ← unified
+   06) Contact (phone/WhatsApp)
    07) Hero / Sections / Layout helpers
    08) Components (features, testimonials, CTA)
    09) Footer
@@ -70,7 +70,7 @@ h2::after{
 .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 var(--padx); }
 .active { text-decoration:underline; text-underline-offset: .25em; }
 
-/* Screen-reader-only helper (keep one copy) */
+/* Screen-reader-only helper */
 .sr-only {
   position:absolute; width:1px; height:1px; padding:0; margin:-1px;
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
@@ -84,72 +84,7 @@ h2::after{
   backdrop-filter: saturate(140%) blur(6px);
 }
 
-/* === Navigation Bar === */
-/* === Navigation Bar === */
-.site-header nav {
-  display: flex;
-  align-items: center;       /* vertical centring */
-  gap: 1.2rem;
-}
-
-.site-header nav a {
-  font-size: 1.1rem;         /* slightly bigger */
-  font-weight: 500;
-  text-decoration: none;
-  color: #111;
-  padding: 0.6rem 0.8rem;    /* larger hit area */
-  transition: color 0.2s ease;
-}
-
-.site-header nav a:hover {
-  color: var(--red);
-}
-
-/* Dropdown (Cursos) inherits same style */
-.site-header nav .dropdown > a {
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-/* === Phone number & icons === */
-.site-header .contact-links {
-  display: flex;
-  align-items: center;       /* aligns icons & number */
-  gap: 0.6rem;
-  margin-left: auto;         /* push to right */
-}
-
-.site-header .phone-link {
-  font-size: 1.15rem;        /* make number stand out */
-  font-weight: 600;
-  color: var(--navy);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.site-header .phone-link:hover {
-  color: var(--red);
-}
-
-/* WhatsApp icon match size */
-.site-header .contact-links img,
-.site-header .contact-links svg {
-  width: 22px;
-  height: 22px;
-  display: block;
-}
-
-.top-bar .phone-link:hover,
-.site-header .phone-link:hover {
-  color: var(--red);
-}
-
-
-
-/* Header grid:
-   [logo] [nav expands] [contact buttons] */
+/* Header grid: [logo] [nav expands] [contact buttons] */
 .header-inner{
   max-width: var(--maxw);
   margin: 0 auto;
@@ -164,32 +99,49 @@ h2::after{
 .header-logo{ height:36px; width:auto; display:block; }
 
 /* ============= 05) Navigation (desktop + dropdown + mobile) ============= */
+/* Unified desktop navigation (anchors + the Cursos toggle) */
+.navbar{ display:flex; gap:34px; align-items:center; }
 
-/* --- Desktop nav bar --- */
-.navbar { display:flex; gap:34px; align-items:center; }
-
-/* Desktop links: bigger than body text */
-.navbar a{
-  font-size:17px; font-weight:500; text-decoration:none; color:#333;
-  padding:8px 0; position:relative; transition: color .25s ease;
+.navbar a,
+.navbar .no-link,
+.navbar button.no-link{
+  position:relative;
+  display:inline-flex; align-items:center; gap:.35rem;
+  font-size:1.1rem;            /* bigger, consistent */
+  font-weight:500;
+  line-height:1;                /* tidy vertical alignment */
+  color:#111;
+  text-decoration:none;
+  background:none; border:0;    /* allow <button> as trigger */
+  padding:.6rem .8rem;          /* same hit area */
+  cursor:pointer;
+  transition:color .25s ease;
 }
-.navbar a:hover{ color: var(--red); }
-.navbar a.active{ color: var(--navy); font-weight:600; }
+
+.navbar a:hover,
+.navbar .no-link:hover,
+.navbar button.no-link:hover{ color:var(--red); }
+
+.navbar a.active{ color:var(--navy); font-weight:600; }
 
 /* Underline animation on hover */
-.navbar a::after{
-  content:""; position:absolute; left:0; bottom:-4px; width:0%; height:2px;
+.navbar a::after,
+.navbar .no-link::after,
+.navbar button.no-link::after{
+  content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px;
   background: var(--red); transition: width .25s ease;
 }
-.navbar a:hover::after{ width:100%; }
+.navbar a:hover::after,
+.navbar .no-link:hover::after,
+.navbar button.no-link:hover::after{ width:100%; }
 
-/* Legacy menus (kept for structure; styles unified below) */
+/* Base list structure */
 .menu, .submenu { list-style:none; margin:0; padding:0; }
-.menu { display:flex; gap:1rem; align-items:center; padding:0.6rem 1rem; }
+.menu,
+.menu > li { display:flex; align-items:center; gap:0; }
 .dropdown { position:relative; }
-.no-link { cursor:pointer; padding:0.4rem 0.2rem; display:inline-block; }
 
-/* --- Modern dropdown card (overrides any older blue dropdown) --- */
+/* Modern dropdown card */
 .dropdown .submenu{
   position:absolute; left:0; top:calc(100% + 8px);
   display:none; min-width:200px; padding:8px 0; background:#fff;
@@ -213,18 +165,17 @@ h2::after{
   transform: rotate(180deg); transition: transform .2s ease;
 }
 
-/* --- Hamburger/button for mobile --- */
+/* Hamburger for mobile (hidden on desktop) */
 .hamburger{
   display:none; gap:4px; width:28px; height:22px;
   background:none; border:0; padding:0; margin:0.5rem 1rem; cursor:pointer;
 }
-.hamburger span{ display:block; height:3px; background:#fff; border-radius:2px; }
+.hamburger span{ display:block; height:3px; background:#222; border-radius:2px; }
 
-/* --- Mobile nav (<768px) --- */
+/* Mobile nav */
 @media (max-width: 768px){
   .hamburger{ display:flex; flex-direction:column; }
 
-  /* Collapse menu into column */
   .menu{ display:none; flex-direction:column; gap:0; padding:0 1rem .75rem; }
   .menu.open{ display:flex; }
   .menu > li{ border-top:1px solid rgba(0,0,0,.08); }
@@ -239,37 +190,38 @@ h2::after{
   #toggle-cursos:checked + .no-link + .submenu{ display:block; }
 }
 
-/* ============= 06) Contact (phone/WhatsApp; number visible on desktop) ============= */
-/* Where to edit:
-   - Colours/sizing: .contact-icons a, .contact-icons a svg
-   - Show/hide number breakpoint: media query below
-*/
+/* ============= 06) Contact (phone/WhatsApp) ============= */
+/* Right-side contact area */
 .contact-icons{
-  display:flex; gap:12px; align-items:center; margin-left:auto; /* push to right */
+  display:flex; align-items:center; gap:12px; margin-left:auto;
 }
 
 .contact-icons a{
   display:flex; align-items:center; gap:8px;
-  padding:6px 10px; border-radius:999px;
+  padding:8px 12px; border-radius:999px;
   background:#f8f9fa; border:1px solid #ddd;
   text-decoration:none; transition:all .2s ease;
-  font-weight:600; font-size:15px; color:var(--navy);
+  font-weight:600; font-size:1.05rem;   /* larger */
+  color:var(--navy);
 }
-.contact-icons a:hover{ background:#fff; border-color:#bbb; transform:scale(1.05); }
+.contact-icons a:hover{ background:#fff; border-color:#bbb; transform:translateY(-1px); }
 
-.contact-icons a svg{ width:20px; height:20px; }
+.contact-icons .phone-number{
+  font-size:1.15rem;            /* make the number pop */
+  font-weight:700; letter-spacing:.2px;
+}
+
+.contact-icons a svg{ width:22px; height:22px; display:block; }
 /* Phone icon uses stroke; WA uses fill */
 .contact-icons a.phone svg{ stroke: var(--navy); fill:none; }
 .contact-icons a.whatsapp svg{ stroke:none; fill:#25D366; }
-
-.contact-icons .phone-number{ display:inline-block; }
 
 /* On small screens: hide the number (icon-only) */
 @media (max-width: 768px){
   .contact-icons .phone-number{ display:none; }
 }
 
-/* Legacy circular icon button (kept for reuse; not used by default) */
+/* Legacy circular icon button (available if needed) */
 .icon-btn{
   --size: 44px;
   inline-size: var(--size); block-size: var(--size);
@@ -283,15 +235,12 @@ h2::after{
 .icon-btn svg{ display:block; }
 .icon-btn--wa{ color:#25D366; }
 
-/* Touch-friendly sizing */
 @media (max-width: 768px){
   .icon-btn{ --size: 52px; }
   .icon-btn svg{ width:24px; height:24px; }
 }
 
 /* ============= 07) Hero / Sections / Layout helpers ============= */
-
-/* Header grid becomes two rows on narrow screens */
 @media (max-width: 860px){
   .header-inner{
     grid-template-columns:auto 1fr;
