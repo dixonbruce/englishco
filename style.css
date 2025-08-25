@@ -62,7 +62,46 @@ h2::after{
 .header-logo{ height:36px; width:auto; display:block; } /* was 42px */
 
 /* ===== Nav ===== */
-.navbar a { text-decoration:none; } 
+.navbar {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.navbar a {
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #E63946; /* red accent */
+}
+
+.navbar a.active {
+  color: #1E3A8A; /* navy for current page */
+  font-weight: 600;
+}
+
+/* underline effect on hover */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #E63946;
+  transition: width 0.25s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
 .menu, .submenu { list-style:none; margin:0; padding:0; }
 
 /* Desktop layout */
