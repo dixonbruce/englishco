@@ -1,2 +1,3 @@
+url: "https://englishco.es"
+baseurl: ""   # important for a custom domain
 title: English CO
-markdown: kramdown
