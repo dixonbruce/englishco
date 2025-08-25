@@ -137,48 +137,51 @@ h2::after{
 .dropdown { position:relative; }
 
 /* --- Desktop behaviour: open on hover/focus, with hover gap bridge --- */
+/* Desktop: open on hover/focus, no visual gap, with hover bridge */
 @media (hover:hover) and (pointer:fine){
-  .dropdown{ --hover-gap: 8px; } /* gap between trigger and card */
+  .dropdown{ position:relative; }
+
+  /* reset any margins that create gaps */
+  .navbar .no-link{ margin:0; }
+  .dropdown .submenu{ margin-top:0; }
 
   .dropdown .submenu{
-    position: absolute;
-    left: 0;
-    top: calc(100% + var(--hover-gap));
-    display: none;
-    min-width: 200px;
-    padding: 8px 0;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.08);
-    z-index: 999;
+    position:absolute;
+    left:0;
+    top:100%;                 /* sit flush to the trigger */
+    display:none;
+    min-width:200px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:8px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    z-index:999;
+    /* add inside padding for breathing room instead of external gap */
+    padding:8px 0;
   }
-
-  .dropdown .submenu a{
-    display:block; padding:10px 14px; color:var(--text);
-    font-size:16px; font-weight:400; white-space:nowrap;
-    transition: background .2s, color .2s;
-  }
-  .dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
 
   .dropdown:hover .submenu,
   .dropdown:focus-within .submenu{ display:block; }
 
-  /* Invisible bridge so pointer doesn't fall through the gap */
+  /* Invisible hover bridge under the trigger (prevents flicker) */
   .dropdown::after{
     content:"";
     position:absolute;
     left:0; right:0;
     top:100%;
-    height: var(--hover-gap);
+    height:10px;             /* size of the bridge */
+    /* no background needed; it just extends the hover area */
   }
 
-  /* Optional caret if you add .caret span */
-  .dropdown:hover .dropdown-toggle .caret,
-  .dropdown:focus-within .dropdown-toggle .caret{
-    transform: rotate(180deg); transition: transform .2s ease;
+  .dropdown .submenu a{
+    display:block; padding:10px 14px;
+    font-size:16px; color:var(--text);
+    transition:background .2s, color .2s;
+    white-space:nowrap;
   }
+  .dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
 }
+
 
 /* --- Mobile: click/checkbox pattern; dropdown inline --- */
 .hamburger{
