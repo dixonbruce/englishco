@@ -1,1 +1,59 @@
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/index.html" class="header-brand" aria-label="Inicio English Co">
+      <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
+    </a>
 
+    <nav class="navbar" role="navigation" aria-label="Principal">
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" aria-controls="main-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menú</span>
+      </button>
+
+      <ul id="main-menu" class="menu">
+        <li>
+          <a href="/index.html" class="{% if page.section == 'home' %}active{% endif %}">Inicio</a>
+        </li>
+
+        <li class="dropdown">
+          <!-- checkbox for mobile expand -->
+          <input type="checkbox" id="toggle-cursos" hidden />
+          <label for="toggle-cursos"
+                 class="no-link {% if page.section == 'cursos' %}active{% endif %}"
+                 aria-haspopup="true"
+                 aria-controls="submenu-cursos"
+                 aria-expanded="false">
+            Cursos ▾
+          </label>
+          <ul id="submenu-cursos" class="submenu" role="menu">
+            <li role="none"><a role="menuitem" href="/infantil.html">Infantil</a></li>
+            <li role="none"><a role="menuitem" href="/primaria.html">Primaria</a></li>
+            <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
+            <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="/academia.html" class="{% if page.section == 'academia' %}active{% endif %}">Academia</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="contact-icons">
+      <a href="tel:+34646555552" class="phone" aria-label="Llamar">
+        <!-- phone SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M6.62 10.79a15.91 15.91 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 12.36 12.36 0 003.89.62 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 12.36 12.36 0 00.62 3.89 1 1 0 01-.24 1.05l-2.26 2.26z"/>
+        </svg>
+        <span class="phone-number">646 555 552</span>
+      </a>
+      <a href="https://wa.me/34646555552" target="_blank" class="whatsapp" aria-label="WhatsApp" rel="noopener">
+        <!-- whatsapp SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M380.9 97.1C339 55.1 283.3 32 223.9 32 106.4 32 14 124.4 14 241.9c0 41.9 11 82.8 31.9 118.6L0 480l123.9-44.7c34.1 18.7 72.5 28.6 112.1 28.6h.1c117.5 0 209.9-92.4 209.9-209.9 0-59.4-23.1-115.1-65.1-157.1zM224 438.6c-35.7 0-70.7-9.6-101.1-27.8l-7.2-4.3-73.4 26.5 25.3-75.5-4.7-7.8C46.3 319.6 36.6 281.2 36.6 241.9c0-103.4 84-187.4 187.4-187.4 50.1 0 97.1 19.5 132.5 54.9 35.4 35.4 54.9 82.4 54.9 132.5 0 103.4-84 187.4-187.4 187.4z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
