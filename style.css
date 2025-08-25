@@ -166,14 +166,17 @@ h2::after{
 
 .contact-icons a {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #f8f9fa;       /* subtle background */
-  border: 1px solid #ddd;    /* light border */
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
   transition: all 0.2s ease;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1E3A8A; /* navy for text */
 }
 
 .contact-icons a svg {
