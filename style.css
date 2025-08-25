@@ -1,15 +1,38 @@
-/* ===== Reset / Base ===== */
+/* =========================================================
+   ENGLISHCO – GLOBAL STYLESHEET
+   Structure:
+   01) Reset / Base / CSS variables
+   02) Typography
+   03) Utilities
+   04) Header & Brand
+   05) Navigation (desktop + dropdown + mobile)
+   06) Contact (phone/WhatsApp; show number on desktop)
+   07) Hero / Sections / Layout helpers
+   08) Components (features, testimonials, CTA)
+   09) Footer
+   10) Accessibility / Focus
+   11) Motion preferences
+   12) Dark mode
+   ========================================================= */
+
+/* ============= 01) Reset / Base / CSS variables ============= */
 * { box-sizing: border-box; }
+
 :root{
+  /* Brand colours */
   --navy:#1E3A8A;
   --red:#E63946;
   --white:#fff;
+
+  /* Text palette */
   --text:#111;
   --muted:#333;
+
+  /* Layout tokens */
   --maxw:1024px;
   --padx:20px;
 
-  /* Type + spacing */
+  /* Type + spacing scales */
   --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --lh: 1.55;
   --space-s: clamp(8px, 1.4vw, 14px);
@@ -18,6 +41,7 @@
 }
 
 html,body{ margin:0; padding:0; }
+
 body{
   font-family: var(--font);
   line-height: var(--lh);
@@ -25,161 +49,185 @@ body{
   background: linear-gradient(to right, #fefefe, #f0f4f8);
 }
 
-/* ===== Typography ===== */
-h1{ font-weight:800; letter-spacing:.2px; font-size: clamp(28px, 3.2vw, 40px); color:#222; }
+/* ============= 02) Typography ============= */
+h1{
+  font-weight:800; letter-spacing:.2px;
+  font-size: clamp(28px, 3.2vw, 40px); color:#222;
+}
 h2{
-  font-weight:750; letter-spacing:.2px; font-size: clamp(20px, 2.2vw, 28px);
+  font-weight:750; letter-spacing:.2px;
+  font-size: clamp(20px, 2.2vw, 28px);
   margin: 28px 0 10px; color:#222; position:relative; padding-bottom:6px;
 }
 p, li{ font-size: clamp(16px, 1.2vw, 18px); }
+
 h2::after{
   content:""; position:absolute; left:0; bottom:0; height:3px; width:68px;
   background: linear-gradient(90deg, var(--red), var(--navy)); border-radius:4px;
 }
 
-/* ===== Utilities ===== */
+/* ============= 03) Utilities ============= */
 .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 var(--padx); }
 .active { text-decoration:underline; text-underline-offset: .25em; }
-.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-/* ===== Header ===== */
+/* Screen-reader-only helper (keep one copy) */
+.sr-only {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* ============= 04) Header & Brand ============= */
 .site-header{
   position: sticky; top: 0; z-index: 1000;
   background: rgba(255,255,255,.9);
   border-bottom: 2px solid var(--red);
   backdrop-filter: saturate(140%) blur(6px);
 }
+
+/* Header grid:
+   [logo] [nav expands] [contact buttons] */
 .header-inner{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 6px var(--padx);              /* tighter padding */
+  padding: 6px var(--padx);
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
 }
+
 .header-brand{ display:flex; align-items:center; }
-.header-logo{ height:36px; width:auto; display:block; } /* was 42px */
+.header-logo{ height:36px; width:auto; display:block; }
 
-/* ===== Nav ===== */
-.navbar {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
+/* ============= 05) Navigation (desktop + dropdown + mobile) ============= */
 
-.navbar a {
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  color: #333;
-  padding: 6px 0;
-  position: relative;
-  transition: color 0.2s ease;
-}
+/* --- Desktop nav bar --- */
+.navbar { display:flex; gap:34px; align-items:center; }
 
-.navbar a:hover {
-  color: #E63946; /* red accent */
+/* Desktop links: bigger than body text */
+.navbar a{
+  font-size:17px; font-weight:500; text-decoration:none; color:#333;
+  padding:8px 0; position:relative; transition: color .25s ease;
 }
+.navbar a:hover{ color: var(--red); }
+.navbar a.active{ color: var(--navy); font-weight:600; }
 
-.navbar a.active {
-  color: #1E3A8A; /* navy for current page */
-  font-weight: 600;
+/* Underline animation on hover */
+.navbar a::after{
+  content:""; position:absolute; left:0; bottom:-4px; width:0%; height:2px;
+  background: var(--red); transition: width .25s ease;
 }
+.navbar a:hover::after{ width:100%; }
 
-/* underline effect on hover */
-.navbar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: #E63946;
-  transition: width 0.25s ease;
-}
-
-.navbar a:hover::after {
-  width: 100%;
-}
+/* Legacy menus (kept for structure; styles unified below) */
 .menu, .submenu { list-style:none; margin:0; padding:0; }
-
-/* Desktop layout */
 .menu { display:flex; gap:1rem; align-items:center; padding:0.6rem 1rem; }
 .dropdown { position:relative; }
 .no-link { cursor:pointer; padding:0.4rem 0.2rem; display:inline-block; }
 
-/* Desktop dropdown */
-.submenu {
-  position:absolute; top:100%; left:0;
-  background:#003366; border:1px solid rgba(255,255,255,.15);
-  display:none; min-width:200px; padding:0.4rem 0;
+/* --- Modern dropdown card (overrides any older blue dropdown) --- */
+.dropdown .submenu{
+  position:absolute; left:0; top:calc(100% + 8px);
+  display:none; min-width:200px; padding:8px 0; background:#fff;
+  border:1px solid #e5e7eb; border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08); z-index:999;
 }
-.submenu li a { display:block; padding:0.5rem 0.9rem; }
-.dropdown:hover .submenu,
-.dropdown:focus-within .submenu { display:block; }
+.dropdown .submenu a{
+  display:block; padding:10px 14px; color:var(--text);
+  font-size:16px; font-weight:400; white-space:nowrap;
+  transition: background .2s, color .2s;
+}
+.dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
 
-/* Hamburger */
-.hamburger {
+/* Show on hover / focus (desktop) */
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu{ display:block; }
+
+/* Optional caret animation if you add a .caret span inside the toggle */
+.dropdown:hover .dropdown-toggle .caret,
+.dropdown:focus-within .dropdown-toggle .caret{
+  transform: rotate(180deg); transition: transform .2s ease;
+}
+
+/* --- Hamburger/button for mobile --- */
+.hamburger{
   display:none; gap:4px; width:28px; height:22px;
   background:none; border:0; padding:0; margin:0.5rem 1rem; cursor:pointer;
 }
-.hamburger span { display:block; height:3px; background:#fff; border-radius:2px; }
+.hamburger span{ display:block; height:3px; background:#fff; border-radius:2px; }
 
-/* Mobile (<768px) */
-@media (max-width: 768px) {
-  .hamburger { display:flex; flex-direction:column; }
-  .menu { display:none; flex-direction:column; gap:0; padding:0 1rem 0.75rem; }
-  .menu.open { display:flex; }
-  .menu > li { border-top:1px solid rgba(255,255,255,.15); }
-  .menu > li > a, .no-link { display:block; padding:0.8rem 0; }
+/* --- Mobile nav (<768px) --- */
+@media (max-width: 768px){
+  .hamburger{ display:flex; flex-direction:column; }
 
-  .submenu { position:static; display:none; border:none; background:transparent; padding:0 0 0.5rem; }
-  #toggle-cursos:checked + .no-link + .submenu { display:block; }
+  /* Collapse menu into column */
+  .menu{ display:none; flex-direction:column; gap:0; padding:0 1rem .75rem; }
+  .menu.open{ display:flex; }
+  .menu > li{ border-top:1px solid rgba(0,0,0,.08); }
+  .menu > li > a, .no-link{ display:block; padding:.8rem 0; }
+
+  /* Dropdown becomes inline list on mobile */
+  .dropdown .submenu{
+    position:static; display:none; border:none; background:transparent;
+    padding:0 0 .5rem; box-shadow:none; border-radius:0;
+  }
+  /* Checkbox/JS toggle pattern */
+  #toggle-cursos:checked + .no-link + .submenu{ display:block; }
 }
 
-/* Dropdown new style */
-.dropdown .submenu{
-  position:absolute; left:0; top:calc(100% + 8px);
-  display:none; min-width:180px; padding:8px 0; background:#fff;
-  border:1px solid #e5e7eb; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,.08);
+/* ============= 06) Contact (phone/WhatsApp; number visible on desktop) ============= */
+/* Where to edit:
+   - Colours/sizing: .contact-icons a, .contact-icons a svg
+   - Show/hide number breakpoint: media query below
+*/
+.contact-icons{
+  display:flex; gap:12px; align-items:center; margin-left:auto; /* push to right */
 }
-.dropdown .submenu a{ display:block; padding:8px 14px; color:var(--text); }
-.dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
-#toggle-cursos:checked ~ .submenu,
-.dropdown:focus-within .submenu,
-.dropdown:hover .submenu{ display:block; }
 
-/* ===== Contact: icons only ===== */
-.contact-info{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-left: auto;
+.contact-icons a{
+  display:flex; align-items:center; gap:8px;
+  padding:6px 10px; border-radius:999px;
+  background:#f8f9fa; border:1px solid #ddd;
+  text-decoration:none; transition:all .2s ease;
+  font-weight:600; font-size:15px; color:var(--navy);
 }
-.contact-info a{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px; height: 42px;      /* large clickable circle */
-  border-radius: 50%;
-  background: rgba(0,0,0,.06);
-  border: 1px solid #e5e7eb;
-  text-decoration: none;
-  transition: background .2s ease;
-}
-.contact-info a:hover{ background: rgba(0,0,0,.12); }
-.contact-info svg{
-  width: 24px; height: 24px; flex: 0 0 24px;
-}
-/* make SVGs actually use the CSS color */
-.contact-info svg,
-.contact-info svg path{ fill: currentColor; }
+.contact-icons a:hover{ background:#fff; border-color:#bbb; transform:scale(1.05); }
 
-.contact-info .whatsapp svg{ color:#25D366; }
-.contact-info .phone svg{ color:#2196F3; }
+.contact-icons a svg{ width:20px; height:20px; }
+/* Phone icon uses stroke; WA uses fill */
+.contact-icons a.phone svg{ stroke: var(--navy); fill:none; }
+.contact-icons a.whatsapp svg{ stroke:none; fill:#25D366; }
 
-/* ===== Header responsive ===== */
+.contact-icons .phone-number{ display:inline-block; }
+
+/* On small screens: hide the number (icon-only) */
+@media (max-width: 768px){
+  .contact-icons .phone-number{ display:none; }
+}
+
+/* Legacy circular icon button (kept for reuse; not used by default) */
+.icon-btn{
+  --size: 44px;
+  inline-size: var(--size); block-size: var(--size);
+  display:inline-grid; place-items:center;
+  border-radius:999px; border:1px solid rgba(0,0,0,.12);
+  background: rgba(0,0,0,.04);
+  color:#1e67ff; text-decoration:none;
+  transition: transform .08s, border-color .2s, background .2s, opacity .2s;
+}
+.icon-btn:hover{ transform: translateY(-1px); border-color: rgba(0,0,0,.22); }
+.icon-btn svg{ display:block; }
+.icon-btn--wa{ color:#25D366; }
+
+/* Touch-friendly sizing */
+@media (max-width: 768px){
+  .icon-btn{ --size: 52px; }
+  .icon-btn svg{ width:24px; height:24px; }
+}
+
+/* ============= 07) Hero / Sections / Layout helpers ============= */
+
+/* Header grid becomes two rows on narrow screens */
 @media (max-width: 860px){
   .header-inner{
     grid-template-columns:auto 1fr;
@@ -190,94 +238,11 @@ h2::after{
   }
   .header-brand{ grid-area:brand; }
   .navbar{ grid-area:nav; }
-  .contact-info{ grid-area:contact; justify-content:flex-end; }
+  .contact-icons{ grid-area:contact; justify-content:flex-end; }
   .header-logo{ height:32px; }
-  .dropdown .submenu{ position:static; box-shadow:none; border:0; border-radius:0; }
 }
 
-
-/* Contact icons (phone & WhatsApp) */
-.contact-icons {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.contact-icons a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: #f8f9fa;
-  border: 1px solid #ddd;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  color: #1E3A8A; /* navy for text */
-}
-
-.contact-icons a svg {
-  width: 20px;
-  height: 20px;
-}
-
-.contact-icons a.phone svg {
-  stroke: #1E3A8A;   /* navy blue */
-  fill: none;
-}
-
-.contact-icons a.whatsapp svg {
-  stroke: none;
-  fill: #25D366;     /* WhatsApp green */
-}
-
-.contact-icons a:hover {
-  background: #fff;
-  border-color: #bbb;
-  transform: scale(1.08);
-}}
-
-/* hidden text helper if you ever add visible labels */
-.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
-
-.icon-btn{
-  --size: 44px;                    /* desktop size */
-  inline-size: var(--size);
-  block-size: var(--size);
-  display: inline-grid;
-  place-items: center;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.12);
-  background: rgba(0,0,0,.04);     /* light mode ghost */
-  color: #1e67ff;                  /* default icon color (phone blue) */
-  text-decoration: none;
-  transition: transform .08s ease, border-color .2s, background .2s, opacity .2s;
-}
-.icon-btn:hover{ transform: translateY(-1px); border-color: rgba(0,0,0,.22); }
-.icon-btn svg{ display:block; }
-
-/* WhatsApp brand colour via currentColor */
-.icon-btn--wa{ color:#25D366; }
-
-/* Dark mode */
-@media (prefers-color-scheme: dark){
-  .icon-btn{
-    border-color: rgba(255,255,255,.14);
-    background: rgba(255,255,255,.06);
-  }
-  .icon-btn:hover{ border-color: rgba(255,255,255,.28); }
-}
-
-/* Bigger, touch-friendly on mobile */
-@media (max-width: 768px){
-  .icon-btn{ --size: 52px; }
-  .icon-btn svg{ width:24px; height:24px; }
-}
-
-
-/* ===== Hero ===== */
+/* Hero blocks */
 .hero{
   background: linear-gradient(to right,#fefefe,#f0f4f8);
   padding: var(--space-l) var(--padx);
@@ -286,27 +251,21 @@ h2::after{
 .hero-content{ margin:0 auto; }
 .hero-content p{ color: var(--text); margin: .6em 0 1.2em; }
 
-/* ===== Image helper ===== */
-.classroom-img{
-  display:block; max-width:100%; height:auto; margin:0 auto;
-  border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-/* Hero light */
+/* Optional light hero variant */
 .hero-light { background:#f7f8fb; border-bottom:1px solid #e6e8ee; }
 .hero-light .hero-inner { max-width:1100px; margin:0 auto; padding:3.2rem 1.25rem; }
 .hero-light h1 { margin:0 0 .6rem; }
 .hero-light p { margin:.25rem 0 1.2rem; max-width:60ch; }
 
-/* Split sections */
-.split {
+/* Split layout (text + image) */
+.split{
   display:grid; grid-template-columns:1.05fr .95fr;
   gap: clamp(1.5rem, 4vw, 3rem); align-items:center;
   max-width:1100px; margin:0 auto; padding:clamp(2rem,6vw,4rem) 1.25rem;
 }
-.split.flip { grid-template-columns:.95fr 1.05fr; }
-.split.flip .split__text { order:2; }
-.split.flip .split__image { order:1; }
+.split.flip{ grid-template-columns:.95fr 1.05fr; }
+.split.flip .split__text{ order:2; }
+.split.flip .split__image{ order:1; }
 .split__text h2{ margin:0 0 .5rem; }
 .split__text p{ margin:0 0 1rem; }
 .link-more{ font-weight:700; text-decoration:none; border-bottom:2px solid currentColor; }
@@ -316,7 +275,20 @@ h2::after{
   box-shadow:0 8px 24px rgba(0,0,0,.08); object-fit:cover;
 }
 
-/* Features row */
+/* Image helper */
+.classroom-img{
+  display:block; max-width:100%; height:auto; margin:0 auto;
+  border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+/* Responsive stacks */
+@media (max-width:900px){
+  .split, .split.flip { grid-template-columns:1fr; }
+  .split.flip .split__text { order:2; }
+  .split.flip .split__image { order:1; }
+}
+
+/* ============= 08) Components (features, testimonials, CTA) ============= */
 .features{
   max-width:1100px; margin:0 auto; padding:1rem 1.25rem 2.5rem;
   display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
@@ -326,27 +298,18 @@ h2::after{
   padding:1.25rem; box-shadow:0 6px 14px rgba(0,0,0,.04);
 }
 .features__item h3{ margin:0 0 .4rem; }
+@media (max-width:900px){ .features { grid-template-columns:1fr; } }
 
-/* Testimonials */
 .testimonials{ max-width:900px; margin:0 auto; padding:2rem 1.25rem 3rem; text-align:center; }
 .testimonials blockquote{ margin:0; font-size:1.1rem; line-height:1.7; }
 .testimonials cite{ display:block; margin-top:.6rem; opacity:.75; }
 
-/* CTA band */
 .cta-band{ background:linear-gradient(90deg,var(--red),#b82e39); color:#fff; }
 .cta-band__inner{ max-width:1100px; margin:0 auto; padding:2.2rem 1.25rem; text-align:center; }
 .cta-band h2{ margin:0 0 .25rem; color:#fff; }
 .cta-band p{ margin:0 0 1rem; color:#fff; }
 
-/* Responsive */
-@media (max-width:900px){
-  .split, .split.flip { grid-template-columns:1fr; }
-  .split.flip .split__text { order:2; }
-  .split.flip .split__image { order:1; }
-  .features { grid-template-columns:1fr; }
-}
-
-/* ===== Buttons ===== */
+/* Buttons */
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin: var(--space-m) 0; }
 .cta-button{
   display:inline-block; padding:14px 22px; border-radius:10px;
@@ -360,35 +323,39 @@ h2::after{
   background:#fff; color:var(--navy); border:2px solid var(--navy); box-shadow:none;
 }
 
-/* ===== Footer ===== */
+/* ============= 09) Footer ============= */
 .site-footer{ border-top:1px solid #e5e7eb; background:#fafafa; margin-top:20px; }
 .site-footer .container{ padding:16px var(--padx); }
 .site-footer p{ margin:0; font-size:.95rem; color:#444; }
 
-/* ===== Focus styles ===== */
+/* ============= 10) Accessibility / Focus ============= */
 :where(a, button, [role="menuitem"]):focus-visible{
   outline:3px solid color-mix(in hsl, var(--navy) 70%, white);
   outline-offset:3px; border-radius:8px;
 }
 
-/* ===== Motion preference ===== */
+/* ============= 11) Motion preferences ============= */
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; animation: none !important; }
 }
 
-/* ===== Dark mode ===== */
+/* ============= 12) Dark mode ============= */
 @media (prefers-color-scheme: dark){
   :root{ --text:#e9edf3; --muted:#c6cbd2; }
   body{ background:linear-gradient(to right,#0d1117,#131923); color:var(--text); }
   .site-header{ background:rgba(16,21,28,.9); border-bottom-color:#273142; }
+
+  /* Nav colours in dark */
   .navbar a, .navbar .no-link{ color:#e7ebf2; }
   .navbar a.active{ color:#ff6b72; }
   .navbar a:hover, .navbar .no-link:hover{ color:#bcd2ff; }
+
+  /* Dropdown card in dark */
   .dropdown .submenu{ background:#161b22; border-color:#273142; }
   .dropdown .submenu a{ color:#e9edf3; }
   .dropdown .submenu a:hover{ background:#1f2733; color:#bcd2ff; }
 
-  /* make both hero variants dark in dark mode */
+  /* Dark hero treatment */
   .hero,
   .hero-light{
     background: linear-gradient(to right,#0f141b,#121a24) !important;
@@ -402,7 +369,10 @@ h2::after{
 
   .cta-button{ box-shadow:0 8px 18px rgba(230,57,70,.28); }
   .cta-button--outline{ background:transparent; color:#d9e4ff; border-color:#5b78e6; }
+
   .site-footer{ background:#0f141b; border-top-color:#273142; }
   .site-footer p{ color:#c7ccd4; }
-  .contact-info a{ background:rgba(255,255,255,.06); border-color:#273142; }
+
+  /* Contact buttons in dark */
+  .contact-icons a{ background:rgba(255,255,255,.06); border-color:#273142; }
 }
