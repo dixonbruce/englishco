@@ -1,4 +1,3 @@
-```css
 /* =========================================================
    ENGLISHCO – GLOBAL STYLESHEET (unified, production-ready)
    Structure:
@@ -13,7 +12,6 @@
    09) Footer
    10) Accessibility / Focus
    11) Motion preferences
-   12) Dark mode
    ========================================================= */
 
 /* ============= 01) Reset / Base / CSS variables ============= */
@@ -39,6 +37,9 @@
   --space-s: clamp(8px, 1.4vw, 14px);
   --space-m: clamp(14px, 2vw, 22px);
   --space-l: clamp(20px, 3vw, 36px);
+
+  /* Force light mode */
+  color-scheme: only light;
 }
 
 html,body{ margin:0; padding:0; }
@@ -137,18 +138,16 @@ h2::after{
 .dropdown { position:relative; }
 
 /* --- Desktop behaviour: open on hover/focus, with hover gap bridge --- */
-/* Desktop: open on hover/focus, no visual gap, with hover bridge */
 @media (hover:hover) and (pointer:fine){
   .dropdown{ position:relative; }
 
-  /* reset any margins that create gaps */
   .navbar .no-link{ margin:0; }
   .dropdown .submenu{ margin-top:0; }
 
   .dropdown .submenu{
     position:absolute;
     left:0;
-    top:100%;                 /* sit flush to the trigger */
+    top:100%;
     display:none;
     min-width:200px;
     background:#fff;
@@ -156,21 +155,18 @@ h2::after{
     border-radius:8px;
     box-shadow:0 8px 24px rgba(0,0,0,.08);
     z-index:999;
-    /* add inside padding for breathing room instead of external gap */
     padding:8px 0;
   }
 
   .dropdown:hover .submenu,
   .dropdown:focus-within .submenu{ display:block; }
 
-  /* Invisible hover bridge under the trigger (prevents flicker) */
   .dropdown::after{
     content:"";
     position:absolute;
     left:0; right:0;
     top:100%;
-    height:10px;             /* size of the bridge */
-    /* no background needed; it just extends the hover area */
+    height:10px;
   }
 
   .dropdown .submenu a{
@@ -362,41 +358,3 @@ h2::after{
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; animation: none !important; }
 }
-
-/* ============= 12) Dark mode ============= */
-/*
-@media (prefers-color-scheme: dark){
-  :root{ --text:#e9edf3; --muted:#c6cbd2; }
-  body{ background:linear-gradient(to right,#0d1117,#131923); color:var(--text); }
-  .site-header{ background:rgba(16,21,28,.9); border-bottom-color:#273142; }
-
-  .navbar a, .navbar .no-link{ color:#e7ebf2; }
-  .navbar a.active{ color:#ff6b72; }
-  .navbar a:hover, .navbar .no-link:hover{ color:#bcd2ff; }
-
-  .dropdown .submenu{ background:#161b22; border-color:#273142; }
-  .dropdown .submenu a{ color:#e9edf3; }
-  .dropdown .submenu a:hover{ background:#1f2733; color:#bcd2ff; }
-
-  .hero,
-  .hero-light{
-    background: linear-gradient(to right,#0f141b,#121a24) !important;
-    border-bottom-color:#273142 !important;
-  }
-  .hero-content h1,
-  .hero-content p,
-  .hero-light .hero-inner,
-  .hero-light h1,
-  .hero-light p{ color:var(--text) !important; }
-
-  .cta-button{ box-shadow:0 8px 18px rgba(230,57,70,.28); }
-  .cta-button--outline{ background:transparent; color:#d9e4ff; border-color:#5b78e6; }
-
-  .site-footer{ background:#0f141b; border-top-color:#273142; }
-  .site-footer p{ color:#c7ccd4; }
-
-  .contact-icons a{ background:rgba(255,255,255,.06); border-color:#273142; }
-}*/
-
-
-```
