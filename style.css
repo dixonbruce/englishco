@@ -279,7 +279,7 @@ h2::after{
 .hero-light { background:#f7f8fb; border-bottom:1px solid #e6e8ee; }
 .hero-light .hero-inner { max-width:1100px; margin:0 auto; padding:3.2rem 1.25rem; }
 .hero-light h1 { margin:0 0 .6rem; }
-.hero-light p { margin:.25rem 0 1.2rem; max-width:60ch; }
+.hero-light p { margin:.25rem 0 1.2rem; }
 
 /* Split layout (text + image) */
 .split{
