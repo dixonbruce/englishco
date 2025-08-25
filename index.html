@@ -1,230 +1,150 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>English Co – Quién Somos</title>
-  <meta name="description" content="Academia de inglés en Playa de Arinaga (Agüimes). Cursos divertidos y eficaces para infantil, primaria, secundaria y adultos." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+---
+layout: default
+title: "English Co – Quién Somos"
+description: "Academia de inglés en Playa de Arinaga (Agüimes). Cursos divertidos y eficaces para infantil, primaria, secundaria y adultos."
+section: "home"
+---
 
-  <!-- Header -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="/index.html" class="header-brand" aria-label="Inicio English Co">
-        <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
-      </a>
-    <nav class="navbar" role="navigation" aria-label="Principal">
-  <!-- Hamburger (mobile only) -->
-  <button class="hamburger" aria-controls="main-menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-    <span class="sr-only">Menú</span>
-  </button>
+<!-- Hero -->
+<section class="hero-light">
+  <div class="hero-inner">
+    <h1>Aprender inglés con confianza, diversión y resultados.</h1>
 
-  <ul id="main-menu" class="menu">
-    <li><a href="/index.html" class="active">Inicio</a></li>
-
-    <li class="dropdown">
-      <!-- keep your checkbox for mobile expand -->
-      <input type="checkbox" id="toggle-cursos" hidden />
-      <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">
-        Cursos ▾
-      </label>
-      <ul id="submenu-cursos" class="submenu" role="menu">
-        <li role="none"><a role="menuitem" href="/infantil.html">Infantil</a></li>
-        <li role="none"><a role="menuitem" href="/primaria.html">Primaria</a></li>
-        <li role="none"><a role="menuitem" href="/secundaria.html">Secundaria</a></li>
-        <li role="none"><a role="menuitem" href="/adultos.html">Adultos</a></li>
-      </ul>
-    </li>
-
-    <li><a href="/academia.html">Academia</a></li>
-  </ul>
-</nav>
-      
-<div class="contact-icons">
-  <a href="tel:+34646555552" class="phone" aria-label="Llamar">
-    <!-- phone SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6.62 10.79a15.91 15.91 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 12.36 12.36 0 003.89.62 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 12.36 12.36 0 00.62 3.89 1 1 0 01-.24 1.05l-2.26 2.26z"/>
-    </svg>
-    <span class="phone-number">646 555 552</span>
-  </a>
-  <a href="https://wa.me/34646555552" target="_blank" class="whatsapp" aria-label="WhatsApp">
-    <!-- whatsapp SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-      <path d="M380.9 97.1C339 55.1 283.3 32 223.9 32 106.4 32 14 124.4 14 241.9c0 41.9 11 82.8 31.9 118.6L0 480l123.9-44.7c34.1 18.7 72.5 28.6 112.1 28.6h.1c117.5 0 209.9-92.4 209.9-209.9 0-59.4-23.1-115.1-65.1-157.1zM224 438.6c-35.7 0-70.7-9.6-101.1-27.8l-7.2-4.3-73.4 26.5 25.3-75.5-4.7-7.8C46.3 319.6 36.6 281.2 36.6 241.9c0-103.4 84-187.4 187.4-187.4 50.1 0 97.1 19.5 132.5 54.9 35.4 35.4 54.9 82.4 54.9 132.5 0 103.4-84 187.4-187.4 187.4z"/>
-    </svg>
-  </a>
-</div>
-  </header>
-
-  <!-- Main --><main id="main-content">
-
-  <!-- Hero -->
-  <section class="hero-light">
-    <div class="hero-inner">
-            <h1>Aprender inglés con confianza, diversión y resultados.</h1>
-
-      <p>
-  En <a href="https://englishco.es" style="color:red;">EnglishCO</a>, tu academia de inglés en Playa de Arinaga (Agüimes), 
-  ofrecemos clases para todas las edades: infantil, primaria, secundaria y adultos. Con una metodología práctica y cercana, 
-  ayudamos a que cada alumno hable inglés con naturalidad y confianza desde el primer día.
-</p>
-      <div class="cta-row">
-        <!-- <a class="cta-button" href="/cursos.html">Ver cursos</a> -->
-        <!--  <a class="cta-button cta-button--outline" href="/academia.html">Quiénes somos</a> -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Split #1 (text left, image right) -->
-  <section class="split">
-    <div class="split__text">
-      <section aria-labelledby="ingles-6-7"><section id="infantil-home">
-    <h2>Inglés para Infantil (3–5 años)</h2>
     <p>
-      En <a href="https://englishco.es" style="color:red;">EnglishCO</a> los más pequeños aprenden inglés jugando, 
-      cantando y descubriendo. Clases llenas de <strong>juegos, canciones, cuentos y movimiento</strong>, en un ambiente 
-      seguro y motivador.
+      En <a href="https://englishco.es" style="color:red;">EnglishCO</a>, tu academia de inglés en Playa de Arinaga (Agüimes), 
+      ofrecemos clases para todas las edades: infantil, primaria, secundaria y adultos. Con una metodología práctica y cercana, 
+      ayudamos a que cada alumno hable inglés con naturalidad y confianza desde el primer día.
     </p>
-    <p>
-      Nuestro objetivo: que tu hijo/a <strong>viva el inglés de forma natural</strong>, gane confianza desde el primer día 
-      y disfrute cada paso de su aprendizaje.
-    </p>
-  </section>
-    </section>
-      <a class="link-more" href="/infantil.html">Más info →</a>
+    <div class="cta-row">
+      <!-- <a class="cta-button" href="/cursos.html">Ver cursos</a> -->
+      <!-- <a class="cta-button cta-button--outline" href="/academia.html">Quiénes somos</a> -->
     </div>
-    <div class="split__image">
-      <img src="https://englishco.es/infantil_estudiante.jpg" alt="Alumnos jóvenes aprendiendo inglés" />
-    </div>
-  </section>
-
-  <!-- Split #2 (image left, text right) -->
-    <!--  <section class="split flip"> -->
-  <section class="split">
-    <div class="split__text"><section id="primaria-home">
-  <h2>Primaria (6–11 años)</h2>
-  <p>
-    En <a href="https://englishco.es" style="color:red;">EnglishCO</a> ofrecemos clases de inglés para 
-    escolares de <strong>Primaria (6 a 11 años)</strong>, con un enfoque práctico, dinámico y motivador. 
-    Los alumnos aprenden a comunicarse desde el primer día mediante <strong>juegos, canciones y actividades 
-    participativas</strong>, en grupos reducidos que permiten una atención personalizada.
-  </p>
-  <p>
-    Nuestra metodología <strong>Oír – Ver – Hacer</strong> les ayuda a escuchar inglés natural, comprender 
-    vocabulario en contextos reales y ponerlo en práctica con confianza.
-  </p>
-  <p>
-    El objetivo: que disfruten del aprendizaje, <strong>ganen soltura al hablar</strong>, amplíen su vocabulario 
-    y construyan una base sólida para la etapa de Secundaria.
-  </p>
-            <a class="link-more" href="/primaria.html">Más info →</a>
-
+  </div>
 </section>
+
+<!-- Split #1 (text left, image right) -->
+<section class="split">
+  <div class="split__text">
+    <section aria-labelledby="ingles-6-7">
+      <section id="infantil-home">
+        <h2>Inglés para Infantil (3–5 años)</h2>
+        <p>
+          En <a href="https://englishco.es" style="color:red;">EnglishCO</a> los más pequeños aprenden inglés jugando, 
+          cantando y descubriendo. Clases llenas de <strong>juegos, canciones, cuentos y movimiento</strong>, en un ambiente 
+          seguro y motivador.
+        </p>
+        <p>
+          Nuestro objetivo: que tu hijo/a <strong>viva el inglés de forma natural</strong>, gane confianza desde el primer día 
+          y disfrute cada paso de su aprendizaje.
+        </p>
+      </section>
+    </section>
+    <a class="link-more" href="/infantil.html">Más info →</a>
+  </div>
+  <div class="split__image">
+    <img src="https://englishco.es/infantil_estudiante.jpg" alt="Alumnos jóvenes aprendiendo inglés" />
+  </div>
+</section>
+
+<!-- Split #2 -->
+<section class="split">
+  <div class="split__text">
+    <section id="primaria-home">
+      <h2>Primaria (6–11 años)</h2>
+      <p>
+        En <a href="https://englishco.es" style="color:red;">EnglishCO</a> ofrecemos clases de inglés para 
+        escolares de <strong>Primaria (6 a 11 años)</strong>, con un enfoque práctico, dinámico y motivador. 
+        Los alumnos aprenden a comunicarse desde el primer día mediante <strong>juegos, canciones y actividades 
+        participativas</strong>, en grupos reducidos que permiten una atención personalizada.
+      </p>
+      <p>
+        Nuestra metodología <strong>Oír – Ver – Hacer</strong> les ayuda a escuchar inglés natural, comprender 
+        vocabulario en contextos reales y ponerlo en práctica con confianza.
+      </p>
+      <p>
+        El objetivo: que disfruten del aprendizaje, <strong>ganen soltura al hablar</strong>, amplíen su vocabulario 
+        y construyan una base sólida para la etapa de Secundaria.
+      </p>
+      <a class="link-more" href="/primaria.html">Más info →</a>
+    </section>
+  </div>
+  <div class="split__image">
+    <img src="/images/primaria.jpg" alt="Estudiantes preparando exámenes de inglés" />
+  </div>
+</section>
+
+<!-- Split #3 -->
+<section class="split">
+  <div class="split__text">
+    <h2>Secundaria & Exámenes</h2>
+    <p>Preparación eficaz para EOI, Cambridge (A2–B2), técnicas de reading & listening, y mucha práctica de speaking.</p>
+    <a class="link-more" href="/secundaria.html">Más info →</a>
+  </div>
+  <div class="split__image">
+    <img src="/images/secundaria.jpg" alt="Estudiantes preparando exámenes de inglés" />
+  </div>
+</section>
+
+<!-- Split #4 (duplicado en tu HTML original; mantenido tal cual) -->
+<section class="split">
+  <div class="split__text">
+    <h2>Secundaria & Exámenes</h2>
+    <p>Preparación eficaz para EOI, Cambridge (A2–B2), técnicas de reading & listening, y mucha práctica de speaking.</p>
+    <a class="link-more" href="/secundaria.html">Más info →</a>
+  </div>
+  <div class="split__image">
+    <img src="/images/secundaria.jpg" alt="Estudiantes preparando exámenes de inglés" />
+  </div>
+</section>
+
+<!-- Split #5 -->
+<section class="split">
+  <div class="split__text">
+    <h2>Adultos Conversación</h2>
+    <p>Grupos reducidos y situaciones reales: trabajo, viajes y vida diaria. Corrección clara y progreso medible.</p>
+    <a class="link-more" href="/adultos.html">Más info →</a>
+  </div>
+  <div class="split__image">
+    <img src="/images/adultos.jpg" alt="Clases de conversación para adultos" />
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="features__item">
+    <h3>Grupos reducidos</h3>
+    <p>Atención individual y participación constante.</p>
+  </div>
+  <div class="features__item">
+    <h3>Hablar primero</h3>
+    <p>Speaking y pronunciación desde el día uno.</p>
+  </div>
+  <div class="features__item">
+    <h3>Profes nativos</h3>
+    <p>Inglés real y corrección precisa.</p>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <blockquote>
+    “Mi hijo ha mejorado muchísimo en pronunciación y confianza.” 
+    <cite>— Verónica, mamá de 5º Primaria</cite>
+  </blockquote>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-band__inner">
+    <h2>¿Listo para empezar?</h2>
+    <p>Escríbenos por WhatsApp o llámanos para reservar tu plaza.</p>
+    <div class="cta-row">
+      <a class="cta-button cta-button--wa" href="https://wa.me/34646555552" target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+      <a class="cta-button cta-button--outline" href="tel:+34646555552">
+        Llamar: 646 555 552
+      </a>
     </div>
-    <div class="split__image">
-      <img src="/images/primaria.jpg" alt="Estudiantes preparando exámenes de inglés" />
-    </div>
-  </section>
-
-  </section>
-
-
-
-  <!-- Split #3 (image left, text right) -->
-    <!--  <section class="split flip"> -->
-  <section class="split">
-    <div class="split__text">
-      <h2>Secundaria & Exámenes</h2>
-      <p>Preparación eficaz para EOI, Cambridge (A2–B2), técnicas de reading & listening, y mucha práctica de speaking.</p>
-      <a class="link-more" href="/secundaria.html">Más info →</a>
-    </div>
-    <div class="split__image">
-      <img src="/images/secundaria.jpg" alt="Estudiantes preparando exámenes de inglés" />
-    </div>
-  </section>
-
-
-    
-  <!-- Split #4 (image left, text right) -->
-    <!--  <section class="split flip"> -->
-  <section class="split">
-    <div class="split__text">
-      <h2>Secundaria & Exámenes</h2>
-      <p>Preparación eficaz para EOI, Cambridge (A2–B2), técnicas de reading & listening, y mucha práctica de speaking.</p>
-      <a class="link-more" href="/secundaria.html">Más info →</a>
-    </div>
-    <div class="split__image">
-      <img src="/images/secundaria.jpg" alt="Estudiantes preparando exámenes de inglés" />
-    </div>
-  </section>
-
-  <!-- Split #5 (text left, image right) -->
-  <section class="split">
-    <div class="split__text">
-      <h2>Adultos Conversación</h2>
-      <p>Grupos reducidos y situaciones reales: trabajo, viajes y vida diaria. Corrección clara y progreso medible.</p>
-      <a class="link-more" href="/adultos.html">Más info →</a>
-    </div>
-    <div class="split__image">
-      <img src="/images/adultos.jpg" alt="Clases de conversación para adultos" />
-    </div>
-  </section>
-
-  <!-- Features row -->
-  <section class="features">
-    <div class="features__item">
-      <h3>Grupos reducidos</h3>
-      <p>Atención individual y participación constante.</p>
-    </div>
-    <div class="features__item">
-      <h3>Hablar primero</h3>
-      <p>Speaking y pronunciación desde el día uno.</p>
-    </div>
-    <div class="features__item">
-      <h3>Profes nativos</h3>
-      <p>Inglés real y corrección precisa.</p>
-    </div>
-  </section>
-
-  <!-- Testimonials (optional) -->
-  <section class="testimonials">
-    <blockquote>
-      “Mi hijo ha mejorado muchísimo en pronunciación y confianza.” 
-      <cite>— Verónica, mamá de 5º Primaria</cite>
-    </blockquote>
-  </section>
-
-  <!-- CTA band -->
-  <section class="cta-band">
-    <div class="cta-band__inner">
-      <h2>¿Listo para empezar?</h2>
-      <p>Escríbenos por WhatsApp o llámanos para reservar tu plaza.</p>
-      <div class="cta-row">
-        <a class="cta-button cta-button--wa" href="https://wa.me/34646555552" target="_blank" rel="noopener">
-          WhatsApp
-        </a>
-        <a class="cta-button cta-button--outline" href="tel:+34646555552">
-          Llamar: 646 555 552
-        </a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Little England</p>
-    </div>
-  </footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-
+  </div>
+</section>
