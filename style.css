@@ -157,7 +157,45 @@ h2::after{
 }
 
 
-.contact-icons { display:flex; gap:12px; align-items:center; }
+/* Contact icons (phone & WhatsApp) */
+.contact-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.contact-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f8f9fa;       /* subtle background */
+  border: 1px solid #ddd;    /* light border */
+  transition: all 0.2s ease;
+}
+
+.contact-icons a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-icons a.phone svg {
+  stroke: #1E3A8A;   /* navy blue */
+  fill: none;
+}
+
+.contact-icons a.whatsapp svg {
+  stroke: none;
+  fill: #25D366;     /* WhatsApp green */
+}
+
+.contact-icons a:hover {
+  background: #fff;
+  border-color: #bbb;
+  transform: scale(1.08);
+}}
 
 /* hidden text helper if you ever add visible labels */
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
