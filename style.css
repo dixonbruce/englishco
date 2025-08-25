@@ -1,3 +1,4 @@
+```css
 /* =========================================================
    ENGLISHCO – GLOBAL STYLESHEET (unified, production-ready)
    Structure:
@@ -5,7 +6,7 @@
    02) Typography
    03) Utilities
    04) Header & Brand
-   05) Navigation (desktop + dropdown + mobile)  ← unified
+   05) Navigation (desktop + dropdown + mobile)
    06) Contact (phone/WhatsApp)
    07) Hero / Sections / Layout helpers
    08) Components (features, testimonials, CTA)
@@ -19,20 +20,20 @@
 * { box-sizing: border-box; }
 
 :root{
-  /* Brand colours */
+  /* Brand */
   --navy:#1E3A8A;
   --red:#E63946;
   --white:#fff;
 
-  /* Text palette */
+  /* Text */
   --text:#111;
   --muted:#333;
 
-  /* Layout tokens */
+  /* Layout */
   --maxw:1024px;
   --padx:20px;
 
-  /* Type + spacing scales */
+  /* Type + spacing */
   --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --lh: 1.55;
   --space-s: clamp(8px, 1.4vw, 14px);
@@ -69,12 +70,7 @@ h2::after{
 /* ============= 03) Utilities ============= */
 .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 var(--padx); }
 .active { text-decoration:underline; text-underline-offset: .25em; }
-
-/* Screen-reader-only helper */
-.sr-only {
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-}
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
 /* ============= 04) Header & Brand ============= */
 .site-header{
@@ -99,7 +95,7 @@ h2::after{
 .header-logo{ height:36px; width:auto; display:block; }
 
 /* ============= 05) Navigation (desktop + dropdown + mobile) ============= */
-/* Unified desktop navigation (anchors + the Cursos toggle) */
+/* Desktop nav (anchors + Cursos toggle) */
 .navbar{ display:flex; gap:34px; align-items:center; }
 
 .navbar a,
@@ -107,13 +103,13 @@ h2::after{
 .navbar button.no-link{
   position:relative;
   display:inline-flex; align-items:center; gap:.35rem;
-  font-size:1.1rem;            /* bigger, consistent */
+  font-size:1.1rem;
   font-weight:500;
-  line-height:1;                /* tidy vertical alignment */
+  line-height:1;
   color:#111;
   text-decoration:none;
-  background:none; border:0;    /* allow <button> as trigger */
-  padding:.6rem .8rem;          /* same hit area */
+  background:none; border:0;
+  padding:.6rem .8rem;
   cursor:pointer;
   transition:color .25s ease;
 }
@@ -124,7 +120,7 @@ h2::after{
 
 .navbar a.active{ color:var(--navy); font-weight:600; }
 
-/* Underline animation on hover */
+/* Underline animation */
 .navbar a::after,
 .navbar .no-link::after,
 .navbar button.no-link::after{
@@ -135,44 +131,62 @@ h2::after{
 .navbar .no-link:hover::after,
 .navbar button.no-link:hover::after{ width:100%; }
 
-/* Base list structure */
+/* Lists */
 .menu, .submenu { list-style:none; margin:0; padding:0; }
-.menu,
-.menu > li { display:flex; align-items:center; gap:0; }
+.menu, .menu > li { display:flex; align-items:center; gap:0; }
 .dropdown { position:relative; }
 
-/* Modern dropdown card */
-.dropdown .submenu{
-  position:absolute; left:0; top:calc(100% + 8px);
-  display:none; min-width:200px; padding:8px 0; background:#fff;
-  border:1px solid #e5e7eb; border-radius:8px;
-  box-shadow:0 8px 24px rgba(0,0,0,.08); z-index:999;
-}
-.dropdown .submenu a{
-  display:block; padding:10px 14px; color:var(--text);
-  font-size:16px; font-weight:400; white-space:nowrap;
-  transition: background .2s, color .2s;
-}
-.dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
+/* --- Desktop behaviour: open on hover/focus, with hover gap bridge --- */
+@media (hover:hover) and (pointer:fine){
+  .dropdown{ --hover-gap: 8px; } /* gap between trigger and card */
 
-/* Show on hover / focus (desktop) */
-.dropdown:hover .submenu,
-.dropdown:focus-within .submenu{ display:block; }
+  .dropdown .submenu{
+    position: absolute;
+    left: 0;
+    top: calc(100% + var(--hover-gap));
+    display: none;
+    min-width: 200px;
+    padding: 8px 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    z-index: 999;
+  }
 
-/* Optional caret animation if you add a .caret span inside the toggle */
-.dropdown:hover .dropdown-toggle .caret,
-.dropdown:focus-within .dropdown-toggle .caret{
-  transform: rotate(180deg); transition: transform .2s ease;
+  .dropdown .submenu a{
+    display:block; padding:10px 14px; color:var(--text);
+    font-size:16px; font-weight:400; white-space:nowrap;
+    transition: background .2s, color .2s;
+  }
+  .dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
+
+  .dropdown:hover .submenu,
+  .dropdown:focus-within .submenu{ display:block; }
+
+  /* Invisible bridge so pointer doesn't fall through the gap */
+  .dropdown::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    top:100%;
+    height: var(--hover-gap);
+  }
+
+  /* Optional caret if you add .caret span */
+  .dropdown:hover .dropdown-toggle .caret,
+  .dropdown:focus-within .dropdown-toggle .caret{
+    transform: rotate(180deg); transition: transform .2s ease;
+  }
 }
 
-/* Hamburger for mobile (hidden on desktop) */
+/* --- Mobile: click/checkbox pattern; dropdown inline --- */
 .hamburger{
   display:none; gap:4px; width:28px; height:22px;
   background:none; border:0; padding:0; margin:0.5rem 1rem; cursor:pointer;
 }
 .hamburger span{ display:block; height:3px; background:#222; border-radius:2px; }
 
-/* Mobile nav */
 @media (max-width: 768px){
   .hamburger{ display:flex; flex-direction:column; }
 
@@ -181,47 +195,41 @@ h2::after{
   .menu > li{ border-top:1px solid rgba(0,0,0,.08); }
   .menu > li > a, .no-link{ display:block; padding:.8rem 0; }
 
-  /* Dropdown becomes inline list on mobile */
   .dropdown .submenu{
     position:static; display:none; border:none; background:transparent;
     padding:0 0 .5rem; box-shadow:none; border-radius:0;
   }
-  /* Checkbox/JS toggle pattern */
   #toggle-cursos:checked + .no-link + .submenu{ display:block; }
 }
 
 /* ============= 06) Contact (phone/WhatsApp) ============= */
-/* Right-side contact area */
 .contact-icons{
   display:flex; align-items:center; gap:12px; margin-left:auto;
 }
-
 .contact-icons a{
   display:flex; align-items:center; gap:8px;
   padding:8px 12px; border-radius:999px;
   background:#f8f9fa; border:1px solid #ddd;
   text-decoration:none; transition:all .2s ease;
-  font-weight:600; font-size:1.05rem;   /* larger */
+  font-weight:600; font-size:1.05rem;
   color:var(--navy);
 }
 .contact-icons a:hover{ background:#fff; border-color:#bbb; transform:translateY(-1px); }
 
 .contact-icons .phone-number{
-  font-size:1.15rem;            /* make the number pop */
+  font-size:1.15rem;
   font-weight:700; letter-spacing:.2px;
 }
 
 .contact-icons a svg{ width:22px; height:22px; display:block; }
-/* Phone icon uses stroke; WA uses fill */
 .contact-icons a.phone svg{ stroke: var(--navy); fill:none; }
 .contact-icons a.whatsapp svg{ stroke:none; fill:#25D366; }
 
-/* On small screens: hide the number (icon-only) */
 @media (max-width: 768px){
   .contact-icons .phone-number{ display:none; }
 }
 
-/* Legacy circular icon button (available if needed) */
+/* Optional circular icon button */
 .icon-btn{
   --size: 44px;
   inline-size: var(--size); block-size: var(--size);
@@ -255,7 +263,7 @@ h2::after{
   .header-logo{ height:32px; }
 }
 
-/* Hero blocks */
+/* Hero */
 .hero{
   background: linear-gradient(to right,#fefefe,#f0f4f8);
   padding: var(--space-l) var(--padx);
@@ -264,7 +272,7 @@ h2::after{
 .hero-content{ margin:0 auto; }
 .hero-content p{ color: var(--text); margin: .6em 0 1.2em; }
 
-/* Optional light hero variant */
+/* Optional light hero */
 .hero-light { background:#f7f8fb; border-bottom:1px solid #e6e8ee; }
 .hero-light .hero-inner { max-width:1100px; margin:0 auto; padding:3.2rem 1.25rem; }
 .hero-light h1 { margin:0 0 .6rem; }
@@ -294,7 +302,7 @@ h2::after{
   border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-/* Responsive stacks */
+/* Stacks */
 @media (max-width:900px){
   .split, .split.flip { grid-template-columns:1fr; }
   .split.flip .split__text { order:2; }
@@ -358,17 +366,14 @@ h2::after{
   body{ background:linear-gradient(to right,#0d1117,#131923); color:var(--text); }
   .site-header{ background:rgba(16,21,28,.9); border-bottom-color:#273142; }
 
-  /* Nav colours in dark */
   .navbar a, .navbar .no-link{ color:#e7ebf2; }
   .navbar a.active{ color:#ff6b72; }
   .navbar a:hover, .navbar .no-link:hover{ color:#bcd2ff; }
 
-  /* Dropdown card in dark */
   .dropdown .submenu{ background:#161b22; border-color:#273142; }
   .dropdown .submenu a{ color:#e9edf3; }
   .dropdown .submenu a:hover{ background:#1f2733; color:#bcd2ff; }
 
-  /* Dark hero treatment */
   .hero,
   .hero-light{
     background: linear-gradient(to right,#0f141b,#121a24) !important;
@@ -386,6 +391,6 @@ h2::after{
   .site-footer{ background:#0f141b; border-top-color:#273142; }
   .site-footer p{ color:#c7ccd4; }
 
-  /* Contact buttons in dark */
   .contact-icons a{ background:rgba(255,255,255,.06); border-color:#273142; }
 }
+```
