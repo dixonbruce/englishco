@@ -364,6 +364,7 @@ h2::after{
 }
 
 /* ============= 12) Dark mode ============= */
+/*
 @media (prefers-color-scheme: dark){
   :root{ --text:#e9edf3; --muted:#c6cbd2; }
   body{ background:linear-gradient(to right,#0d1117,#131923); color:var(--text); }
@@ -395,5 +396,7 @@ h2::after{
   .site-footer p{ color:#c7ccd4; }
 
   .contact-icons a{ background:rgba(255,255,255,.06); border-color:#273142; }
-}
+}*/
+
+
 ```
