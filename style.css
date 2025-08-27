@@ -1,9 +1,17 @@
 /* =========================================================
    ENGLISHCO – GLOBAL STYLESHEET (unified, production-ready)
-   (0827) Updates:
-   • Use --maxw everywhere (hero, split, features, CTA) so home = primary width
-   • Hamburger hidden on desktop; only shows ≤768px
-   • Minor tidy of mobile menu spacing
+   Structure:
+   01) Reset / Base / CSS variables
+   02) Typography
+   03) Utilities
+   04) Header & Brand
+   05) Navigation (desktop + dropdown + mobile)
+   06) Contact (phone/WhatsApp)
+   07) Hero / Sections / Layout helpers
+   08) Components (features, testimonials, CTA)
+   09) Footer
+   10) Accessibility / Focus
+   11) Motion preferences
    ========================================================= */
 
 /* ============= 01) Reset / Base / CSS variables ============= */
@@ -73,7 +81,7 @@ h2::after{
   backdrop-filter: saturate(140%) blur(6px);
 }
 
-/* Header grid: [logo] [nav expands] [contact buttons] */
+/* Grid: burger | brand | contact (row 1), nav (row 2) on mobile */
 .header-inner{
   max-width: var(--maxw);
   margin: 0 auto;
@@ -88,7 +96,7 @@ h2::after{
 .header-logo{ height:36px; width:auto; display:block; }
 
 /* ============= 05) Navigation (desktop + dropdown + mobile) ============= */
-/* Desktop nav (anchors + Cursos toggle) */
+.navbar ul{ list-style:none; margin:0; padding:0; }
 .navbar{ display:flex; gap:34px; align-items:center; }
 
 .navbar a,
@@ -129,13 +137,8 @@ h2::after{
 .menu, .menu > li { display:flex; align-items:center; gap:0; }
 .dropdown { position:relative; }
 
-/* --- Desktop behaviour: open on hover/focus, with hover gap bridge --- */
+/* --- Desktop dropdown behaviour --- */
 @media (hover:hover) and (pointer:fine){
-  .dropdown{ position:relative; }
-
-  .navbar .no-link{ margin:0; }
-  .dropdown .submenu{ margin-top:0; }
-
   .dropdown .submenu{
     position:absolute;
     left:0;
@@ -149,18 +152,11 @@ h2::after{
     z-index:999;
     padding:8px 0;
   }
-
   .dropdown:hover .submenu,
   .dropdown:focus-within .submenu{ display:block; }
-
   .dropdown::after{
-    content:"";
-    position:absolute;
-    left:0; right:0;
-    top:100%;
-    height:10px;
+    content:""; position:absolute; left:0; right:0; top:100%; height:10px;
   }
-
   .dropdown .submenu a{
     display:block; padding:10px 14px;
     font-size:16px; color:var(--text);
@@ -170,58 +166,42 @@ h2::after{
   .dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
 }
 
-
-/* --- Mobile: click/checkbox pattern; dropdown inline --- */
+/* --- Hamburger --- */
 .hamburger{
   display:none; gap:4px; width:28px; height:22px;
-  background:none; border:0; padding:0; margin:0.5rem 1rem; cursor:pointer;
+  background:none; border:0; padding:0; margin:0 .25rem;
+  cursor:pointer;
 }
 .hamburger span{ display:block; height:3px; background:#222; border-radius:2px; }
 
-@media (max-width: 768px){
-  .hamburger{ display:flex; flex-direction:column; }
+/* --- Mobile layout --- */
+@media (max-width: 860px){
+  .header-inner{
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "burger brand contact"
+      "nav    nav   nav";
+    row-gap:6px;
+  }
+  .hamburger{ grid-area: burger; display:flex; flex-direction:column; }
+  .header-brand{ grid-area: brand; }
+  .contact-icons{ grid-area: contact; justify-content:flex-end; }
+  .navbar{ grid-area: nav; }
+  .header-logo{ height:32px; }
+}
 
+/* Mobile nav behaviour */
+@media (max-width: 768px){
   .menu{ display:none; flex-direction:column; gap:0; padding:0 1rem .75rem; }
   .menu.open{ display:flex; }
   .menu > li{ border-top:1px solid rgba(0,0,0,.08); }
   .menu > li > a, .no-link{ display:block; padding:.8rem 0; }
-
   .dropdown .submenu{
     position:static; display:none; border:none; background:transparent;
     padding:0 0 .5rem; box-shadow:none; border-radius:0;
   }
   #toggle-cursos:checked + .no-link + .submenu{ display:block; }
 }
-
-/* Ensure the hamburger sits on the first row with the logo on mobile */
-@media (max-width: 860px){
-  .header-inner{
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-      "burger brand contact"
-      "nav    nav   nav";
-    align-items: center;
-    row-gap: 6px;
-  }
-  .hamburger { grid-area: burger; display:flex; flex-direction:column; }
-  .header-brand{ grid-area: brand; }
-  .contact-icons{ grid-area: contact; justify-content:flex-end; }
-  .navbar{ grid-area: nav; }
-}
-
-/* Hide hamburger on desktop, show on mobile (already present but explicit) */
-.hamburger{ display:none; gap:4px; width:28px; height:22px; background:none; border:0; padding:0; margin:0 .25rem; cursor:pointer; }
-.hamburger span{ display:block; height:3px; background:#222; border-radius:2px; }
-
-/* WA/phone icon sizing consistency */
-.contact-icons a svg{ width:22px; height:22px; display:block; }
-
-/* If any bullets remain because of markup drift */
-.site-header .navbar ul { list-style:none; margin:0; padding:0; }
-
-
-
 
 /* ============= 06) Contact (phone/WhatsApp) ============= */
 .contact-icons{
@@ -236,81 +216,42 @@ h2::after{
   color:var(--navy);
 }
 .contact-icons a:hover{ background:#fff; border-color:#bbb; transform:translateY(-1px); }
-
 .contact-icons .phone-number{
-  font-size:1.15rem;
-  font-weight:700; letter-spacing:.2px;
+  font-size:1.15rem; font-weight:700; letter-spacing:.2px;
 }
 
-.contact-icons a svg{ width:22px; height:22px; display:block; }
+/* Consistent sizing for icons */
+.contact-icons a svg,
+.contact-icons a img{
+  width:22px; height:22px; display:block;
+}
 .contact-icons a.phone svg{ stroke: var(--navy); fill:none; }
-.contact-icons a.whatsapp svg{ stroke:none; fill:#25D366; }
+.contact-icons a.whatsapp svg{ fill:#25D366; stroke:none; }
 
 @media (max-width: 768px){
   .contact-icons .phone-number{ display:none; }
 }
 
-/* Optional circular icon button */
-.icon-btn{
-  --size: 44px;
-  inline-size: var(--size); block-size: var(--size);
-  display:inline-grid; place-items:center;
-  border-radius:999px; border:1px solid rgba(0,0,0,.12);
-  background: rgba(0,0,0,.04);
-  color:#1e67ff; text-decoration:none;
-  transition: transform .08s, border-color .2s, background .2s, opacity .2s;
-}
-.icon-btn:hover{ transform: translateY(-1px); border-color: rgba(0,0,0,.22); }
-.icon-btn svg{ display:block; }
-.icon-btn--wa{ color:#25D366; }
-
-@media (max-width: 768px){
-  .icon-btn{ --size: 52px; }
-  .icon-btn svg{ width:24px; height:24px; }
-}
-
 /* ============= 07) Hero / Sections / Layout helpers ============= */
-@media (max-width: 860px){
-  .header-inner{
-    grid-template-columns:auto 1fr;
-    grid-template-areas:
-      "brand contact"
-      "nav nav";
-    row-gap:6px;
-  }
-  .header-brand{ grid-area:brand; }
-  .navbar{ grid-area:nav; }
-  .contact-icons{ grid-area:contact; justify-content:flex-end; }
-  .header-logo{ height:32px; }
-}
-
-/* Hero */
 .hero{
   background: linear-gradient(to right,#fefefe,#f0f4f8);
   padding: var(--space-l) var(--padx);
   border-bottom: 1px solid #ddd;
 }
-.hero-content{
-  max-width: var(--maxw);   /* <= unify width */
-  margin:0 auto;
-}
+.hero-content{ max-width: var(--maxw); margin:0 auto; }
 .hero-content p{ color: var(--text); margin: .6em 0 1.2em; }
 
-/* Optional light hero */
 .hero-light { background:#f7f8fb; border-bottom:1px solid #e6e8ee; }
 .hero-light .hero-inner {
-  max-width: var(--maxw);   /* <= unify width */
-  margin:0 auto; padding:3.2rem 1.25rem;
+  max-width: var(--maxw); margin:0 auto; padding:3.2rem 1.25rem;
 }
 .hero-light h1 { margin:0 0 .6rem; }
 .hero-light p { margin:.25rem 0 1.2rem; }
 
-/* Split layout (text + image) */
 .split{
   display:grid; grid-template-columns:1.05fr .95fr;
   gap: clamp(1.5rem, 4vw, 3rem); align-items:center;
-  max-width: var(--maxw);   /* <= unify width */
-  margin:0 auto; padding:clamp(2rem,6vw,4rem) 1.25rem;
+  max-width: var(--maxw); margin:0 auto; padding:clamp(2rem,6vw,4rem) 1.25rem;
 }
 .split.flip{ grid-template-columns:.95fr 1.05fr; }
 .split.flip .split__text{ order:2; }
@@ -324,13 +265,11 @@ h2::after{
   box-shadow:0 8px 24px rgba(0,0,0,.08); object-fit:cover;
 }
 
-/* Image helper */
 .classroom-img{
   display:block; max-width:100%; height:auto; margin:0 auto;
   border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-/* Stacks */
 @media (max-width:900px){
   .split, .split.flip { grid-template-columns:1fr; }
   .split.flip .split__text { order:2; }
@@ -339,8 +278,7 @@ h2::after{
 
 /* ============= 08) Components (features, testimonials, CTA) ============= */
 .features{
-  max-width: var(--maxw);   /* <= unify width */
-  margin:0 auto; padding:1rem 1.25rem 2.5rem;
+  max-width: var(--maxw); margin:0 auto; padding:1rem 1.25rem 2.5rem;
   display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
 }
 .features__item{
@@ -356,13 +294,11 @@ h2::after{
 
 .cta-band{ background:linear-gradient(90deg,var(--red),#b82e39); color:#fff; }
 .cta-band__inner{
-  max-width: var(--maxw);   /* <= unify width */
-  margin:0 auto; padding:2.2rem 1.25rem; text-align:center;
+  max-width: var(--maxw); margin:0 auto; padding:2.2rem 1.25rem; text-align:center;
 }
 .cta-band h2{ margin:0 0 .25rem; color:#fff; }
 .cta-band p{ margin:0 0 1rem; color:#fff; }
 
-/* Buttons */
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin: var(--space-m) 0; }
 .cta-button{
   display:inline-block; padding:14px 22px; border-radius:10px;
