@@ -113,6 +113,32 @@ p { margin-bottom: 1rem; color: var(--muted); }
   .dropdown:hover > .submenu{ display:block; }
 }
 
+/* hide but keep accessible */
+.visually-hidden{
+  position:absolute!important; clip:rect(1px,1px,1px,1px);
+  clip-path:inset(50%); height:1px; width:1px; overflow:hidden; white-space:nowrap;
+}
+
+/* hamburger visible only on mobile */
+.hamburger{ display:none; flex-direction:column; gap:4px; padding:8px; cursor:pointer; }
+.hamburger span{ width:22px; height:2px; background:#333; display:block; }
+
+/* desktop: show nav normally */
+.navbar{ display:flex; }
+
+@media (max-width:768px){
+  .hamburger{ display:flex; }
+  .navbar{ display:none; width:100%; }
+  /* CSS-only open: when #nav-open is checked, show nav */
+  #nav-open:checked ~ .navbar{ display:block; }
+
+  .menu{ flex-direction:column; gap:0; }
+  .submenu{ display:none; }
+  /* open Cursos via its own checkbox */
+  #toggle-cursos:checked ~ .submenu{ display:block; }
+}
+
+
 /* =========================================================
    MOBILE BEHAVIOUR
    ========================================================= */
