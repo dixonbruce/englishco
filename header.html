@@ -1,42 +1,49 @@
-<!-- header.html -->
-
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="header-inner">
-    <a href="/index.html" class="header-brand">
-      <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo">
+
+    <!-- Mobile toggle (CSS-only) -->
+    <input id="nav-open" type="checkbox" class="visually-hidden" />
+
+    <!-- Hamburger (label toggles #nav-open) -->
+    <label for="nav-open" class="hamburger" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </label>
+
+    <!-- Logo -->
+    <a href="{{ '/' | relative_url }}" class="header-brand" aria-label="Inicio">
+      <img src="{{ '/logo.svg?v=3' | relative_url }}" alt="English Co – Academia de Inglés" class="header-logo" width="140" height="40" />
     </a>
 
-    <nav class="navbar">
-      <ul>
-        <li><a href="/index.html" class="active">Inicio</a></li>
+    <!-- Contact -->
+    <div class="contact-icons">
+      <a class="phone" href="tel:+34646555552" aria-label="Llamar">
+        <img src="{{ '/images/phone.svg' | relative_url }}" alt="" width="22" height="22">
+        <span class="phone-number">646 555 552</span>
+      </a>
+      <a class="whatsapp" href="https://wa.me/34646555552" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <img src="{{ '/images/whatsapp.svg' | relative_url }}" alt="" width="22" height="22">
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Principal">
+      <ul class="menu" id="main-menu">
+        <li><a href="{{ '/' | relative_url }}" class="active">Inicio</a></li>
 
         <li class="dropdown">
-          <input type="checkbox" id="toggle-cursos" hidden>
-          <label for="toggle-cursos" class="no-link">Cursos ▾</label>
+          <input type="checkbox" id="toggle-cursos" class="visually-hidden" />
+          <label for="toggle-cursos" class="no-link">Cursos</label>
           <ul class="submenu">
-            <li><a href="/infantil.html">Infantil</a></li>
-            <li><a href="/primaria.html">Primaria</a></li>
-            <li><a href="/secundaria.html">Secundaria</a></li>
-            <li><a href="/adultos.html">Adultos</a></li>
+            <li><a href="{{ '/infantil'  | relative_url }}">Infantil</a></li>
+            <li><a href="{{ '/primaria'  | relative_url }}">Primaria</a></li>
+            <li><a href="{{ '/secundaria'| relative_url }}">Secundaria</a></li>
+            <li><a href="{{ '/adultos'   | relative_url }}">Adultos</a></li>
           </ul>
         </li>
 
-        <li><a href="/academia.html">Academia</a></li>
+        <li><a href="{{ '/academia' | relative_url }}">Academia</a></li>
       </ul>
     </nav>
-  <div class="contact-info">
-  <span class="phone">
-    <img src="/images/phone.svg" alt="Llamar" />
-    <a href="tel:+34646555552">646 555 552</a>
-  </span> 
-  | 
-  <span class="whatsapp">
-    <a href="https://wa.me/34646555552" target="_blank" aria-label="WhatsApp">
-      <img src="/images/whatsapp.svg" alt="WhatsApp" />
-    </a>
-  </span>
-</div>
 
   </div>
 </header>
-
