@@ -2,31 +2,34 @@
 <header class="site-header" role="banner">
   <div class="header-inner">
 
-    
     <!-- Brand / Logo -->
-    <a href="/" class="header-brand" aria-label="Inicio">
-      <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" />
+    <a href="/index.html" class="header-brand" aria-label="Inicio">
+      <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" width="140" height="40" />
     </a>
 
     <!-- Mobile Hamburger -->
-    <button class="hamburger" aria-controls="main-menu" aria-expanded="false">
+    <button class="hamburger" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
 
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Principal">
       <ul class="menu" id="main-menu">
-        <li><a href="/" class="active">Inicio</a></li>
+        <li><a href="/index.html" class="active">Inicio</a></li>
+
         <li class="dropdown">
-          <input type="checkbox" id="toggle-cursos" hidden />
-          <label for="toggle-cursos" class="no-link">Cursos</label>
-          <ul class="submenu">
+          <input type="checkbox" id="toggle-cursos" class="visually-hidden" />
+          <label for="toggle-cursos" class="no-link" aria-haspopup="true" aria-controls="submenu-cursos" aria-expanded="false">
+            Cursos
+          </label>
+          <ul class="submenu" id="submenu-cursos">
             <li><a href="/infantil.html">Infantil</a></li>
             <li><a href="/primaria.html">Primaria</a></li>
             <li><a href="/secundaria.html">Secundaria</a></li>
             <li><a href="/adultos.html">Adultos</a></li>
           </ul>
         </li>
+
         <li><a href="/academia.html">Academia</a></li>
       </ul>
     </nav>
@@ -34,13 +37,23 @@
     <!-- Contact icons -->
     <div class="contact-icons">
       <a class="phone" href="tel:+34646555552" aria-label="Llamar">
-        <img src="/images/phone.svg" alt="Llamar" />
+        <img src="/images/phone.svg" alt="" width="22" height="22" />
         <span class="phone-number">646 555 552</span>
       </a>
       <a class="whatsapp" href="https://wa.me/34646555552" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <img src="/images/whatsapp.svg" alt="WhatsApp" />
+        <img src="/images/whatsapp.svg" alt="" width="22" height="22" />
       </a>
     </div>
 
   </div>
 </header>
+
+<script>
+  // Minimal hamburger toggle
+  const btn = document.querySelector('.hamburger');
+  const nav = document.querySelector('.navbar');
+  btn?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
