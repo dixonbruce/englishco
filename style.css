@@ -1,3 +1,6 @@
+Updated CSS — unified widths (home = primary), hamburger hidden on desktop, consistent section max-widths.
+
+```css
 /* =========================================================
    ENGLISHCO – GLOBAL STYLESHEET (unified, production-ready)
    (0827) Updates:
@@ -126,4 +129,239 @@ h2::after{
 
 /* Lists */
 .menu, .submenu { list-style:none; margin:0; padding:0; }
-.menu, .menu > li { display:flex
+.menu, .menu > li { display:flex; align-items:center; gap:0; }
+.dropdown { position:relative; }
+
+/* --- Desktop behaviour: open on hover/focus, with hover gap bridge --- */
+@media (hover:hover) and (pointer:fine){
+  .dropdown{ position:relative; }
+
+  .navbar .no-link{ margin:0; }
+  .dropdown .submenu{ margin-top:0; }
+
+  .dropdown .submenu{
+    position:absolute;
+    left:0;
+    top:100%;
+    display:none;
+    min-width:200px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:8px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    z-index:999;
+    padding:8px 0;
+  }
+
+  .dropdown:hover .submenu,
+  .dropdown:focus-within .submenu{ display:block; }
+
+  .dropdown::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    top:100%;
+    height:10px;
+  }
+
+  .dropdown .submenu a{
+    display:block; padding:10px 14px;
+    font-size:16px; color:var(--text);
+    transition:background .2s, color .2s;
+    white-space:nowrap;
+  }
+  .dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
+}
+
+
+/* --- Mobile: click/checkbox pattern; dropdown inline --- */
+.hamburger{
+  display:none; gap:4px; width:28px; height:22px;
+  background:none; border:0; padding:0; margin:0.5rem 1rem; cursor:pointer;
+}
+.hamburger span{ display:block; height:3px; background:#222; border-radius:2px; }
+
+@media (max-width: 768px){
+  .hamburger{ display:flex; flex-direction:column; }
+
+  .menu{ display:none; flex-direction:column; gap:0; padding:0 1rem .75rem; }
+  .menu.open{ display:flex; }
+  .menu > li{ border-top:1px solid rgba(0,0,0,.08); }
+  .menu > li > a, .no-link{ display:block; padding:.8rem 0; }
+
+  .dropdown .submenu{
+    position:static; display:none; border:none; background:transparent;
+    padding:0 0 .5rem; box-shadow:none; border-radius:0;
+  }
+  #toggle-cursos:checked + .no-link + .submenu{ display:block; }
+}
+
+/* ============= 06) Contact (phone/WhatsApp) ============= */
+.contact-icons{
+  display:flex; align-items:center; gap:12px; margin-left:auto;
+}
+.contact-icons a{
+  display:flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px;
+  background:#f8f9fa; border:1px solid #ddd;
+  text-decoration:none; transition:all .2s ease;
+  font-weight:600; font-size:1.05rem;
+  color:var(--navy);
+}
+.contact-icons a:hover{ background:#fff; border-color:#bbb; transform:translateY(-1px); }
+
+.contact-icons .phone-number{
+  font-size:1.15rem;
+  font-weight:700; letter-spacing:.2px;
+}
+
+.contact-icons a svg{ width:22px; height:22px; display:block; }
+.contact-icons a.phone svg{ stroke: var(--navy); fill:none; }
+.contact-icons a.whatsapp svg{ stroke:none; fill:#25D366; }
+
+@media (max-width: 768px){
+  .contact-icons .phone-number{ display:none; }
+}
+
+/* Optional circular icon button */
+.icon-btn{
+  --size: 44px;
+  inline-size: var(--size); block-size: var(--size);
+  display:inline-grid; place-items:center;
+  border-radius:999px; border:1px solid rgba(0,0,0,.12);
+  background: rgba(0,0,0,.04);
+  color:#1e67ff; text-decoration:none;
+  transition: transform .08s, border-color .2s, background .2s, opacity .2s;
+}
+.icon-btn:hover{ transform: translateY(-1px); border-color: rgba(0,0,0,.22); }
+.icon-btn svg{ display:block; }
+.icon-btn--wa{ color:#25D366; }
+
+@media (max-width: 768px){
+  .icon-btn{ --size: 52px; }
+  .icon-btn svg{ width:24px; height:24px; }
+}
+
+/* ============= 07) Hero / Sections / Layout helpers ============= */
+@media (max-width: 860px){
+  .header-inner{
+    grid-template-columns:auto 1fr;
+    grid-template-areas:
+      "brand contact"
+      "nav nav";
+    row-gap:6px;
+  }
+  .header-brand{ grid-area:brand; }
+  .navbar{ grid-area:nav; }
+  .contact-icons{ grid-area:contact; justify-content:flex-end; }
+  .header-logo{ height:32px; }
+}
+
+/* Hero */
+.hero{
+  background: linear-gradient(to right,#fefefe,#f0f4f8);
+  padding: var(--space-l) var(--padx);
+  border-bottom: 1px solid #ddd;
+}
+.hero-content{
+  max-width: var(--maxw);   /* <= unify width */
+  margin:0 auto;
+}
+.hero-content p{ color: var(--text); margin: .6em 0 1.2em; }
+
+/* Optional light hero */
+.hero-light { background:#f7f8fb; border-bottom:1px solid #e6e8ee; }
+.hero-light .hero-inner {
+  max-width: var(--maxw);   /* <= unify width */
+  margin:0 auto; padding:3.2rem 1.25rem;
+}
+.hero-light h1 { margin:0 0 .6rem; }
+.hero-light p { margin:.25rem 0 1.2rem; }
+
+/* Split layout (text + image) */
+.split{
+  display:grid; grid-template-columns:1.05fr .95fr;
+  gap: clamp(1.5rem, 4vw, 3rem); align-items:center;
+  max-width: var(--maxw);   /* <= unify width */
+  margin:0 auto; padding:clamp(2rem,6vw,4rem) 1.25rem;
+}
+.split.flip{ grid-template-columns:.95fr 1.05fr; }
+.split.flip .split__text{ order:2; }
+.split.flip .split__image{ order:1; }
+.split__text h2{ margin:0 0 .5rem; }
+.split__text p{ margin:0 0 1rem; }
+.link-more{ font-weight:700; text-decoration:none; border-bottom:2px solid currentColor; }
+.link-more:hover{ opacity:.8; }
+.split__image img{
+  display:block; width:100%; height:auto; border-radius:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08); object-fit:cover;
+}
+
+/* Image helper */
+.classroom-img{
+  display:block; max-width:100%; height:auto; margin:0 auto;
+  border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+/* Stacks */
+@media (max-width:900px){
+  .split, .split.flip { grid-template-columns:1fr; }
+  .split.flip .split__text { order:2; }
+  .split.flip .split__image { order:1; }
+}
+
+/* ============= 08) Components (features, testimonials, CTA) ============= */
+.features{
+  max-width: var(--maxw);   /* <= unify width */
+  margin:0 auto; padding:1rem 1.25rem 2.5rem;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
+}
+.features__item{
+  background:#fff; border:1px solid #e6e8ee; border-radius:12px;
+  padding:1.25rem; box-shadow:0 6px 14px rgba(0,0,0,.04);
+}
+.features__item h3{ margin:0 0 .4rem; }
+@media (max-width:900px){ .features { grid-template-columns:1fr; } }
+
+.testimonials{ max-width: var(--maxw); margin:0 auto; padding:2rem 1.25rem 3rem; text-align:center; }
+.testimonials blockquote{ margin:0; font-size:1.1rem; line-height:1.7; }
+.testimonials cite{ display:block; margin-top:.6rem; opacity:.75; }
+
+.cta-band{ background:linear-gradient(90deg,var(--red),#b82e39); color:#fff; }
+.cta-band__inner{
+  max-width: var(--maxw);   /* <= unify width */
+  margin:0 auto; padding:2.2rem 1.25rem; text-align:center;
+}
+.cta-band h2{ margin:0 0 .25rem; color:#fff; }
+.cta-band p{ margin:0 0 1rem; color:#fff; }
+
+/* Buttons */
+.cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin: var(--space-m) 0; }
+.cta-button{
+  display:inline-block; padding:14px 22px; border-radius:10px;
+  background:var(--red); color:#fff; font-weight:750; text-decoration:none;
+  box-shadow:0 6px 14px rgba(230,57,70,.25);
+  transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+}
+.cta-button:hover{ filter:brightness(.96); box-shadow:0 10px 26px rgba(230,57,70,.35); }
+.cta-button:active{ transform:translateY(1px); }
+.cta-button--outline{
+  background:#fff; color:var(--navy); border:2px solid var(--navy); box-shadow:none;
+}
+
+/* ============= 09) Footer ============= */
+.site-footer{ border-top:1px solid #e5e7eb; background:#fafafa; margin-top:20px; }
+.site-footer .container{ padding:16px var(--padx); }
+.site-footer p{ margin:0; font-size:.95rem; color:#444; }
+
+/* ============= 10) Accessibility / Focus ============= */
+:where(a, button, [role="menuitem"]):focus-visible{
+  outline:3px solid color-mix(in hsl, var(--navy) 70%, white);
+  outline-offset:3px; border-radius:8px;
+}
+
+/* ============= 11) Motion preferences ============= */
+@media (prefers-reduced-motion: reduce){
+  * { transition: none !important; animation: none !important; }
+}
+```
