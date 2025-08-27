@@ -1,9 +1,11 @@
-<!-- _layouts/default.html -->
 <!doctype html>
 <html lang="es">
 <head>
-  <!-- … -->
-  <link rel="stylesheet" href="{{ '/style.css?v=5' | relative_url }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <link rel="stylesheet" href="{{ '/style.css?v=12' | relative_url }}">
 </head>
 <body>
   {% include header.html %}
@@ -11,6 +13,5 @@
     {{ content }}
   </main>
   {% include footer.html %}
-  <script src="{{ '/assets/js/header.js' | relative_url }}" defer></script>
 </body>
 </html>
