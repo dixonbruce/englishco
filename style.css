@@ -1,6 +1,3 @@
-Updated CSS — unified widths (home = primary), hamburger hidden on desktop, consistent section max-widths.
-
-```css
 /* =========================================================
    ENGLISHCO – GLOBAL STYLESHEET (unified, production-ready)
    (0827) Updates:
@@ -364,4 +361,3 @@ h2::after{
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; animation: none !important; }
 }
-```
