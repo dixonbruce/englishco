@@ -193,6 +193,36 @@ h2::after{
   #toggle-cursos:checked + .no-link + .submenu{ display:block; }
 }
 
+/* Ensure the hamburger sits on the first row with the logo on mobile */
+@media (max-width: 860px){
+  .header-inner{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "burger brand contact"
+      "nav    nav   nav";
+    align-items: center;
+    row-gap: 6px;
+  }
+  .hamburger { grid-area: burger; display:flex; flex-direction:column; }
+  .header-brand{ grid-area: brand; }
+  .contact-icons{ grid-area: contact; justify-content:flex-end; }
+  .navbar{ grid-area: nav; }
+}
+
+/* Hide hamburger on desktop, show on mobile (already present but explicit) */
+.hamburger{ display:none; gap:4px; width:28px; height:22px; background:none; border:0; padding:0; margin:0 .25rem; cursor:pointer; }
+.hamburger span{ display:block; height:3px; background:#222; border-radius:2px; }
+
+/* WA/phone icon sizing consistency */
+.contact-icons a svg{ width:22px; height:22px; display:block; }
+
+/* If any bullets remain because of markup drift */
+.site-header .navbar ul { list-style:none; margin:0; padding:0; }
+
+
+
+
 /* ============= 06) Contact (phone/WhatsApp) ============= */
 .contact-icons{
   display:flex; align-items:center; gap:12px; margin-left:auto;
