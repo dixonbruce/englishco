@@ -1,44 +1,44 @@
 <header class="site-header" role="banner">
   <div class="header-inner">
 
-    <!-- Mobile toggle (checkbox) -->
-    <input id="nav-open" type="checkbox" class="visually-hidden" />
+    <!-- Mobile toggle (must be BEFORE .navbar for CSS to work) -->
+    <input id="nav-open" type="checkbox" class="vh" />
 
-    <!-- Hamburger (label controls #nav-open) -->
+    <!-- Hamburger (label toggles #nav-open) -->
     <label for="nav-open" class="hamburger" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </label>
 
     <!-- Logo -->
-    <a href="/" class="header-brand" aria-label="Inicio">
-      <img src="/logo.svg?v=3" alt="English Co – Academia de Inglés" class="header-logo" width="140" height="40" />
+    <a href="{{ '/' | relative_url }}" class="header-brand" aria-label="Inicio">
+      <img src="{{ '/logo.svg?v=4' | relative_url }}" alt="ENGLISHCO" class="header-logo" width="140" height="40" />
     </a>
 
     <!-- Right: contact -->
     <div class="contact-icons">
       <a class="phone" href="tel:+34646555552" aria-label="Llamar">
-        <img src="/images/phone.svg" alt="" width="22" height="22"><span class="phone-number">646 555 552</span>
+        <img src="{{ '/images/phone.svg' | relative_url }}" alt="" width="22" height="22"><span class="phone-number">646 555 552</span>
       </a>
       <a class="whatsapp" href="https://wa.me/34646555552" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <img src="/images/whatsapp.svg" alt="" width="22" height="22">
+        <img src="{{ '/images/whatsapp.svg' | relative_url }}" alt="" width="22" height="22">
       </a>
     </div>
 
     <!-- Nav -->
     <nav class="navbar" role="navigation" aria-label="Principal">
       <ul class="menu" id="main-menu">
-        <li><a href="/" class="active">Inicio</a></li>
+        <li><a href="{{ '/' | relative_url }}" class="active">Inicio</a></li>
         <li class="dropdown">
-          <input type="checkbox" id="toggle-cursos" class="visually-hidden" />
+          <input type="checkbox" id="toggle-cursos" class="vh" />
           <label for="toggle-cursos" class="no-link">Cursos</label>
           <ul class="submenu">
-            <li><a href="/infantil.html">Infantil</a></li>
-            <li><a href="/primaria.html">Primaria</a></li>
-            <li><a href="/secundaria.html">Secundaria</a></li>
-            <li><a href="/adultos.html">Adultos</a></li>
+            <li><a href="{{ '/infantil'  | relative_url }}">Infantil</a></li>
+            <li><a href="{{ '/primaria'  | relative_url }}">Primaria</a></li>
+            <li><a href="{{ '/secundaria'| relative_url }}">Secundaria</a></li>
+            <li><a href="{{ '/adultos'   | relative_url }}">Adultos</a></li>
           </ul>
         </li>
-        <li><a href="/academia.html">Academia</a></li>
+        <li><a href="{{ '/academia' | relative_url }}">Academia</a></li>
       </ul>
     </nav>
 
