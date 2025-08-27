@@ -1,58 +1,57 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English co – La Academia</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="header-placeholder"></div>
-  <div class="container">
+---
+layout: default
+title: "English Co – La academia"
+description: "Las aulas de la academia en Playa de Arinaga"
+section: "aulas"
+---
 
+<!-- Main -->
+<main class="container" id="main-content">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Instalaciones: aulas modernas y confortables</h1>
+      <p>
+        Nuestras aulas son amplias, luminosas y bien ventiladas, diseñadas para ofrecer un entorno
+        de aprendizaje ideal. Contamos con proyectores interactivos, sistema de audio de alta calidad
+        y tratamiento acústico para una comunicación clara.
+      </p>
+    </div>
+  </section>
 
-    <div class="hero-section">
-      <main>
-        <section>
-          <p><strong>Aulas modernas y confortables</strong></p>
-          <p>Nuestras aulas son amplias, luminosas y bien ventiladas, diseñadas para ofrecer un entorno de aprendizaje ideal.</p>
-          <p>Cada sala está equipada con proyectores interactivos, sistemas de audio de alta calidad y tratamiento acústico para minimizar la reverberación y garantizar una comunicación clara.</p>
-          <p><img src="/secundaria_aula.png" alt="Foto de aula de secundaria" class="classroom-img"></p>
-          <p><img src="/primaria_aula.JPEG" alt="Foto de aula de primaria" class="classroom-img"></p>
-          <p><img src="/infantil_aula.jpg" alt="Foto de aula de infantil" class="classroom-img"></p>
-        </section>
-      </main>
-    </div> <!-- End hero-section -->
+  <!-- Aulas / Fotos -->
+  <section id="aulas" class="stack">
+    <h2>Aulas preparadas para aprender</h2>
+    <p>
+      Cada sala está pensada para favorecer la participación, el juego y la práctica del inglés desde el
+      primer día. Aquí tienes una muestra de nuestras aulas:
+    </p>
 
-    <footer>
-      <p>&copy; 2025 Little England</p>
-    </footer>
-  </div> <!-- End container -->
+    <figure class="classroom">
+      <img src="/secundaria_aula.png" alt="Foto de aula de Secundaria" class="classroom-img" />
+      <figcaption>Aula de Secundaria</figcaption>
+    </figure>
 
-  <script>
-    fetch('/header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
+    <figure class="classroom">
+      <img src="/primaria_aula.JPEG" alt="Foto de aula de Primaria" class="classroom-img" />
+      <figcaption>Aula de Primaria</figcaption>
+    </figure>
 
-        const links = document.querySelectorAll('.navbar a');
-        const currentPath = window.location.pathname
-          .replace(/\/$/, '')
-          .replace(/\/index$/, '')
-          .replace(/\.html$/, '');
+    <figure class="classroom">
+      <img src="/infantil_aula.jpg" alt="Foto de aula de Infantil" class="classroom-img" />
+      <figcaption>Aula de Infantil</figcaption>
+    </figure>
+  </section>
 
-        links.forEach(link => {
-          const href = link.getAttribute('href')
-            .replace(/\/$/, '')
-            .replace(/\/index$/, '')
-            .replace(/\.html$/, '');
-
-          if (href === currentPath) {
-            link.classList.add('active');
-          }
-        });
-      });
-  </script>
-
-</body>
-</html>
+  <!-- CTA (opcional; elimina si no lo necesitas) -->
+  <section class="cta-band">
+    <div class="cta-band__inner">
+      <h2>¿Quieres venir a conocerlas?</h2>
+      <p>Pídenos una visita o reserva tu plaza por WhatsApp o teléfono.</p>
+      <div class="cta-row">
+        <a class="cta-button cta-button--wa" href="https://wa.me/34646555552" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="cta-button cta-button--outline" href="tel:+34646555552">Llamar: 646 555 552</a>
+      </div>
+    </div>
+  </section>
+</main>
