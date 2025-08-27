@@ -1,14 +1,13 @@
-// Toggle main menu (mobile)
-const btn = document.querySelector('.hamburger');
-const menu = document.getElementById('main-menu');
 
-if (btn && menu) {
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-  });
-}
+  const burger = document.querySelector('.hamburger');
+  const menu = document.getElementById('main-menu');
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
 
 // Reflect submenu expanded state for a11y (mobile)
 const chk = document.getElementById('toggle-cursos');
