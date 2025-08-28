@@ -29,9 +29,23 @@ p{margin-bottom:1rem;color:var(--muted)}
 
 /* ===== Header ===== */
 .site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:1000}
-.header-inner{max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.header-brand{display:inline-flex;align-items:center}
+.site-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.header-brand {
+  flex: 1; /* logo takes available space */
+}
 .header-logo{height:40px;width:auto;max-width:100%}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem; /* space between phone and WhatsApp icons */
+  align-items: center;
+}
 
 /* Contact icons */
 .contact-icons{display:flex;align-items:center;gap:12px}
@@ -39,7 +53,11 @@ p{margin-bottom:1rem;color:var(--muted)}
 .contact-icons img{width:22px;height:22px;inline-size:22px;block-size:22px}
 
 /* Hamburger (label for #nav-open) */
-.hamburger{display:none;flex-direction:column;gap:4px;background:none;border:0;padding:8px;cursor:pointer}
+.hamburger{flex-direction:column;gap:4px;background:none;border:0;padding:8px;cursor:pointer}
+.hamburger {
+  display: block;
+  margin-right: 1rem;
+}
 .hamburger span{width:22px;height:2px;background:#333;display:block;border-radius:2px}
 
 /* Desktop nav */
