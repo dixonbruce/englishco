@@ -165,6 +165,40 @@ p{ margin-bottom:1rem; color:var(--muted); }
   .icon-btn{ inline-size:48px; block-size:48px; }
 }
 
+
+/* ===== Split (text + image) section ===== */
+.split{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;      /* text | image */
+  align-items:center;
+  gap: clamp(1.25rem, 4vw, 3rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) 1.25rem;
+}
+.split__text h2{ margin:0 0 .5rem; }
+.split__text p{ margin:0 0 1rem; color:var(--muted); }
+.split__image img{
+  display:block; width:100%; height:auto; object-fit:cover;
+  border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Optional reversed layout */
+.split.flip{ grid-template-columns: .95fr 1.05fr; }
+.split.flip .split__text{ order:2; }
+.split.flip .split__image{ order:1; }
+
+/* Stack on smaller screens */
+@media (max-width: 900px){
+  .split, .split.flip{ grid-template-columns:1fr; }
+  .split.flip .split__text{ order:2; }
+  .split.flip .split__image{ order:1; }
+}
+
+
+.hero-light{ background:#f7f8fb; border-bottom:1px solid #e6e8ee; }
+.hero-light .hero-inner{ max-width:1100px; margin:0 auto; padding:3.2rem 1.25rem; }
+
 /* ================= Sections / Components ================= */
 .hero{ padding:28px 0; }
 .hero .hero-content{ display:grid; gap:1rem; }
