@@ -563,7 +563,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
   margin-bottom: .5rem;
 }
 
-/* ===== CTA rows + buttons ===== */
+/* ===== CTA rows + buttons ===== 
 .cta-row {
   display: flex;
   gap: .75rem;
@@ -595,3 +595,4 @@ p{ margin-bottom:1rem; color:var(--muted); }
 .cta-button--wa {
   background: #25D366;
 }
+*/
