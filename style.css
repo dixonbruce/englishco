@@ -326,20 +326,37 @@ p{ margin-bottom:1rem; color:var(--muted); }
 @media (min-width:768px){ .dropdown:hover>.submenu{ display:block; } }
 
 /* ============ Mobile behaviour (CSS-only) ============ */
-@media (max-width:860px){
-  /* Mobile grid: brand | contact (row 1), nav (row 2) */
-  .site-header .header-inner{
-    grid-template-columns:auto 1fr;
-    grid-template-areas:
-      "brand contact"
-      "nav   nav";
-    row-gap:6px;
-  }
-  .header-brand{ grid-area:brand; }
-  .navbar{ grid-area:nav; }
-  .header-actions,.contact-icons{ grid-area:contact; justify-content:flex-end; }
-  .header-logo{ height:32px; max-width:160px; } /* keep logo visible */
+
+
+/* One row at all widths */
+.site-header .header-inner{
+  display:grid;
+  grid-template-columns:auto 1fr auto;   /* brand | nav | contact */
+  align-items:center; gap:12px;
 }
+
+/* Desktop: nav visible, burger hidden */
+.navbar{ display:flex; }
+.hamburger{ display:none; }
+
+/* Mobile: use burger, hide nav until toggled */
+@media (max-width:768px){
+  .site-header .header-inner{
+    grid-template-columns:auto 1fr auto; /* burger | brand | contact on ONE row */
+  }
+  .hamburger{ display:flex; }
+  .navbar{ display:none; width:100%; }          /* hidden by default */
+  #nav-open:checked ~ .navbar{ display:block; } /* shows when burger checked */
+}
+
+.contact-icons .phone-number{ display:none; }
+@media (min-width:1024px){
+  .contact-icons .phone-number{ display:inline; }
+}
+
+
+.menu{ gap: clamp(12px, 2vw, 20px); flex-wrap: nowrap; }
+.menu a{ white-space: nowrap; }
 
 @media (max-width:768px){
   /* grid becomes: burger | brand | contact (row 1), nav (row 2) */
