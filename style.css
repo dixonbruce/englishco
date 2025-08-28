@@ -54,60 +54,6 @@ h2::after{
 .header-brand{ display:flex; align-items:center; }
 .header-logo{ height:42px; width:auto; display:block; }
 
-/* ===== Nav ===== */
-.navbar ul{
-  list-style:none; margin:0; padding:0;
-  display:flex; gap:20px; align-items:center; flex-wrap:wrap; justify-content:center;
-}
-.navbar a,.navbar .no-link{
-  position:relative; text-decoration:none; color:var(--text); font-weight:600;
-  text-transform:uppercase; letter-spacing:.5px; font-size:17px; padding-bottom:4px;
-  cursor:pointer; transition:color .25s ease;
-}
-.navbar a:hover,.navbar .no-link:hover{ color:var(--navy); }
-.navbar a::after{
-  content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0;
-  background:var(--red); transition:width .25s ease;
-}
-.navbar a:hover::after,.navbar a.active::after{ width:100%; }
-.navbar a.active{ color:var(--red); }
-.navbar li{ position:relative; }
-
-/* Dropdown */
-.dropdown .submenu{
-  position:absolute; left:0; top:calc(100% + 8px);
-  display:none; min-width:180px; padding:8px 0; background:#fff;
-  border:1px solid #e5e7eb; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,.08);
-}
-.dropdown .submenu a{ display:block; padding:8px 14px; color:var(--text); text-transform:none; }
-.dropdown .submenu a:hover{ background:#f6f7fb; color:var(--navy); }
-/* Open via checkbox / keyboard / hover */
-#toggle-cursos:checked ~ .submenu,
-.dropdown:focus-within .submenu,
-.dropdown:hover .submenu{ display:block; }
-
-/* Contact */
-.contact-info{
-  font-size:16px; font-weight:500; display:flex; align-items:center; gap:8px; flex-wrap:wrap;
-}
-.contact-info a{ color:inherit; text-decoration:none; }
-.contact-info .whatsapp svg{ vertical-align:middle; }
-
-/* Header responsive */
-@media (max-width: 860px){
-  .header-inner{
-    grid-template-columns:auto auto;
-    grid-template-areas:
-      "brand contact"
-      "nav nav";
-    row-gap:8px;
-  }
-  .header-brand{ grid-area:brand; }
-  .navbar{ grid-area:nav; }
-  .contact-info{ grid-area:contact; justify-content:flex-end; }
-  .header-logo{ height:36px; }
-  .dropdown .submenu{ position:static; box-shadow:none; border:0; border-radius:0; }
-}
 
 /* ===== Hero ===== */
 .hero{
