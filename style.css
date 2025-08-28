@@ -52,7 +52,7 @@ h2::after{
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
 }
 .header-brand{ display:flex; align-items:center; }
-.header-logo{ height:42px; width:auto; display:block; }
+.header-logo{ height:50px; width:auto; display:block; }
 
 
 /* ===== Hero ===== */
@@ -280,7 +280,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
   min-width:0;
 }
 
-.header-logo{ height:32px; width:auto; max-width:160px; display:block; }
+.header-logo{ height:50px; width:auto; max-width:160px; display:block; }
 
 
 /* Contact area (icons + optional number) */
