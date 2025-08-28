@@ -532,3 +532,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
   background: #25D366;
 }
 */
+
+@media (min-width:1024px){
+  .contact-icons .phone-number{ display:inline; }
+}
