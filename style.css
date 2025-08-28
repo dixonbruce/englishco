@@ -417,7 +417,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
 .hero .hero-content{ display:grid; gap:1rem; }
 .classroom-img{ border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,.08); }
 
-/* CTA */
+/* CTA 
 .cta-band{
   background:#f7f9ff; margin:2rem 0; padding:1.5rem 0;
   border-top:1px solid #eef2ff; border-bottom:1px solid #eef2ff;
@@ -432,7 +432,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
 }
 .cta-button:hover{ transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.12); }
 .cta-button--outline{ background:#fff; border-color:#e5e7eb; color:var(--text); }
-.cta-button--wa{ background:#25D366; }
+.cta-button--wa{ background:#25D366; }*/
 
 /* ================= Footer ================= */
 .site-footer{ border-top:1px solid #eee; padding:20px 0; color:var(--muted); font-size:.95rem; }
