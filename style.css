@@ -455,12 +455,12 @@ p{ margin-bottom:1rem; color:var(--muted); }
   line-height: var(--lh);
 }
 
-/* Optional: section spacing inside main */
+/* Optional: section spacing inside main 
 #main-content section {
   margin-bottom: clamp(2.5rem, 6vw, 0rem);
 }
 
-
+*/
 
 
 /* ===== Main content ===== */
