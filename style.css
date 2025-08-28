@@ -84,7 +84,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
 /* Phone number: desktop only */
 .desktop-only{ display:none; }
 @media (min-width:768px){
-  .desktop-only{ display:inline; margin-left:6px; }
+  .desktop-only{ display:inline; }
 }
 
 /* Hamburger (label for #nav-open) – hidden on desktop */
