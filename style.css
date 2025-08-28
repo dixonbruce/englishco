@@ -59,8 +59,16 @@ p{ margin-bottom:1rem; color:var(--muted); }
   margin:0 auto;
 }
 
-.header-brand{ display:flex; align-items:center; min-width:0; }
-.header-logo{ height:40px; width:auto; max-width:180px; display:block; }
+
+.header-brand{
+  display:flex;        /* hamburger + logo inline */
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.header-logo{ height:32px; width:auto; max-width:160px; display:block; }
+
 
 /* Contact area (icons + optional number) */
 .header-actions,
@@ -121,17 +129,26 @@ p{ margin-bottom:1rem; color:var(--muted); }
 }
 
 @media (max-width:768px){
-  .hamburger{ display:flex; }              /* show hamburger on mobile */
-  .navbar{ display:none; width:100%; }     /* hide menu until opened */
-  /* IMPORTANT: #nav-open must be BEFORE .navbar in HTML */
+  /* grid becomes: burger | brand | contact (row 1), nav (row 2) */
+  .site-header .header-inner{
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:
+      "burger brand contact"
+      "nav    nav   nav";
+  }
+  .hamburger{ display:flex; grid-area:burger; }
+  .header-brand{ grid-area:brand; }
+  .header-actions{ grid-area:contact; justify-content:flex-end; }
+  .navbar{ grid-area:nav; display:none; width:100%; }
+  /* IMPORTANT: #nav-open checkbox must be BEFORE .navbar in the HTML */
   #nav-open:checked ~ .navbar{ display:block; }
 
-  /* Stack menu items */
+  /* Mobile menu stack */
   .menu{ flex-direction:column; align-items:stretch; gap:0; padding-top:10px; }
   .menu>li{ border-top:1px solid #f0f0f0; }
   .menu a,.no-link{ padding:14px 4px; }
 
-  /* Mobile submenu opened by its own checkbox (must be before .submenu) */
+  /* Mobile submenu (checkbox-controlled) */
   .submenu{ position:static; border:0; box-shadow:none; border-radius:0; padding:0; display:none; margin:0 0 8px 12px; }
   #toggle-cursos:checked ~ .submenu{ display:block; }
 }
