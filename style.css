@@ -246,3 +246,85 @@ p{ margin-bottom:1rem; color:var(--muted); }
 #main-content section {
   margin-bottom: clamp(2.5rem, 6vw, 4rem);
 }
+
+
+
+
+/* ===== Main content ===== */
+#main-content {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) var(--padx);
+}
+#main-content section {
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* ===== Hero section ===== */
+.hero {
+  padding: 2rem 0;
+}
+.hero .hero-content {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+  text-align: left;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+.classroom-img {
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+  margin-top: 1rem;
+}
+
+/* ===== Section headings ===== */
+#main-content h2 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  margin-bottom: .75rem;
+  color: var(--navy);
+}
+#main-content ul {
+  list-style: disc;
+  margin: 0 0 1.5rem 1.25rem;
+  line-height: 1.55;
+}
+#main-content li {
+  margin-bottom: .5rem;
+}
+
+/* ===== CTA rows + buttons ===== */
+.cta-row {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .65rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: var(--navy);
+  color: #fff;
+  transition: transform .15s, box-shadow .15s;
+  font-size: .95rem;
+}
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+.cta-button--outline {
+  background: #fff;
+  border-color: #e5e7eb;
+  color: var(--text);
+}
+.cta-button--wa {
+  background: #25D366;
+}
