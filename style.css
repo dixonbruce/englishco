@@ -45,6 +45,13 @@ p{margin-bottom:1rem;color:var(--muted)}
   display: flex;
   gap: 0.5rem; /* space between phone and WhatsApp icons */
   align-items: center;
+  
+}
+
+.header-actions .icon-btn {
+  display: flex;         /* makes the icon button shrink to icon size */
+  align-items: center;
+  justify-content: center;
 }
 
 /* Default: hidden on small screens */
