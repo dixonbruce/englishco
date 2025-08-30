@@ -550,3 +550,51 @@ p{ margin-bottom:1rem; color:var(--muted); }
   background-color: var(--navy);
   transform: translateY(-2px);
 }
+
+
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;   /* space between links */
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #111; /* default text colour */
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #e63946; /* coral accent */
+}
+
+/* Active link (current page) */
+.navbar a.active {
+  font-weight: 600;
+  color: #1e3a8a; /* navy */
+}
+
+/* Optional underline effect for hover/active */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #e63946; /* coral underline */
+  transition: width 0.25s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
