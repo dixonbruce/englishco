@@ -530,3 +530,23 @@ p{ margin-bottom:1rem; color:var(--muted); }
   max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 3rem;
   text-align: center;
 }
+
+
+
+.more-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--red);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.more-link:hover {
+  background-color: var(--navy);
+  transform: translateY(-2px);
+}
