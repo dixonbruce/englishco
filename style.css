@@ -598,3 +598,82 @@ p{ margin-bottom:1rem; color:var(--muted); }
 .navbar a.active::after {
   width: 100%;
 }
+
+
+
+
+/* ==== NAV FIX (drop-in override) ==== */
+
+/* keep header from clipping dropdowns */
+.site-header { overflow: visible; }
+
+/* layout: logo | nav | contact, prevent wrapping */
+.header-inner{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:12px;
+}
+.header-brand{ min-width:0; }
+.navbar{ display:flex; justify-content:flex-start; min-width:0; }
+.menu{
+  display:flex; gap: clamp(14px,2vw,24px);
+  flex-wrap:nowrap; align-items:center;
+  white-space:nowrap;
+}
+
+/* links */
+.menu>li{ position:relative; }
+.navbar a{
+  position:relative;
+  display:inline-block;
+  padding:.45rem .1rem;
+  font-weight:500; color:#111;
+  text-decoration:none; transition:color .2s ease;
+}
+.navbar a:hover{ color:#e63946; }
+.navbar a.active{ color:#1e3a8a; font-weight:600; }
+.navbar a::after{
+  content:""; position:absolute; left:0; bottom:-4px;
+  width:0; height:2px; background:#e63946; transition:width .25s ease;
+}
+.navbar a:hover::after, .navbar a.active::after{ width:100%; }
+
+/* dropdown (desktop) */
+.submenu{
+  position:absolute; left:0; top:calc(100% + 10px);
+  min-width:200px; padding:8px;
+  background:#fff; border:1px solid #eee; border-radius:10px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  display:none; z-index: 2000;
+}
+.menu .dropdown:hover > .submenu{ display:block; }
+.submenu li a{ display:block; padding:8px 10px; border-radius:8px; }
+.submenu li a:hover{ background:#f6f7fb; }
+
+/* mobile: burger toggles .navbar (ensure #nav-open is BEFORE .navbar in HTML) */
+.hamburger{ display:none; }
+@media (max-width: 768px){
+  .hamburger{ display:flex; }
+  .navbar{ display:none; grid-area:nav; width:100%; }
+  #nav-open:checked ~ .navbar{ display:block; }
+
+  .header-inner{
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:
+      "burger brand contact"
+      "nav    nav   nav";
+  }
+  .hamburger{ grid-area:burger; }
+  .header-brand{ grid-area:brand; }
+  .header-actions{ grid-area:contact; justify-self:end; }
+  .menu{ flex-direction:column; align-items:stretch; gap:0; }
+  .menu>li{ border-top:1px solid #f0f0f0; }
+  .navbar a{ padding:14px 4px; }
+  .navbar a::after{ display:none; }        /* no underline animation on stacked links */
+
+  /* mobile submenu via checkbox (#toggle-cursos) */
+  .submenu{ position:static; border:0; box-shadow:none; padding:0; display:none; }
+  #toggle-cursos:checked ~ .submenu{ display:block; }
+}
+
