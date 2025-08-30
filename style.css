@@ -41,7 +41,7 @@ ul{ list-style:none; margin:0; padding:0; }
 .container{ max-width:var(--maxw); margin:0 auto; padding:0 var(--padx); }
 
 /* ----- Typography ----- */
-h1{ font-weight:800; letter-spacing:.2px; font-size: clamp(28px, 3.2vw, 40px); color:#222; }
+h1{ font-weight:800; letter-spacing:.2px; font-size: clamp(28px, 3.2vw, 40px); color: var(--navy); }
 h2{
   font-weight:750; letter-spacing:.2px; font-size: clamp(20px, 2.2vw, 28px);
   margin: 28px 0 10px; color:#222; position:relative; padding-bottom:6px;
@@ -78,7 +78,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
 .header-inner{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 10px var(--padx);
+  /*padding: 10px var(--padx);*/
   display: grid;
   grid-template-columns: auto 1fr auto; /* brand | nav | contact */
   align-items: center;
@@ -177,7 +177,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
    ========================================================= */
 
 .hero{
-  background: linear-gradient(to right,#fefefe,#f0f4f8);
+  /*background: linear-gradient(to right,#fefefe,#f0f4f8); */
   padding: var(--space-l) var(--padx);
   border-bottom: 1px solid #ddd;
 }
@@ -312,4 +312,58 @@ p{ margin-bottom:1rem; color:var(--muted); }
 /* ----- Reduced motion ----- */
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; animation: none !important; }
+}
+
+
+/* === Dropdown hover-gap fix === */
+.menu .dropdown { position: relative; }
+
+.submenu{
+  /* sit flush to the trigger so there’s no dead zone */
+  top: 100% !important;            /* was calc(100% + 10px) */
+  margin-top: 0 !important;        /* ensure no external gap */
+  transform: none !important;
+
+  /* add visual breathing room INSIDE the submenu box */
+  padding-top: 8px !important;
+
+  position: absolute;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  z-index: 2000;
+  display: none;                   /* default hidden */
+}
+
+.menu .dropdown:hover > .submenu { display: block; }
+
+/* submenu items */
+.submenu li a{
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.submenu li a:hover{ background:#f6f7fb; }
+
+/* (Optional) add a tiny hover bridge if you still see flicker) */
+.menu .dropdown::after{
+  content:"";
+  position:absolute;
+  left:0; top:100%;
+  width:100%; height:6px;          /* small buffer */
+  /* transparent, just keeps :hover alive while moving down */
+}
+.phone-number {
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s, color .2s;
+}
+.phone-number:hover {
+  color: var(--red);
+  border-color: var(--red);
 }
