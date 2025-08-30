@@ -677,3 +677,34 @@ p{ margin-bottom:1rem; color:var(--muted); }
   #toggle-cursos:checked ~ .submenu{ display:block; }
 }
 
+/* Make the "Cursos" label look like a normal nav link */
+.no-link {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #111;
+  padding: .45rem .1rem;
+  position: relative;
+  transition: color 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.no-link:hover {
+  color: #e63946; /* coral on hover */
+}
+
+.no-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #e63946;
+  transition: width 0.25s ease;
+}
+
+.no-link:hover::after {
+  width: 100%;
+}
