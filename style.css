@@ -575,3 +575,23 @@ p{ margin-bottom:1rem; color:var(--muted); }
   .header-actions{ display:flex; align-items:center; gap:8px; justify-self:end; flex-wrap:nowrap; }
   .header-actions .phone-number{ display:none !important; }
 }
+
+
+/* Features row */
+.features {
+  max-width: 1100px; margin: 0 auto; padding: 1rem 1.25rem 2.5rem;
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1.25rem;
+}
+.features__item {
+  background: #fff; border: 1px solid #e6e8ee; border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,.04);
+}
+.features__item h3 { margin: 0 0 .4rem; }
+
+/* Testimonials (optional simple style) */
+.testimonials {
+  max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 3rem;
+  text-align: center;
+}
