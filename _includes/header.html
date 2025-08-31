@@ -26,22 +26,66 @@
     </div>
 
     <!-- Nav -->
-    <nav class="navbar" role="navigation" aria-label="Principal">
-      <ul class="menu" id="main-menu">
-        <li><a href="{{ '/' | relative_url }}" class="active">Inicio</a></li>
-        <li class="dropdown">
-          <input type="checkbox" id="toggle-cursos" class="vh" />
-          <label for="toggle-cursos" class="no-link">Cursos</label>
-          <ul class="submenu">
-            <li><a href="{{ '/infantil'  | relative_url }}">Infantil</a></li>
-            <li><a href="{{ '/primaria'  | relative_url }}">Primaria</a></li>
-            <li><a href="{{ '/secundaria'| relative_url }}">Secundaria</a></li>
-            <li><a href="{{ '/adultos'   | relative_url }}">Adultos</a></li>
-          </ul>
-        </li>
-        <li><a href="{{ '/academia' | relative_url }}">Academia</a></li>
+{% assign path = page.url | downcase %}
+
+<nav class="navbar" role="navigation" aria-label="Principal">
+  <ul class="menu" id="main-menu">
+    <li>
+      <a href="{{ '/' | relative_url }}"
+         class="{% if page.section == 'home' or path == '/' %}active{% endif %}"
+         aria-current="{% if page.section == 'home' or path == '/' %}page{% endif %}">
+        Inicio
+      </a>
+    </li>
+
+    <li class="dropdown">
+      <!-- Keep submenu open on mobile when you're on a course page -->
+      <input type="checkbox" id="toggle-cursos" class="vh"
+             {% if page.section == 'cursos'
+                or path contains '/infantil'
+                or path contains '/primaria'
+                or path contains '/secundaria'
+                or path contains '/adultos' %}checked{% endif %} />
+
+      <!-- Label styled like a link; mark active when on any course page -->
+      <label for="toggle-cursos"
+             class="no-link {% if page.section == 'cursos'
+                               or path contains '/infantil'
+                               or path contains '/primaria'
+                               or path contains '/secundaria'
+                               or path contains '/adultos' %}active{% endif %}">
+        Cursos
+      </label>
+
+      <ul class="submenu">
+        <li><a href="{{ '/infantil'  | relative_url }}"
+               class="{% if path contains '/infantil' %}active{% endif %}"
+               aria-current="{% if path contains '/infantil' %}page{% endif %}">Infantil</a></li>
+
+        <li><a href="{{ '/primaria'  | relative_url }}"
+               class="{% if path contains '/primaria' %}active{% endif %}"
+               aria-current="{% if path contains '/primaria' %}page{% endif %}">Primaria</a></li>
+
+        <li><a href="{{ '/secundaria'| relative_url }}"
+               class="{% if path contains '/secundaria' %}active{% endif %}"
+               aria-current="{% if path contains '/secundaria' %}page{% endif %}">Secundaria</a></li>
+
+        <li><a href="{{ '/adultos'   | relative_url }}"
+               class="{% if path contains '/adultos' %}active{% endif %}"
+               aria-current="{% if path contains '/adultos' %}page{% endif %}">Adultos</a></li>
       </ul>
-    </nav>
+    </li>
+
+    <li>
+      <a href="{{ '/academia' | relative_url }}"
+         class="{% if page.section == 'academia' or path contains '/academia' %}active{% endif %}"
+         aria-current="{% if page.section == 'academia' or path contains '/academia' %}page{% endif %}">
+        Academia
+      </a>
+    </li>
+  </ul>
+</nav>
+
 
   </div>
 </header>
