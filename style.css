@@ -176,6 +176,10 @@ p{ margin-bottom:1rem; color:var(--muted); }
 .navbar a:hover, .no-link:hover{ color:var(--coral); }              /* updated */
 .navbar a.active{ color:var(--navy); font-weight:700; }             /* unified */
 
+/* Make the label gain the same active style as links */
+.no-link.active { color: var(--navy); font-weight: 700; }
+.no-link.active::after { transform: scaleX(1); }
+
 /* Hover/active underline (navy -> coral) */
 .navbar a::after, .no-link::after{
   content:""; position:absolute; left:0; right:0; bottom:-6px;
