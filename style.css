@@ -206,11 +206,7 @@ p{ margin-bottom:1rem; color:var(--muted); }
   border-bottom: 1px solid #ddd;
 }
 .hero .hero-content{ margin:0 auto; display:grid; gap:1rem; }
-.hero h1{
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-  line-height: 1.25;
-  margin-bottom: .5rem;
-}
+
 .hero .hero-content p{ color: var(--text); margin: .6em 0 1.2em; }
 .classroom-img{
   display:block; max-width:100%; height:auto; margin-top:1rem;
