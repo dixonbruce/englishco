@@ -76,9 +76,9 @@ p{ margin-bottom:1rem; color:var(--muted); }
 }
 
 .header-inner{
-  max-width: var(--maxw);
-  margin: 0 auto;
-  /*padding: 10px var(--padx);*/
+     max-width: var(--maxw);
+   margin: 0 auto;
+   padding: 0 var(--padx);
   display: grid;
   grid-template-columns: auto 1fr auto; /* brand | nav | contact */
   align-items: center;
