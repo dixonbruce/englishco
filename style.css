@@ -11,6 +11,8 @@
   /* Brand colours (red kept but aligned to coral for backward compat) */
   --navy: #0b3d91;
   --coral: #ff6f61;
+     --coral-strong:#e65d52; /* action coral for buttons */
+
   --red: #ff6f61; /* legacy alias for coral */
 
   --white:#fff;
@@ -322,17 +324,32 @@ p{ margin-bottom:1rem; color:var(--muted); }
 
 /* CTAs */
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin: var(--space-m) 0; }
-.cta-button{
-  display:inline-block; padding:14px 22px; border-radius:10px;
-  background:var(--coral); color:#fff; font-weight:750; text-decoration:none;   /* updated */
-  box-shadow:0 6px 14px rgba(255,111,97,.25);                                   /* updated */
-  transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+.cta-button {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 10px;
+  background-color: var(--coral-strong);
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.08), rgba(0,0,0,.06));
+  color: #fff;
+  font-weight: 750;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(230,93,82,.25);
+  transition: transform .08s ease, box-shadow .2s ease, filter .2s ease, background .25s ease;
 }
-.cta-button:hover{ filter:brightness(.96); box-shadow:0 10px 26px rgba(255,111,97,.35); } /* updated */
-.cta-button:active{ transform: translateY(1px); }
-.cta-button--outline{
-  background:#fff; color:var(--navy); border:2px solid var(--navy); box-shadow:none;
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #d9544a; /* darker coral on hover */
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.12), rgba(0,0,0,.10));
+  filter: brightness(.98);
+  box-shadow: 0 10px 26px rgba(230,93,82,.35);
+  transform: translateY(-2px);
 }
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
 
 /* “More” pill */
 .more-link {
@@ -354,6 +371,23 @@ p{ margin-bottom:1rem; color:var(--muted); }
   transform: translateY(-2px);
 }
 .more-link:active { transform: translateY(0); }
+
+
+.more-link{
+  background-color: var(--coral-strong);
+  color:#fff;
+  box-shadow: 0 4px 12px rgba(230,93,82,.25);
+}
+
+.more-link:hover,
+.more-link:focus{
+  background-color:#d9544a;          /* 8–10% darker on hover */
+  transform: translateY(-2px);
+}
+
+.more-link{
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.08), rgba(0,0,0,.06));
+}
 
 /* main content area */
 #main-content { max-width: var(--maxw); margin: 0 auto; }
