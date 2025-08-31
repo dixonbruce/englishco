@@ -467,3 +467,37 @@ p{ margin-bottom:1rem; color:var(--muted); }
 
 /* Brand text inline */
 .brand-text { color: var(--navy); font-weight: 700; }
+
+
+/* Classroom image + caption */
+.classroom { margin: 1rem 0 2rem; }
+
+.classroom figcaption{
+  margin-top: .6rem;
+  text-align: center;
+  font-size: .95rem;
+  line-height: 1.35;
+  color: var(--muted);
+  font-weight: 600;                 /* readable on light bg */
+}
+
+/* little accent bar above the caption */
+.classroom figcaption::before{
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0 auto .45rem;
+  background: linear-gradient(to right, var(--navy), var(--coral));
+  border-radius: 2px;
+}
+
+/* optional: soften the image corners/shadow if not already */
+.classroom-img{
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+@media (max-width: 640px){
+  .classroom figcaption{ font-size: .9rem; }
+}
