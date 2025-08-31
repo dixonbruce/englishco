@@ -41,7 +41,27 @@ ul{ list-style:none; margin:0; padding:0; }
 .container{ max-width:var(--maxw); margin:0 auto; padding:0 var(--padx); }
 
 /* ----- Typography ----- */
-h1{ font-weight:800; letter-spacing:.2px; font-size: clamp(28px, 3.2vw, 40px); color: var(--navy); }
+
+.hero-light h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Accent underline */
+.hero-light h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  background: var(--red);
+  border-radius: 2px;
+}
+
 h2{
   font-weight:750; letter-spacing:.2px; font-size: clamp(20px, 2.2vw, 28px);
   margin: 28px 0 10px; color:#222; position:relative; padding-bottom:6px;
@@ -262,13 +282,25 @@ p{ margin-bottom:1rem; color:var(--muted); }
 .more-link {
   display: inline-block;
   margin-top: 0.75rem;
-  padding: 6px 14px;
-  font-size: 0.9rem;
+  padding: 8px 18px;                  /* slightly bigger */
+  font-size: 0.95rem;                 /* a touch larger */
   font-weight: 600;
   color: #fff;
   background-color: var(--red);
   border-radius: 999px;
+  text-decoration: none;              /* ensure no underline */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12); /* subtle depth */
   transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.more-link:hover,
+.more-link:focus {
+  background-color: #c52d39;          /* darker red hover */
+  transform: translateY(-2px);        /* subtle lift */
+}
+
+.more-link:active {
+  transform: translateY(0);           /* reset on click */
 }
 .more-link:hover { background-color: var(--navy); transform: translateY(-2px); }
 
@@ -398,4 +430,10 @@ p{ margin-bottom:1rem; color:var(--muted); }
   .features {
     flex-direction: column;
   }
+}
+
+
+.brand-text {
+  color: var(--navy);
+  font-weight: 700;
 }
