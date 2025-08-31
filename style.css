@@ -45,24 +45,20 @@ ul{ list-style:none; margin:0; padding:0; }
 .hero-light h1 {
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 800;
-  line-height: 1.2;
+  color: var(--navy);
   text-align: center;
+  line-height: 1.2;
   margin-bottom: 1rem;
-
-  /* Subtle gradient: mostly navy, hint of red */
-  background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 70%, var(--red) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  position: relative;
 }
 
-/* Accent underline */
 .hero-light h1::after {
   content: "";
   display: block;
-  width: 60px;
+  width: 80px;
   height: 4px;
-  margin: 0.6rem auto 0;
-  background: var(--red);
+  margin: 0.8rem auto 0;
+  background: linear-gradient(90deg, var(--navy), var(--red));
   border-radius: 2px;
 }
 
