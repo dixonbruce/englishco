@@ -380,3 +380,22 @@ p{ margin-bottom:1rem; color:var(--muted); }
 }
 
 .header-actions .phone-text { display:inline; }
+
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m); /* or just 1rem */
+}
+
+.features__item {
+  flex: 1;
+  min-width: 200px; /* prevents items getting too tiny on wide screens */
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+}
