@@ -109,3 +109,31 @@ Por razones de seguridad, le pedimos que <strong>no se aproxime a la puerta</str
 </aside>
 </section>
 </main>
+
+<style>
+:root{
+--maxw: 1024px;
+--padx: 20px;
+--muted: #555;
+--border: #e5e7eb;
+}
+.container{ max-width:var(--maxw); margin-inline:auto; padding: 0 var(--padx); }
+.hero-light{ background:#f8fafc; padding: 2.5rem 0; }
+.hero-inner h1{ margin:0 0 .5rem; }
+.lead{ color:var(--muted); margin:0; }
+.stack > *{ margin-block: 1.25rem; }
+.note{ background:#fff7ed; border:1px solid #fed7aa; padding:.75rem 1rem; border-radius:.5rem; font-size:.95rem; }
+.table-wrap{ overflow-x:auto; }
+table.fees{ width:100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+table.fees caption{ text-align:left; font-weight:600; margin-bottom:.5rem; }
+table.fees th, table.fees td{ border:1px solid var(--border); padding:.6rem .7rem; text-align:left; }
+table.fees thead th{ background:#f3f4f6; }
+details.small{ font-size:.95rem; }
+.pay{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem; align-items:start; }
+.card{ border:1px solid var(--border); border-radius:.75rem; padding:1rem 1.25rem; background:#fff; }
+ul.plain{ list-style:none; padding:0; margin:.5rem 0 0; }
+ul.plain li{ margin:.25rem 0; }
+@media (max-width: 720px){
+.pay{ grid-template-columns: 1fr; }
+}
+</style>
