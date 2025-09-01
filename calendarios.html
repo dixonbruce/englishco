@@ -1,0 +1,221 @@
+---
+layout: default
+title: "English Co – Calendarios 2025–2026"
+description: "Calendarios de clases con festivos y vacaciones – L/X y M/J"
+section: "info"
+permalink: "/calendarios-2025-26.html"
+---
+
+<section class="cal2">
+  <div class="container">
+    <h1>Calendario de clases 2025–2026</h1>
+    <p class="muted">Incluye festivos de Gran Canaria y los periodos de Navidad (22 dic–7 ene) y Semana Santa (30 mar–5 abr).</p>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Calendarios">
+      <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-lx" id="tab-lx">Lunes y Miércoles</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-mj" id="tab-mj">Martes y Jueves</button>
+    </div>
+
+    <!-- Panels -->
+    <div id="panel-lx" class="panel is-active" role="tabpanel" aria-labelledby="tab-lx">
+      <div class="panel__head">
+        <p>Lunes y miércoles, del <strong>8 de septiembre de 2025</strong> al <strong>19 de junio de 2026</strong>. <br><em>Nota:</em> 8 de septiembre es festivo (Ntra. Sra. del Pino), por lo que la primera clase real será el <strong>miércoles 10 de septiembre</strong>.</p>
+        <div class="legend">
+          <span><i class="key key--class"></i> Clase</span>
+          <span><i class="key key--break"></i> Vacaciones / festivo</span>
+          <span><i class="key key--today"></i> Hoy</span>
+        </div>
+      </div>
+      <div class="grid" id="grid-lx" aria-live="polite"></div>
+      <div class="side">
+        <div class="summary" id="sum-lx"></div>
+        <details class="details">
+          <summary>Fechas sin clase (L/X)</summary>
+          <ul id="nolist-lx" class="list"></ul>
+        </details>
+      </div>
+    </div>
+
+    <div id="panel-mj" class="panel" role="tabpanel" aria-labelledby="tab-mj" hidden>
+      <div class="panel__head">
+        <p>Martes y jueves, del <strong>9 de septiembre de 2025</strong> al <strong>18 de junio de 2026</strong>.</p>
+        <div class="legend">
+          <span><i class="key key--class"></i> Clase</span>
+          <span><i class="key key--break"></i> Vacaciones / festivo</span>
+          <span><i class="key key--today"></i> Hoy</span>
+        </div>
+      </div>
+      <div class="grid" id="grid-mj" aria-live="polite"></div>
+      <div class="side">
+        <div class="summary" id="sum-mj"></div>
+        <details class="details">
+          <summary>Fechas sin clase (M/J)</summary>
+          <ul id="nolist-mj" class="list"></ul>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ===== Uses your site tokens where available ===== */
+  .cal2{ --maxw: var(--maxw, 1024px); --padx: var(--padx, 20px); --navy: var(--navy, #1E3A8A); --muted: var(--muted, #6b7280); --border: #e5e7eb; --bg: #f8fafc; --class: var(--navy); --break: #ef4444; }
+  .cal2 .container{ max-width:var(--maxw); margin-inline:auto; padding:0 var(--padx); }
+  .cal2 h1{ margin: 1rem 0 .25rem; }
+  .cal2 .muted{ color: var(--muted); margin:0 0 1rem; }
+
+  /* Tabs */
+  .tabs{ display:flex; gap:.5rem; border-bottom:1px solid var(--border); margin-bottom:1rem; }
+  .tab{ appearance:none; border:1px solid var(--border); border-bottom:none; background:#fff; padding:.5rem .9rem; border-top-left-radius:.6rem; border-top-right-radius:.6rem; font-weight:600; cursor:pointer; color:#111; }
+  .tab.is-active{ background: var(--bg); color: var(--navy); }
+
+  /* Panels */
+  .panel{ background:var(--bg); border:1px solid var(--border); border-radius:.8rem; padding:1rem; }
+  .panel[hidden]{ display:none; }
+  .panel__head{ display:flex; flex-direction:column; gap:.5rem; margin-bottom:.75rem; }
+  .legend{ display:flex; gap:1rem; flex-wrap:wrap; font-size:.95rem; }
+  .key{ display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:.35rem; border:1px solid #0001; vertical-align:-2px; }
+  .key--class{ background: color-mix(in oklab, var(--class) 85%, white); }
+  .key--break{ background: color-mix(in oklab, var(--break) 85%, white); }
+  .key--today{ background: #10b981; }
+
+  .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; }
+  .month{ background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; box-shadow:0 1px 0 #00000008; }
+  .month h3{ margin:0; padding:.75rem 1rem; background:#fff; border-bottom:1px solid var(--border); font-size:1rem; }
+  .table{ width:100%; border-collapse:separate; border-spacing:0; }
+  .table th{ font-weight:600; font-size:.85rem; color:#111; padding:.5rem .3rem; text-align:center; border-bottom:1px solid var(--border); }
+  .table td{ text-align:center; padding:.35rem .25rem; height:34px; vertical-align:middle; }
+  .table td:empty{ background:#fafafa; }
+  .d{ display:inline-block; min-width:28px; line-height:28px; border-radius:6px; }
+  .d--class{ background: color-mix(in oklab, var(--class) 12%, white); border:1px solid color-mix(in oklab, var(--class) 30%, #0000); }
+  .d--break{ background: color-mix(in oklab, var(--break) 14%, white); border:1px solid color-mix(in oklab, var(--break) 30%, #0000); }
+  .d--today{ outline:2px solid #10b981; }
+
+  .side{ margin-top:.5rem; }
+  .summary{ margin:.5rem 0; font-weight:600; }
+  .details{ border:1px solid var(--border); border-radius:10px; padding:.75rem 1rem; background:#fff; }
+  .list{ margin:.5rem 0 0; padding-left:1rem; }
+
+  @media (prefers-color-scheme: dark){
+    .panel{ background:#0f1620; border-color:#111827; }
+    .month{ background:#0b0f14; border-color:#111827; }
+    .month h3{ background:#0f1620; border-bottom-color:#111827; color:#f3f4f6; }
+    .table th{ color:#e5e7eb; }
+    .details{ background:#0b0f14; border-color:#111827; color:#e5e7eb; }
+    .tab{ background:#0b0f14; color:#e5e7eb; border-color:#111827; }
+    .tab.is-active{ background:#0f1620; color:#93c5fd; border-color:#111827; }
+    .muted{ color:#9ca3af; }
+  }
+</style>
+
+<script>
+(function(){
+  // ===== Utilities =====
+  const d2s = d => d.toISOString().slice(0,10);
+  const isoDow = d => (d.getDay()===0?7:d.getDay()); // 1..7 Mon..Sun
+  const makeDate = (s)=>{ const [y,m,dd]=s.split('-').map(Number); return new Date(y, m-1, dd); };
+  const inRange = (d, a, b)=> d>=a && d<=b;
+
+  function* monthsBetween(a,b){
+    let y=a.getFullYear(), m=a.getMonth();
+    while(y<b.getFullYear() || (y===b.getFullYear() && m<=b.getMonth())){
+      yield { y, m };
+      m++; if(m>11){ m=0; y++; }
+    }
+  }
+
+  function renderCalendar(cfg){
+    const {start, end, weekdays, singles, ranges, gridId, sumId, listId} = cfg;
+    const grid = document.getElementById(gridId);
+    grid.innerHTML = '';
+    let count = 0; const todayS = d2s(new Date());
+
+    const isNoClass = (d)=>{
+      const s = d2s(d);
+      if(singles.includes(s)) return true;
+      for(const [from,to] of ranges){ if(inRange(d, makeDate(from), makeDate(to))) return true; }
+      return false;
+    };
+
+    for(const {y,m} of monthsBetween(start,end)){
+      const first = new Date(y,m,1), last = new Date(y,m+1,0);
+      const month = document.createElement('section'); month.className='month';
+      const title = document.createElement('h3'); title.textContent = first.toLocaleDateString('es-ES', { month:'long', year:'numeric' }); month.appendChild(title);
+
+      const tbl = document.createElement('table'); tbl.className='table';
+      const thead = document.createElement('thead'); const hr=document.createElement('tr');
+      ['L','M','X','J','V','S','D'].forEach(d=>{ const th=document.createElement('th'); th.textContent=d; hr.appendChild(th); });
+      thead.appendChild(hr); tbl.appendChild(thead);
+      const tbody = document.createElement('tbody');
+
+      let cursor = new Date(first);
+      let lead = isoDow(cursor)-1;
+      let tr = document.createElement('tr');
+      for(let i=0;i<lead;i++) tr.appendChild(document.createElement('td'));
+
+      while(cursor<=last){
+        const td=document.createElement('td');
+        const span=document.createElement('span'); span.className='d'; span.textContent=cursor.getDate();
+        const dow = isoDow(cursor), within = cursor>=start && cursor<=end;
+        const isClass = within && weekdays.includes(dow) && !isNoClass(cursor);
+        const isBreak = within && weekdays.includes(dow) && isNoClass(cursor);
+        if(isClass){ span.classList.add('d--class'); count++; }
+        if(isBreak){ span.classList.add('d--break'); }
+        if(d2s(cursor)===todayS){ span.classList.add('d--today'); }
+        td.appendChild(span); tr.appendChild(td);
+        if(isoDow(cursor)===7){ tbody.appendChild(tr); tr=document.createElement('tr'); }
+        cursor = new Date(cursor.getFullYear(), cursor.getMonth(), cursor.getDate()+1);
+      }
+      if(isoDow(last)!==7){ for(let i=isoDow(last); i<7; i++){ tr.appendChild(document.createElement('td')); } tbody.appendChild(tr); }
+      tbl.appendChild(tbody); month.appendChild(tbl); grid.appendChild(month);
+    }
+
+    document.getElementById(sumId).textContent = `Total de clases: ${count}`;
+
+    // build no-class list only for relevant weekdays
+    const list = document.getElementById(listId); list.innerHTML='';
+    const expandRange = (from,to)=>{ const A=makeDate(from), B=makeDate(to), out=[]; let d=A; while(d<=B){ if(weekdays.includes(isoDow(d))) out.push(new Date(d)); d=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1);} return out; };
+
+    singles.map(makeDate).forEach(d=>{ if(weekdays.includes(isoDow(d))){ const li=document.createElement('li'); li.textContent=d.toLocaleDateString('es-ES',{weekday:'long',year:'numeric',month:'long',day:'numeric'}); list.appendChild(li);} });
+    ranges.forEach(([f,t])=> expandRange(f,t).forEach(d=>{ const li=document.createElement('li'); li.textContent=d.toLocaleDateString('es-ES',{weekday:'long',year:'numeric',month:'long',day:'numeric'}); list.appendChild(li); }));
+  }
+
+  // ===== Configs (adjust singles if needed) =====
+  const NAVIDAD = ['2025-12-22','2026-01-07'];
+  const SEMANA_SANTA = ['2026-03-30','2026-04-05'];
+
+  // L/X
+  renderCalendar({
+    start: new Date(2025,8,8),
+    end:   new Date(2026,5,19),
+    weekdays: [1,3], // Mon, Wed
+    singles: ['2025-09-08','2025-12-08','2026-02-02'], // Pino, Inmaculada, Candelaria
+    ranges: [NAVIDAD, SEMANA_SANTA],
+    gridId:'grid-lx', sumId:'sum-lx', listId:'nolist-lx'
+  });
+
+  // M/J (note: the singles listed above are lunes, so no impacto directo; mantenemos por consistencia)
+  renderCalendar({
+    start: new Date(2025,8,9),
+    end:   new Date(2026,5,18),
+    weekdays: [2,4], // Tue, Thu
+    singles: ['2025-09-08','2025-12-08','2026-02-02'],
+    ranges: [NAVIDAD, SEMANA_SANTA],
+    gridId:'grid-mj', sumId:'sum-mj', listId:'nolist-mj'
+  });
+
+  // ===== Tabs behaviour =====
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const panels = { 'tab-lx': document.getElementById('panel-lx'), 'tab-mj': document.getElementById('panel-mj') };
+  tabs.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      tabs.forEach(b=>b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      Object.values(panels).forEach(p=>{ p.hidden=true; p.classList.remove('is-active'); });
+      panels[btn.id].hidden=false; panels[btn.id].classList.add('is-active');
+      tabs.forEach(b=>{ b.setAttribute('aria-selected', b===btn ? 'true' : 'false'); });
+    });
+  });
+})();
+</script>
