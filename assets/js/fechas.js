@@ -23,14 +23,23 @@
   const TERMS = [TERM1,TERM2,TERM3].map(([a,b])=>[makeDate(a), makeDate(b)]);
   const inAnyTerm = d => TERMS.some(([a,b])=> inRange(d,a,b));
 
-  // Build sets
-  const closed = new Set();
-  CIERRES_SUELTOS.forEach(s=>closed.add(s));
-  CIERRES_RANGOS.forEach(([f,t])=>{
-    let d=makeDate(f), B=makeDate(t);
-    while(d<=B){ closed.add(d2s(d)); d=new Date(d.getFullYear(), d.getMonth(), d.getDate()+1); }
-  });
-  const hitos = new Set([TERM1[0],TERM1[1],TERM2[0],TERM2[1],TERM3[0],TERM3[1]]);
+// Build sets
+const closed = new Set();
+CIERRES_SUELTOS.forEach(s=>{
+  const d = makeDate(s);
+  if(isoDow(d)!==7) closed.add(s);  // exclude Sundays
+});
+CIERRES_RANGOS.forEach(([f,t])=>{
+  let d=makeDate(f), B=makeDate(t);
+  while(d<=B){
+    if(isoDow(d)!==7) closed.add(d2s(d));  // exclude Sundays
+    d=new Date(d.getFullYear(), d.getMonth(), d.getDate()+1);
+  }
+});
+
+// Term start/finish markers (hitos)
+const rawHitos = [TERM1[0],TERM1[1],TERM2[0],TERM2[1],TERM3[0],TERM3[1]];
+const hitos = new Set(rawHitos.filter(s => isoDow(makeDate(s))!==7)););
 
   // ===== Banner (si hoy es cierre o fuera de periodo lectivo) =====
   (function banner(){
