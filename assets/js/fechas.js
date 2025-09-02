@@ -3,19 +3,24 @@
   // If a boundary falls on Sunday, we will:
   //  - START: move to Monday (+1 day)
   //  - END:   move to Friday (-2 days)
-  const TERM1 = ['2025-09-09', '2025-12-21']; // end is a Sunday
+  const TERM1 = ['2025-09-09', '2025-12-23']; // end is a Tuesday
   const TERM2 = ['2026-01-08', '2026-03-29']; // end is a Sunday
   const TERM3 = ['2026-04-06', '2026-06-19'];
 
   // ===== Cierres (sin clase) — 8 Sep NO es cierre =====
-  const CIERRES_RANGOS = [
-    ['2025-12-22','2026-01-07'], // Navidad (2 semanas)
-    ['2026-03-30','2026-04-05'], // Semana Santa (1 semana)
-  ];
-  const CIERRES_SUELTOS = [
-    '2025-12-08', // Inmaculada (nacional)
-    '2026-02-02', // Candelaria (Canarias)
-  ];
+// ===== Cierres (sin clase) — 8 Sep NO es cierre =====
+const CIERRES_RANGOS = [
+  ['2025-12-24','2026-01-07'], // Navidad (2 semanas)
+  ['2026-03-30','2026-04-05'], // Semana Santa (1 semana)
+];
+
+const CIERRES_SUELTOS = [
+  '2025-09-08', // Ntra. Sra. del Pino (insular Gran Canaria)
+  '2025-12-08', // Inmaculada Concepción (nacional)
+  '2026-01-20', // San Sebastián (local Agüimes)
+  '2026-02-19', // Jueves de Carnaval (local Agüimes)
+  '2026-05-01', // Día del Trabajo (nacional)
+];
 
   // ===== Helpers =====
   const makeDate = s => { const [y,m,d]=s.split('-').map(Number); return new Date(y, m-1, d); };
