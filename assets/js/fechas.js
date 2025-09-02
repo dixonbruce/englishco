@@ -1,3 +1,5 @@
+the actual output calendar shows us closed on 9 not 8 sept
+
 (function(){
   // ===== Trimestres (inicio / fin) =====
   // If a boundary falls on Sunday, we will:
