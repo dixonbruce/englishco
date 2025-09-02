@@ -26,7 +26,12 @@ const CIERRES_SUELTOS = [
 
   // ===== Helpers =====
   const makeDate = s => { const [y,m,d]=s.split('-').map(Number); return new Date(y, m-1, d); };
-  const d2s = d => d.toISOString().slice(0,10);
+  const d2s = d => {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+};
   const isoDow = d => (d.getDay()===0 ? 7 : d.getDay()); // 1..7 Mon..Sun
   const inRange = (d,a,b)=> d>=a && d<=b;
 
