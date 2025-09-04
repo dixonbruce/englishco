@@ -1,3 +1,6 @@
+Here’s your updated HTML with the “Notas sobre las cuotas” always visible and the new 10% annual prepayment discount included. I also added a short line noting there are no books this year (can remove if you don’t want it here).
+
+```html
 ---
 layout: default
 title: "English Co – Cuotas (Infantil y Primaria)"
@@ -23,7 +26,15 @@ permalink: "/condiciones.html"
     <h2>Cuotas mensuales (curso 2025–2026)</h2>
 
     <div class="note">
-      Las cuotas incluyen <strong>5% de descuento</strong> en la cuota mensual para familias con dos o más hermanos inscritos.
+      Este curso <strong>no usaremos libros</strong>; solo hay que abonar la cuota.
+    </div>
+
+    <div class="note">
+      Descuento familiar: <strong>5% de descuento</strong> en la cuota mensual para familias con dos o más hermanos inscritos.
+    </div>
+
+    <div class="note">
+      Pago anual por adelantado (opcional): <strong>10% de descuento</strong> sobre la cuota anual si se realiza el pago completo al inicio del curso.
     </div>
 
     <div class="table-wrap">
@@ -51,15 +62,19 @@ permalink: "/condiciones.html"
       </table>
     </div>
 
-    <details class="small">
-      <summary>Notas sobre las cuotas</summary>
+    <!-- Notas sobre las cuotas (siempre visible) -->
+    <div class="small" id="notas-cuotas">
+      <h3>Notas sobre las cuotas</h3>
       <ol>
         <li>Solicitamos que el pago se realice <strong>antes del día 7</strong> de cada mes.</li>
         <li>Medios de pago: <strong>transferencia bancaria</strong> o <strong>Bizum</strong>.</li>
         <li>La tarifa mensual se calcula sobre el total del curso, incluyendo <strong>2 semanas de Navidad</strong>, <strong>1 semana de Semana Santa</strong> y <strong>festivos</strong>. El precio/hora para un total de <strong>71 clases</strong> es <strong>7,60€</strong>.</li>
         <li>Para mantener <strong>grupos reducidos</strong>, no es posible descontar clases por ausencia del alumnado.</li>
       </ol>
-    </details>
+      <p class="muted" style="margin-top:.5rem;">
+        <strong>Pago anual por adelantado:</strong> si prefieres, puedes abonar el curso completo al inicio y recibirás un <strong>10% de descuento</strong> sobre la cuota anual.
+      </p>
+    </div>
 
     <hr/>
 
@@ -129,3 +144,6 @@ permalink: "/condiciones.html"
 
 <!-- Load calendar JS (put the file in /assets/js/fechas.js or similar) -->
 <script src="/assets/js/fechas.js" defer></script>
+```
+
+Want me to tweak any phrasing (e.g., “no usamos libros” → “no habrá libro”)?
