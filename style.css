@@ -566,3 +566,43 @@ table.cal td{text-align:center;padding:.25rem .2rem;height:32px}
   .m h4{background:#0f1620;border-bottom-color:#111827;color:#e5e7eb}
   table.cal th{color:#e5e7eb}
 }
+
+/* Adultos Schedule Table */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.schedule-table thead {
+  background: #0a2342; /* navy */
+  color: #fff;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.schedule-table tbody tr:hover {
+  background: #ffecec; /* soft coral hover */
+  transition: background 0.2s ease-in-out;
+}
+
+.schedule-table th {
+  font-weight: 600;
+}
+
+.schedule-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  background: #f3f6fa;
+}
+
