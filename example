@@ -1,0 +1,661 @@
+---
+layout: default
+title: "EnglishCO – Qué estamos trabajando"
+description: "Consulta los contenidos y objetivos que estamos trabajando esta semana en EnglishCO."
+section: "academia"
+---
+
+<div class="container">
+  <!-- Hero -->
+  <section class="hero-light">
+    <div class="hero-inner">
+      <h1>Qué estamos trabajando</h1>
+      <p>
+        Aquí puedes ver, por grupo, los <strong>contenidos y objetivos</strong> que estamos enseñando y practicando en clase
+        (vocabulario, gramática, writing y speaking). Actualizado por el profesorado.
+      </p>
+
+      <div class="cta-row">
+        <a class="cta-button cta-button--outline" href="#grupos">Ver grupos</a>
+        <a class="cta-button" href="#semana">Esta semana</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Week summary band -->
+  <section class="teach-band" id="semana">
+    <div class="teach-band__inner">
+      <div class="teach-band__left">
+        <h2>Resumen semanal</h2>
+        <p class="muted">
+          Semana: <strong id="weekLabel">—</strong> · Última actualización: <strong id="lastUpdated">—</strong>
+        </p>
+      </div>
+
+      <div class="teach-band__right">
+        <div class="pill-row">
+          <span class="pill pill--grey">Introducido</span>
+          <span class="pill pill--amber">Practicando</span>
+          <span class="pill pill--green">Dominado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters" aria-label="Filtros">
+    <div class="filters__grid">
+      <div class="filters__item">
+        <label for="levelFilter">Nivel</label>
+        <select id="levelFilter">
+          <option value="all">Todos</option>
+          <option value="infantil">Infantil</option>
+          <option value="primaria">Primaria</option>
+          <option value="secundaria">Secundaria</option>
+          <option value="adultos">Adultos</option>
+        </select>
+      </div>
+
+      <div class="filters__item">
+        <label for="groupFilter">Grupo</label>
+        <select id="groupFilter">
+          <option value="all">Todos</option>
+        </select>
+      </div>
+
+      <div class="filters__item">
+        <label for="typeFilter">Tipo</label>
+        <select id="typeFilter">
+          <option value="all">Todo</option>
+          <option value="vocab">Vocabulario</option>
+          <option value="grammar">Gramática</option>
+          <option value="writing">Writing</option>
+          <option value="speaking">Speaking</option>
+          <option value="listening">Listening</option>
+          <option value="reading">Reading</option>
+        </select>
+      </div>
+
+      <div class="filters__item">
+        <label for="searchBox">Buscar</label>
+        <input id="searchBox" type="search" placeholder="Ej.: past simple, hotel, email..." />
+      </div>
+    </div>
+  </section>
+
+  <!-- Groups -->
+  <section class="group-list" id="grupos">
+    <h2>Grupos</h2>
+    <p class="muted">
+      Selecciona un grupo para ver lo que estamos trabajando. (Estos datos son de ejemplo para el mockup.)
+    </p>
+
+    <div class="cards-grid" id="groupCards"></div>
+  </section>
+
+  <!-- Selected group detail -->
+  <section class="group-detail" id="groupDetail" hidden>
+    <div class="group-detail__head">
+      <div>
+        <h2 id="groupTitle">—</h2>
+        <p class="muted" id="groupMeta">—</p>
+      </div>
+
+      <div class="group-detail__actions">
+        <button class="btn btn--ghost" id="closeGroup" type="button">Cerrar</button>
+        <a class="btn btn--outline" href="#grupos">Volver a grupos</a>
+      </div>
+    </div>
+
+    <!-- Lesson feed -->
+    <div class="split split--tight">
+      <div class="split__text">
+        <h3>Últimas clases</h3>
+        <div class="timeline" id="lessonFeed"></div>
+      </div>
+
+      <div class="split__text">
+        <h3>Objetivos actuales</h3>
+        <p class="muted">Lo más importante que estamos trabajando ahora mismo en este grupo.</p>
+        <div class="objective-grid" id="objectiveGrid"></div>
+      </div>
+    </div>
+
+    <!-- Table view -->
+    <div class="table-wrap">
+      <h3>Tabla de contenidos</h3>
+      <p class="muted">Vista tipo “portfolio” a nivel de grupo (no por alumno) para tenerlo claro de un vistazo.</p>
+
+      <div class="table-scroll" role="region" aria-label="Tabla de contenidos" tabindex="0">
+        <table class="teach-table">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Objetivo</th>
+              <th>Ejemplos</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="teachTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="cta-band">
+    <div class="cta-band__inner">
+      <h2>¿Quieres más detalle?</h2>
+      <p>Si eres familia, podemos compartir el progreso individual del alumno/a (portfolio) cuando esté listo.</p>
+      <div class="cta-row">
+        <a class="cta-button cta-button--wa" href="https://wa.me/34646555552" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="cta-button cta-button--outline" href="tel:+34646555552">Llamar: 646 555 552</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  /* Page-specific minimal styles (doesn't touch header/footer) */
+
+  .muted { opacity: .75; }
+
+  .teach-band {
+    margin-top: 18px;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 16px;
+    padding: 18px;
+    background: rgba(0,0,0,.02);
+  }
+  .teach-band__inner {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .pill-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: .9rem;
+    border: 1px solid rgba(0,0,0,.08);
+    background: #fff;
+    white-space: nowrap;
+  }
+  .pill--grey::before,
+  .pill--amber::before,
+  .pill--green::before {
+    content: "";
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  .pill--grey::before { background: rgba(0,0,0,.25); }
+  .pill--amber::before { background: #f0b429; }
+  .pill--green::before { background: #2f855a; }
+
+  .filters { margin-top: 18px; }
+  .filters__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    align-items: end;
+  }
+  .filters__item label { display: block; font-size: .9rem; margin-bottom: 6px; opacity: .8; }
+  .filters__item select,
+  .filters__item input {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: #fff;
+    outline: none;
+  }
+  .filters__item input::placeholder { opacity: .6; }
+
+  .group-list { margin-top: 26px; }
+  .cards-grid {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .card {
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 16px;
+    padding: 14px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,.04);
+  }
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .card .meta { margin: 0 0 12px; opacity: .75; font-size: .92rem; }
+  .card .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .chip {
+    font-size: .85rem;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(0,0,0,.04);
+    border: 1px solid rgba(0,0,0,.06);
+  }
+  .card .card-actions { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+  .card .link { text-decoration: none; font-weight: 600; }
+  .card button {
+    border: 1px solid rgba(0,0,0,.12);
+    background: #fff;
+    padding: 8px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .group-detail { margin-top: 26px; }
+  .group-detail__head {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,.10);
+    padding-top: 22px;
+  }
+  .group-detail__actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn--ghost { background: rgba(0,0,0,.03); }
+  .btn--outline { background: #fff; }
+
+  .split--tight { margin-top: 16px; }
+
+  .timeline { display: grid; gap: 10px; margin-top: 10px; }
+  .timeline-item {
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 14px;
+    padding: 12px;
+    background: #fff;
+  }
+  .timeline-item .top {
+    display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .timeline-item .date { font-weight: 700; }
+  .timeline-item .teacher { opacity: .75; }
+  .timeline-item ul { margin: 8px 0 0 18px; }
+  .timeline-item li { margin: 4px 0; }
+
+  .objective-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .objective {
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 16px;
+    padding: 12px;
+    background: #fff;
+  }
+  .objective .row {
+    display: flex; justify-content: space-between; gap: 10px; align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: .85rem;
+    border: 1px solid rgba(0,0,0,.10);
+    background: #fff;
+    white-space: nowrap;
+  }
+  .badge--grey { opacity: .75; }
+  .badge--amber { border-color: rgba(240,180,41,.45); }
+  .badge--green { border-color: rgba(47,133,90,.45); }
+
+  .table-wrap { margin-top: 22px; }
+  .table-scroll {
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 16px;
+    overflow: auto;
+    background: #fff;
+  }
+  .teach-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 780px;
+  }
+  .teach-table th, .teach-table td {
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    vertical-align: top;
+    text-align: left;
+  }
+  .teach-table thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.10);
+    z-index: 1;
+  }
+  .status-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot--grey { background: rgba(0,0,0,.25); }
+  .dot--amber { background: #f0b429; }
+  .dot--green { background: #2f855a; }
+
+  @media (max-width: 980px) {
+    .filters__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .objective-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  // Mock data (replace later with your API fetch)
+  const DATA = {
+    meta: {
+      weekLabel: "3–7 febrero 2026",
+      lastUpdated: "jueves, 5 febrero 2026"
+    },
+    groups: [
+      {
+        id: "inf-3-5",
+        level: "infantil",
+        name: "Infantil (3–5)",
+        schedule: "L/M 17:00",
+        teacher: "Teacher A",
+        focus: ["Songs", "Movement", "Storytime"],
+        items: [
+          { type: "vocab", objective: "Colours (red/blue/green)", examples: "It’s red. / What colour is it?", status: "introducido", date: "03/02" },
+          { type: "speaking", objective: "Classroom routine phrases", examples: "Can I go to the toilet? / I’m finished!", status: "practicando", date: "04/02" },
+          { type: "listening", objective: "Follow simple instructions", examples: "Stand up / Sit down / Touch your nose", status: "practicando", date: "05/02" }
+        ],
+        lessons: [
+          { date: "05/02", teacher: "Teacher A", notes: "Songs + colours + routine.", taught: ["Colours (red/blue/green)", "Classroom routine phrases"] },
+          { date: "03/02", teacher: "Teacher A", notes: "Storytime + instructions.", taught: ["Follow simple instructions"] }
+        ]
+      },
+      {
+        id: "pri-6-8",
+        level: "primaria",
+        name: "Primaria (6–8)",
+        schedule: "M/J 16:00",
+        teacher: "Teacher B",
+        focus: ["Speaking games", "Vocabulary building", "Clear correction"],
+        items: [
+          { type: "grammar", objective: "Present simple (he/she)", examples: "He plays. / She doesn’t like…", status: "practicando", date: "04/02" },
+          { type: "vocab", objective: "Daily routines", examples: "wake up, have breakfast, go to school", status: "introducido", date: "04/02" },
+          { type: "speaking", objective: "Ask & answer about routines", examples: "What time do you…? / I… at…", status: "practicando", date: "06/02" }
+        ],
+        lessons: [
+          { date: "06/02", teacher: "Teacher B", notes: "Speaking chain practice + correction.", taught: ["Ask & answer about routines"] },
+          { date: "04/02", teacher: "Teacher B", notes: "New routine vocab + present simple he/she.", taught: ["Daily routines", "Present simple (he/she)"] }
+        ]
+      },
+      {
+        id: "sec-b1",
+        level: "secundaria",
+        name: "B1 Teens",
+        schedule: "M/J 18:00",
+        teacher: "Mark",
+        focus: ["Exam skills", "Speaking confidence", "Useful grammar"],
+        items: [
+          { type: "grammar", objective: "Past simple vs present perfect", examples: "I went… / I’ve been…", status: "practicando", date: "03/02" },
+          { type: "writing", objective: "Writing an informal email", examples: "Hi…, Thanks for…, Looking forward to…", status: "introducido", date: "05/02" },
+          { type: "speaking", objective: "Photo description (B1)", examples: "In the foreground… / It looks like…", status: "practicando", date: "06/02" },
+          { type: "vocab", objective: "Travel problems", examples: "delay, lost luggage, refund, complain", status: "dominando", date: "06/02" }
+        ],
+        lessons: [
+          { date: "06/02", teacher: "Mark", notes: "Speaking: photo + travel problems.", taught: ["Photo description (B1)", "Travel problems"] },
+          { date: "05/02", teacher: "Mark", notes: "Writing: informal email structure.", taught: ["Writing an informal email"] },
+          { date: "03/02", teacher: "Mark", notes: "Grammar: past vs present perfect.", taught: ["Past simple vs present perfect"] }
+        ]
+      }
+    ]
+  };
+
+  const els = {
+    weekLabel: document.getElementById("weekLabel"),
+    lastUpdated: document.getElementById("lastUpdated"),
+    levelFilter: document.getElementById("levelFilter"),
+    groupFilter: document.getElementById("groupFilter"),
+    typeFilter: document.getElementById("typeFilter"),
+    searchBox: document.getElementById("searchBox"),
+    groupCards: document.getElementById("groupCards"),
+    groupDetail: document.getElementById("groupDetail"),
+    groupTitle: document.getElementById("groupTitle"),
+    groupMeta: document.getElementById("groupMeta"),
+    lessonFeed: document.getElementById("lessonFeed"),
+    objectiveGrid: document.getElementById("objectiveGrid"),
+    teachTableBody: document.getElementById("teachTableBody"),
+    closeGroup: document.getElementById("closeGroup")
+  };
+
+  const STATUS = {
+    "introducido": { label: "Introducido", dot: "dot--grey", badge: "badge--grey" },
+    "practicando": { label: "Practicando", dot: "dot--amber", badge: "badge--amber" },
+    "dominando": { label: "Dominado", dot: "dot--green", badge: "badge--green" }
+  };
+
+  function typeLabel(type) {
+    return {
+      vocab: "Vocabulario",
+      grammar: "Gramática",
+      writing: "Writing",
+      speaking: "Speaking",
+      listening: "Listening",
+      reading: "Reading"
+    }[type] || type;
+  }
+
+  function escapeHtml(s) {
+    return (s || "").replace(/[&<>"']/g, c => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[c]));
+  }
+
+  function currentFilters() {
+    return {
+      level: els.levelFilter.value,
+      group: els.groupFilter.value,
+      type: els.typeFilter.value,
+      q: (els.searchBox.value || "").trim().toLowerCase()
+    };
+  }
+
+  function filteredGroups() {
+    const f = currentFilters();
+    return DATA.groups.filter(g => {
+      if (f.level !== "all" && g.level !== f.level) return false;
+      if (f.group !== "all" && g.id !== f.group) return false;
+      if (!f.q && f.type === "all") return true;
+
+      const hay = (g.name + " " + g.schedule + " " + g.teacher).toLowerCase();
+      const items = g.items || [];
+      const matchesQ = !f.q ? true : (
+        hay.includes(f.q) ||
+        items.some(it =>
+          (it.objective || "").toLowerCase().includes(f.q) ||
+          (it.examples || "").toLowerCase().includes(f.q)
+        )
+      );
+
+      const matchesType = (f.type === "all") ? true : items.some(it => it.type === f.type);
+
+      return matchesQ && matchesType;
+    });
+  }
+
+  function renderGroupCards() {
+    const groups = filteredGroups();
+    els.groupCards.innerHTML = groups.map(g => `
+      <div class="card">
+        <h3>${escapeHtml(g.name)}</h3>
+        <p class="meta">${escapeHtml(g.schedule)} · ${escapeHtml(g.teacher)}</p>
+
+        <div class="chips">
+          ${(g.focus || []).slice(0,3).map(x => `<span class="chip">${escapeHtml(x)}</span>`).join("")}
+        </div>
+
+        <div class="card-actions">
+          <a class="link" href="#groupDetail" data-open="${escapeHtml(g.id)}">Ver detalle →</a>
+          <button type="button" data-open="${escapeHtml(g.id)}">Abrir</button>
+        </div>
+      </div>
+    `).join("");
+
+    // populate groupFilter options once (or refresh)
+    const allGroups = DATA.groups;
+    const opts = ["<option value='all'>Todos</option>"].concat(
+      allGroups
+        .filter(g => (els.levelFilter.value === "all" ? true : g.level === els.levelFilter.value))
+        .map(g => `<option value="${escapeHtml(g.id)}">${escapeHtml(g.name)}</option>`)
+    );
+    els.groupFilter.innerHTML = opts.join("");
+  }
+
+  function renderGroupDetail(groupId) {
+    const g = DATA.groups.find(x => x.id === groupId);
+    if (!g) return;
+
+    els.groupTitle.textContent = g.name;
+    els.groupMeta.textContent = `${g.schedule} · Profesor/a: ${g.teacher}`;
+
+    // lesson feed
+    els.lessonFeed.innerHTML = (g.lessons || []).map(lsn => `
+      <div class="timeline-item">
+        <div class="top">
+          <span class="date">${escapeHtml(lsn.date)}</span>
+          <span class="teacher">${escapeHtml(lsn.teacher)}</span>
+        </div>
+        <div class="muted">${escapeHtml(lsn.notes || "")}</div>
+        <ul>
+          ${(lsn.taught || []).map(x => `<li>${escapeHtml(x)}</li>`).join("")}
+        </ul>
+      </div>
+    `).join("");
+
+    // objective cards (top priorities)
+    const top = (g.items || []).slice(0, 6);
+    els.objectiveGrid.innerHTML = top.map(it => {
+      const st = STATUS[it.status] || STATUS.introducido;
+      return `
+        <div class="objective">
+          <div class="row">
+            <strong>${escapeHtml(it.objective)}</strong>
+            <span class="badge ${st.badge}">${st.label}</span>
+          </div>
+          <div class="muted"><strong>${typeLabel(it.type)}:</strong> ${escapeHtml(it.examples || "—")}</div>
+        </div>
+      `;
+    }).join("");
+
+    // table
+    const f = currentFilters();
+    const items = (g.items || []).filter(it => {
+      if (f.type !== "all" && it.type !== f.type) return false;
+      if (f.q) {
+        const hay = ((it.objective || "") + " " + (it.examples || "")).toLowerCase();
+        if (!hay.includes(f.q)) return false;
+      }
+      return true;
+    });
+
+    els.teachTableBody.innerHTML = items.map(it => {
+      const st = STATUS[it.status] || STATUS.introducido;
+      return `
+        <tr>
+          <td>${escapeHtml(typeLabel(it.type))}</td>
+          <td><strong>${escapeHtml(it.objective)}</strong></td>
+          <td class="muted">${escapeHtml(it.examples || "—")}</td>
+          <td>
+            <span class="status-dot">
+              <span class="dot ${st.dot}" aria-hidden="true"></span>
+              ${st.label}
+            </span>
+          </td>
+          <td class="muted">${escapeHtml(it.date || "—")}</td>
+        </tr>
+      `;
+    }).join("");
+
+    els.groupDetail.hidden = false;
+  }
+
+  function wireEvents() {
+    document.addEventListener("click", (e) => {
+      const open = e.target.closest("[data-open]");
+      if (open) {
+        e.preventDefault();
+        renderGroupDetail(open.getAttribute("data-open"));
+        location.hash = "#groupDetail";
+        return;
+      }
+    });
+
+    els.closeGroup.addEventListener("click", () => {
+      els.groupDetail.hidden = true;
+      location.hash = "#grupos";
+    });
+
+    [els.levelFilter, els.groupFilter, els.typeFilter].forEach(el => {
+      el.addEventListener("change", () => {
+        // If a specific group is selected, open it automatically
+        renderGroupCards();
+        const f = currentFilters();
+        if (f.group !== "all") renderGroupDetail(f.group);
+        else if (!els.groupDetail.hidden) {
+          // If detail is open, keep it updated
+          const current = DATA.groups.find(g => g.name === els.groupTitle.textContent);
+          if (current) renderGroupDetail(current.id);
+        } 
+      });
+    });
+
+    els.searchBox.addEventListener("input", () => {
+      renderGroupCards();
+      if (!els.groupDetail.hidden) {
+        const current = DATA.groups.find(g => g.name === els.groupTitle.textContent);
+        if (current) renderGroupDetail(current.id);
+      }
+    });
+  }
+
+  // init
+  els.weekLabel.textContent = DATA.meta.weekLabel;
+  els.lastUpdated.textContent = DATA.meta.lastUpdated;
+
+  renderGroupCards();
+  wireEvents();
+</script>
