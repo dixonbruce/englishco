@@ -1,0 +1,67 @@
+---
+layout: default
+title: "English Co – Speaking Classes"
+description: "Speaking Classes en Playa de Arinaga. Inglés para Primaria, Secundaria y Adultos: 2 o 4 días por semana, mañanas o tardes."
+section: "cursos"
+---
+
+<main id="main-content">
+
+  <section class="hero-light">
+    <div class="container hero-inner">
+      <h1>Speaking Classes</h1>
+      <p>
+        Clases de speaking en <strong>Playa de Arinaga</strong> para
+        <strong>Primaria, Secundaria y Adultos</strong>.
+      </p>
+      <p>
+        Elige <strong>2 o 4 días por semana</strong>, por la mañana o por la tarde.
+        En clase trabajamos <strong>speaking + gramática práctica</strong>:
+        conversación guiada, corrección activa, pronunciación y vocabulario útil
+        para hablar inglés con más seguridad.
+      </p>
+      <img src="/images/adultos.jpg" alt="Speaking classes en Playa de Arinaga" class="classroom-img" />
+    </div>
+  </section>
+
+  <section class="container" aria-label="Opciones">
+    <h2>Opciones</h2>
+    <ul>
+      <li><strong>2 días por semana:</strong> 50€/mes</li>
+      <li><strong>4 días por semana:</strong> 100€/mes</li>
+      <li><strong>Horarios:</strong> mañanas o tardes, según demanda y nivel</li>
+      <li><strong>Grupos:</strong> pequeños y organizados por edad/nivel</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-label="Para quién">
+    <h2>Para quién</h2>
+    <ul>
+      <li><strong>Primaria:</strong> aprender jugando, vocabulario y speaking básico.</li>
+      <li><strong>Secundaria:</strong> conversación, confianza y apoyo escolar.</li>
+      <li><strong>Adultos:</strong> inglés práctico para trabajo, viajes y vida diaria.</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-label="Método">
+    <h2>Método</h2>
+    <ul>
+      <li><strong>Speaking todos los días:</strong> práctica oral guiada desde el primer día.</li>
+      <li><strong>Gramática útil:</strong> estructuras necesarias para hablar mejor.</li>
+      <li><strong>Corrección activa:</strong> feedback claro para ganar fluidez y precisión.</li>
+      <li><strong>Vocabulario práctico:</strong> situaciones reales, preguntas y respuestas útiles.</li>
+    </ul>
+  </section>
+
+  <section class="container">
+    <p class="cta-row">
+      <a class="cta-button" href="https://wa.me/34646555552" target="_blank" rel="noopener">
+        Reservar plaza por WhatsApp
+      </a>
+      <a class="cta-button cta-button--outline" href="tel:+34646555552">
+        Llamar: 646 555 552
+      </a>
+    </p>
+  </section>
+
+</main>
