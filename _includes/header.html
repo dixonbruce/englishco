@@ -59,18 +59,18 @@
 
       <ul class="submenu">
         <li><a href="{{ '/infantil'  | relative_url }}"
-               class="{% if path contains '/infantil' %}active{% endif %}"
+               class="{% if path contains '/infantil/' %}active{% endif %}"
                aria-current="{% if path contains '/infantil' %}page{% endif %}">Infantil</a></li>
 
-        <li><a href="{{ '/primaria'  | relative_url }}"
+        <li><a href="{{ '/primaria/'  | relative_url }}"
                class="{% if path contains '/primaria' %}active{% endif %}"
                aria-current="{% if path contains '/primaria' %}page{% endif %}">Primaria</a></li>
 
-        <li><a href="{{ '/secundaria'| relative_url }}"
+        <li><a href="{{ '/secundaria/'| relative_url }}"
                class="{% if path contains '/secundaria' %}active{% endif %}"
                aria-current="{% if path contains '/secundaria' %}page{% endif %}">Secundaria</a></li>
 
-        <li><a href="{{ '/adultos'   | relative_url }}"
+        <li><a href="{{ '/adultos/'   | relative_url }}"
                class="{% if path contains '/adultos' %}active{% endif %}"
                aria-current="{% if path contains '/adultos' %}page{% endif %}">Adultos</a></li>
       </ul>
