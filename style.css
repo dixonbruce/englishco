@@ -1432,3 +1432,25 @@ table.cal td {
     display: none;
   }
 }
+
+
+
+/* Final tightening of course sections */
+
+.split {
+  padding-top: clamp(1rem, 2.5vw, 1.8rem);
+  padding-bottom: clamp(1rem, 2.5vw, 1.8rem);
+  align-items: center;
+}
+
+.split + .split {
+  padding-top: clamp(0.8rem, 2vw, 1.4rem);
+}
+
+.split__image img {
+  width: 100%;
+  height: clamp(240px, 26vw, 320px);
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
