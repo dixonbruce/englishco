@@ -752,13 +752,12 @@ h3 {
 .split {
   max-width: var(--wide);
   margin-inline: auto;
-  padding: clamp(2rem, 6vw, 4rem) 0;
+  padding: clamp(1.4rem, 3.5vw, 2.6rem) 0;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: clamp(1.25rem, 4vw, 3rem);
 }
-
 .split__text h2 {
   margin: 0 0 0.5rem;
 }
