@@ -1442,8 +1442,7 @@ table.cal td {
 /* Final tightening of course sections */
 
 .split {
-  padding-top: clamp(1rem, 2.5vw, 1.8rem);
-  padding-bottom: clamp(1rem, 2.5vw, 1.8rem);
+
   align-items: center;
 }
 
