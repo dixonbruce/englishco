@@ -758,6 +758,12 @@ h3 {
   align-items: center;
   gap: clamp(1.25rem, 4vw, 3rem);
 }
+
+
+.split + .split {
+  padding-top: clamp(1.2rem, 3vw, 2.2rem);
+}
+
 .split__text h2 {
   margin: 0 0 0.5rem;
 }
