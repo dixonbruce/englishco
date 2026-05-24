@@ -1455,3 +1455,141 @@ table.cal td {
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SUMMER STYLE OVERRIDE — ENGLISHCO
+   Add at the very bottom of style.css
+   ========================================================= */
+
+:root {
+  --summer-blue: #00a6d6;
+  --summer-turquoise: #00c2a8;
+  --summer-yellow: #ffd166;
+  --summer-coral: #ff6b6b;
+  --summer-purple: #32109b;
+  --summer-bg: #f4fbff;
+}
+
+/* Page background */
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 209, 102, 0.22), transparent 32rem),
+    radial-gradient(circle at top right, rgba(0, 194, 168, 0.16), transparent 30rem),
+    linear-gradient(to bottom, #ffffff 0%, var(--summer-bg) 100%);
+}
+
+/* Header: clean and bright */
+.site-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 166, 214, 0.14);
+}
+
+/* Hero: summer feel */
+.hero-home {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 209, 102, 0.22), transparent 18rem),
+    radial-gradient(circle at 85% 10%, rgba(0, 194, 168, 0.16), transparent 20rem);
+}
+
+.hero-light h1 {
+  color: var(--summer-purple);
+}
+
+.hero-light .hero-inner h1::after,
+h2::after {
+  background: linear-gradient(to right, var(--summer-blue), var(--summer-yellow), var(--summer-coral));
+}
+
+/* Highlight pills */
+.hero-highlights span {
+  color: var(--summer-purple);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(0, 166, 214, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 166, 214, 0.08);
+}
+
+/* WhatsApp button: less neon, more natural */
+.hero-home .cta-button.cta-button--wa,
+.cta-button--wa {
+  background: #25d366;
+  background-image: none;
+  border: 0;
+  color: #fff;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.25);
+}
+
+.hero-home .cta-button.cta-button--wa:hover,
+.hero-home .cta-button.cta-button--wa:focus,
+.cta-button--wa:hover,
+.cta-button--wa:focus {
+  background: #1ebe5d;
+  background-image: none;
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.32);
+}
+
+/* Section images: softer, sunnier */
+.split__image img {
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 166, 214, 0.12);
+}
+
+/* Course section text */
+h2,
+h3,
+.brand-text,
+.navbar a,
+.no-link,
+.phone-number {
+  color: var(--summer-purple);
+}
+
+/* More info buttons */
+.more-link {
+  background: linear-gradient(135deg, var(--summer-blue), var(--summer-turquoise));
+  box-shadow: 0 8px 20px rgba(0, 166, 214, 0.22);
+}
+
+.more-link:hover,
+.more-link:focus {
+  background: linear-gradient(135deg, #0097c7, #00ad96);
+}
+
+/* Feature cards */
+.features__item {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 166, 214, 0.14);
+  box-shadow: 0 12px 30px rgba(0, 166, 214, 0.08);
+}
+
+/* Bottom CTA */
+.cta-band {
+  background:
+    linear-gradient(135deg, rgba(0, 166, 214, 0.12), rgba(255, 209, 102, 0.22)),
+    #ffffff;
+  border: 1px solid rgba(0, 166, 214, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 166, 214, 0.08);
+}
+
+/* Outline button */
+.cta-button--outline {
+  color: var(--summer-purple);
+  background: #fff;
+  border-color: var(--summer-blue);
+}
+
+.cta-button--outline:hover,
+.cta-button--outline:focus {
+  color: #fff;
+  background: var(--summer-blue);
+  border-color: var(--summer-blue);
+}
