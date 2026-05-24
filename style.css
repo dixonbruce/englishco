@@ -1250,3 +1250,35 @@ table.cal td {
     text-align: center;
   }
 }
+
+
+
+
+
+/* Make homepage hero break out of the main .container */
+.hero-home {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: var(--padx);
+  padding-right: var(--padx);
+}
+
+/* Keep the actual hero content controlled and centred */
+.hero-home .hero-inner {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make the course cards align with the hero, not feel trapped */
+.course-strip {
+  width: min(980px, calc(100vw - 40px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.hero-light .hero-inner {
+  max-width: 980px;
+}
