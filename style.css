@@ -574,3 +574,116 @@ table.cal td { text-align: center; padding: .25rem .2rem; height: 32px; }
 .schedule-table tbody tr:hover { background: #ffecec; transition: background .2s ease-in-out; }
 .schedule-table th                       { font-weight: 600; }
 .schedule-table td:first-child           { text-align: left; font-weight: 600; background: #f3f6fa; }
+
+
+.hero-home {
+  padding-top: clamp(3.5rem, 7vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.hero-home .hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: #4b17b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+.hero-lead {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.6rem auto 1.8rem;
+}
+
+.hero-highlights span {
+  background: #fff;
+  border: 1px solid rgba(50, 16, 155, 0.12);
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 700;
+  color: #32109b;
+  box-shadow: 0 8px 20px rgba(30, 20, 90, 0.06);
+}
+
+.hero-cta {
+  justify-content: center;
+}
+
+.course-strip {
+  max-width: 980px;
+  margin: -1.2rem auto 3.5rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.course-strip__item {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 12px 28px rgba(30, 20, 90, 0.08);
+  border: 1px solid rgba(50, 16, 155, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.course-strip__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(30, 20, 90, 0.12);
+}
+
+.course-strip__item strong,
+.course-strip__item span {
+  display: block;
+}
+
+.course-strip__item strong {
+  color: #32109b;
+  font-size: 1.05rem;
+}
+
+.course-strip__item span {
+  margin-top: 0.2rem;
+  color: #5f6470;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+  .course-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .course-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.hero-light {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
