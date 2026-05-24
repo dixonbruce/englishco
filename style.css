@@ -1593,3 +1593,48 @@ h3,
   background: var(--summer-blue);
   border-color: var(--summer-blue);
 }
+
+
+
+/* Summer nav underline + hover polish */
+
+.navbar a,
+.no-link {
+  color: var(--summer-purple);
+}
+
+.navbar a:hover,
+.no-link:hover {
+  color: var(--summer-blue);
+}
+
+.navbar a::after,
+.no-link::after {
+  background: linear-gradient(
+    to right,
+    var(--summer-blue),
+    var(--summer-yellow),
+    var(--summer-coral)
+  );
+}
+
+.navbar a.active,
+.no-link.active {
+  color: var(--summer-purple);
+}
+
+.navbar a.active::after,
+.no-link.active::after {
+  background: linear-gradient(
+    to right,
+    var(--summer-blue),
+    var(--summer-yellow),
+    var(--summer-coral)
+  );
+}
+
+
+.submenu li a:hover {
+  background: rgba(0, 166, 214, 0.08);
+  color: var(--summer-blue);
+}
