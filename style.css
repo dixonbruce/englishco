@@ -640,7 +640,7 @@ h3 {
 
 .more-link {
   display: inline-block;
-  margin-top: 0.75rem;
+  /*margin-top: 0.75rem;*/
   padding: 8px 18px;
   color: var(--white);
   font-size: 0.95rem;
