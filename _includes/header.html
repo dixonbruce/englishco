@@ -63,20 +63,46 @@
                     or path contains '/infantil'
                     or path contains '/primaria'
                     or path contains '/secundaria'
-                    or path contains '/adultos' %}checked{% endif %} />
+                    or path contains '/adultos'
+                    or path contains '/speaking'
+                    or path contains '/intensivos'
+                    or path contains '/nivela2'
+                    or path contains '/nivelb1'
+                    or path contains '/nivelb2' %}checked{% endif %} />
 
           <label for="toggle-cursos"
                  class="no-link {% if page.section == 'cursos'
                                    or path contains '/infantil'
                                    or path contains '/primaria'
                                    or path contains '/secundaria'
-                                   or path contains '/adultos' %}active{% endif %}">
+                                   or path contains '/adultos'
+                                   or path contains '/speaking'
+                                   or path contains '/intensivos'
+                                   or path contains '/nivela2'
+                                   or path contains '/nivelb1'
+                                   or path contains '/nivelb2' %}active{% endif %}">
             Cursos
           </label>
 
           <ul class="submenu">
             <li>
-              <a href="{{ '/infantil' | relative_url }}"
+              <a href="{{ '/intensivos.html' | relative_url }}"
+                 class="{% if path contains '/intensivos' %}active{% endif %}"
+                 {% if path contains '/intensivos' %}aria-current="page"{% endif %}>
+                Intensivos
+              </a>
+            </li>
+
+            <li>
+              <a href="{{ '/speaking.html' | relative_url }}"
+                 class="{% if path contains '/speaking' %}active{% endif %}"
+                 {% if path contains '/speaking' %}aria-current="page"{% endif %}>
+                Speaking
+              </a>
+            </li>
+
+            <li>
+              <a href="{{ '/infantil.html' | relative_url }}"
                  class="{% if path contains '/infantil' %}active{% endif %}"
                  {% if path contains '/infantil' %}aria-current="page"{% endif %}>
                 Infantil
@@ -84,7 +110,7 @@
             </li>
 
             <li>
-              <a href="{{ '/primaria' | relative_url }}"
+              <a href="{{ '/primaria.html' | relative_url }}"
                  class="{% if path contains '/primaria' %}active{% endif %}"
                  {% if path contains '/primaria' %}aria-current="page"{% endif %}>
                 Primaria
@@ -92,7 +118,7 @@
             </li>
 
             <li>
-              <a href="{{ '/secundaria' | relative_url }}"
+              <a href="{{ '/secundaria.html' | relative_url }}"
                  class="{% if path contains '/secundaria' %}active{% endif %}"
                  {% if path contains '/secundaria' %}aria-current="page"{% endif %}>
                 Secundaria
@@ -100,7 +126,7 @@
             </li>
 
             <li>
-              <a href="{{ '/adultos' | relative_url }}"
+              <a href="{{ '/adultos.html' | relative_url }}"
                  class="{% if path contains '/adultos' %}active{% endif %}"
                  {% if path contains '/adultos' %}aria-current="page"{% endif %}>
                 Adultos
@@ -110,7 +136,7 @@
         </li>
 
         <li>
-          <a href="{{ '/academia' | relative_url }}"
+          <a href="{{ '/academia.html' | relative_url }}"
              class="{% if page.section == 'academia' or path contains '/academia' %}active{% endif %}"
              {% if page.section == 'academia' or path contains '/academia' %}aria-current="page"{% endif %}>
             Academia
