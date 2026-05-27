@@ -1639,3 +1639,24 @@ h3,
   background: rgba(0, 166, 214, 0.08);
   color: var(--summer-blue);
 }
+
+
+body.home #cursos,
+body.home #speaking-home {
+  align-items: center;
+}
+
+body.home #cursos .split__image,
+body.home #speaking-home .split__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.home #cursos .split__image img,
+body.home #speaking-home .split__image img {
+  max-width: 445px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
