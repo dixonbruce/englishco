@@ -24,6 +24,11 @@
   --brand-dark: #23066f;
   --brand-soft: rgba(50, 16, 155, 0.08);
 
+
+   --brand-blue: #12468f;
+  --brand-navy: #061a4d;
+  --brand-purple: #35179a;
+
   --coral: #ff6f61;
   --coral-strong: #e65d52;
   --coral-dark: #d9544a;
@@ -1693,4 +1698,12 @@ body.home #speaking-home .split__image img {
   .classroom-section {
     grid-template-columns: 1fr;
   }
+}
+
+
+h1,
+h2,
+.card h2,
+.hero-light h1 {
+  color: var(--brand-blue);
 }
