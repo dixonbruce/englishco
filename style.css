@@ -491,6 +491,14 @@ h3 {
   padding: var(--space-xl) 0;
 }
 
+.hero-light {
+  padding: 2.25rem 0 1.75rem;
+}
+
+.hero-light + .card {
+  margin-top: 1.5rem;
+}
+
 .hero {
   border-bottom: 1px solid #ddd;
 }
