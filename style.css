@@ -1,11 +1,13 @@
 /* =========================================================
-   ENGLISHCO — REFACTORED CSS
+   ENGLISHCO — CLEAN STYLE.CSS
    =========================================================
    Brand system:
-   - Primary: blue/navy
+   - Primary: EnglishCO blue/navy
    - Accent: orange/coral
-   - Supporting summer accent: turquoise/yellow
-   - Purple removed
+   - Supporting accents: turquoise/yellow
+   - Purple removed completely
+
+   Replace your current style.css with this file.
    ========================================================= */
 
 /* =========================================================
@@ -19,22 +21,25 @@
 }
 
 :root {
-  /* Brand */
+  /* Brand colours */
   --brand: #12468f;
   --brand-dark: #061a4d;
   --brand-soft: rgba(18, 70, 143, 0.08);
 
   --accent: #ff4b1f;
-  --accent-soft: rgba(255, 75, 31, 0.1);
   --accent-dark: #d94318;
+  --accent-soft: rgba(255, 75, 31, 0.1);
 
   --turquoise: #00a6d6;
   --turquoise-dark: #0097c7;
-  --green: #25d366;
-  --green-dark: #1ebe5d;
+  --mint: #00c2a8;
+  --mint-dark: #00ad96;
   --yellow: #ffd166;
 
-  /* Legacy aliases */
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1ebe5d;
+
+  /* Legacy aliases, kept so older pages still work */
   --navy: var(--brand);
   --red: var(--accent);
   --coral: var(--accent);
@@ -78,7 +83,7 @@
   --shadow-soft: 0 6px 14px rgba(0, 0, 0, 0.04);
   --shadow-card: 0 12px 28px rgba(18, 70, 143, 0.08);
   --shadow-card-hover: 0 16px 34px rgba(18, 70, 143, 0.12);
-  --shadow-image: 0 18px 40px rgba(18, 70, 143, 0.12);
+  --shadow-image: 0 16px 36px rgba(18, 70, 143, 0.14);
 }
 
 html,
@@ -803,7 +808,7 @@ h3 {
 .cta-button--wa,
 .hero-home .cta-button.cta-button--wa {
   color: var(--white);
-  background: var(--green);
+  background: var(--whatsapp);
   background-image: none;
   border: 0;
   border-radius: 999px;
@@ -814,7 +819,7 @@ h3 {
 .cta-button--wa:focus,
 .hero-home .cta-button.cta-button--wa:hover,
 .hero-home .cta-button.cta-button--wa:focus {
-  background: var(--green-dark);
+  background: var(--whatsapp-dark);
   background-image: none;
   box-shadow: 0 14px 30px rgba(37, 211, 102, 0.32);
 }
@@ -826,7 +831,7 @@ h3 {
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  background: linear-gradient(135deg, var(--turquoise), #00c2a8);
+  background: linear-gradient(135deg, var(--turquoise), var(--mint));
   border-radius: 999px;
   box-shadow: 0 8px 20px rgba(0, 166, 214, 0.22);
   transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
@@ -836,7 +841,7 @@ h3 {
 .more-link:focus {
   transform: translateY(-2px);
   color: var(--white);
-  background: linear-gradient(135deg, var(--turquoise-dark), #00ad96);
+  background: linear-gradient(135deg, var(--turquoise-dark), var(--mint-dark));
 }
 
 .more-link:active {
@@ -1054,39 +1059,36 @@ body.home #speaking-home .split__image img {
 .course-intro-section,
 .classroom-section {
   display: grid;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.course-intro-section {
   grid-template-columns: 1.15fr 0.85fr;
-}
-
-.classroom-section {
-  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
 }
 
 .course-intro-section__image,
 .classroom-section__image {
   margin: 0;
+  justify-self: end;
+  width: 100%;
+  max-width: 380px;
 }
 
 .course-intro-section__image img,
 .classroom-section__image img {
   width: 100%;
+  height: 260px;
   display: block;
   border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .course-intro-section__image img {
-  max-height: 430px;
   object-fit: contain;
+  background: var(--white);
 }
 
 .classroom-section__image img {
-  max-height: 280px;
   object-fit: cover;
+  filter: brightness(1.12) contrast(1.05) saturate(1.08);
 }
 
 @media (max-width: 760px) {
@@ -1095,14 +1097,72 @@ body.home #speaking-home .split__image img {
     grid-template-columns: 1fr;
   }
 
+  .course-intro-section__image,
+  .classroom-section__image {
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
   .course-intro-section__image img,
   .classroom-section__image img {
-    max-height: none;
+    height: auto;
   }
 }
 
 /* =========================================================
-   10. LEGACY AGE CARDS / CLASSROOM FIGURE
+   10. FEATURE GRID / ICON CARDS
+   Use this for Información del curso if you replace the list.
+   ========================================================= */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--surface-soft);
+  border: 1px solid rgba(18, 70, 143, 0.12);
+  border-radius: 14px;
+}
+
+.feature-icon {
+  flex: 0 0 auto;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(18, 70, 143, 0.08);
+  font-size: 1.25rem;
+}
+
+.feature-item strong {
+  display: block;
+  color: var(--brand);
+  margin-bottom: 0.2rem;
+}
+
+.feature-item p {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 720px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   11. LEGACY AGE CARDS / CLASSROOM FIGURE
    ========================================================= */
 
 .classroom {
@@ -1208,7 +1268,7 @@ body.home #speaking-home .split__image img {
 }
 
 /* =========================================================
-   11. CONTENT UTILITIES / CARDS
+   12. CONTENT UTILITIES / CARDS
    ========================================================= */
 
 .card {
@@ -1237,8 +1297,14 @@ body.home #speaking-home .split__image img {
   margin-bottom: 0.5rem;
 }
 
+/* Prevent feature-grid lists being affected by general content list rules */
+#main-content .feature-grid {
+  margin-left: 0;
+  list-style: none;
+}
+
 /* =========================================================
-   12. CTA BAND
+   13. CTA BAND
    ========================================================= */
 
 .cta-band {
@@ -1267,7 +1333,7 @@ body.home #speaking-home .split__image img {
 }
 
 /* =========================================================
-   13. TABLES / FEES / PAYMENT
+   14. TABLES / FEES / PAYMENT
    ========================================================= */
 
 .table-wrap {
@@ -1341,7 +1407,7 @@ table.fees tbody tr:nth-child(odd) th[scope="row"] {
 }
 
 /* =========================================================
-   14. IMPORTANT DATES / MINI CALENDAR
+   15. IMPORTANT DATES / MINI CALENDAR
    ========================================================= */
 
 .legend {
@@ -1454,7 +1520,7 @@ table.cal td {
 }
 
 /* =========================================================
-   15. ADULTOS SCHEDULE TABLE
+   16. ADULTOS SCHEDULE TABLE
    ========================================================= */
 
 .schedule-table {
@@ -1496,7 +1562,7 @@ table.cal td {
 }
 
 /* =========================================================
-   16. SMALL-SCREEN POLISH
+   17. SMALL-SCREEN POLISH
    ========================================================= */
 
 @media (max-width: 640px) {
@@ -1531,55 +1597,5 @@ table.cal td {
     width: 100%;
     max-width: 330px;
     text-align: center;
-  }
-}
-
-
-
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-
-.feature-item {
-  display: flex;
-  gap: 0.85rem;
-  align-items: flex-start;
-  padding: 1rem;
-  background: #f8fafc;
-  border: 1px solid rgba(18, 70, 143, 0.12);
-  border-radius: 14px;
-}
-
-.feature-icon {
-  flex: 0 0 auto;
-  width: 2.3rem;
-  height: 2.3rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(18, 70, 143, 0.08);
-  font-size: 1.25rem;
-}
-
-.feature-item strong {
-  display: block;
-  color: var(--brand);
-  margin-bottom: 0.2rem;
-}
-
-.feature-item p {
-  margin: 0;
-  font-size: 0.98rem;
-}
-
-@media (max-width: 720px) {
-  .feature-grid {
-    grid-template-columns: 1fr;
   }
 }
