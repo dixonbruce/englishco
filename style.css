@@ -1660,3 +1660,29 @@ body.home #speaking-home .split__image img {
   height: auto;
   display: block;
 }
+
+
+.classroom-section {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.classroom-section__image {
+  margin: 0;
+}
+
+.classroom-section__image img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .classroom-section {
+    grid-template-columns: 1fr;
+  }
+}
