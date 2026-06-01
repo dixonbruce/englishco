@@ -1707,3 +1707,75 @@ h2,
 .hero-light h1 {
   color: var(--brand-blue);
 }
+
+
+:root {
+  --brand-blue: #12468f;
+  --brand-navy: #061a4d;
+  --brand-orange: #ff4b1f;
+  --text-main: #3f4b5f;
+  --text-muted: #5b6778;
+}
+
+/* Main text */
+body {
+  color: var(--text-main);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+.hero-light h1,
+.card h2 {
+  color: var(--brand-blue);
+}
+
+/* Navigation */
+.site-nav a,
+.nav a,
+header a {
+  color: var(--brand-blue);
+}
+
+.site-nav a:hover,
+.nav a:hover,
+header a:hover {
+  color: var(--brand-orange);
+}
+
+/* Active nav item */
+.site-nav a.active,
+.nav a.active,
+header a.active {
+  color: var(--brand-blue);
+}
+
+/* Hero pills */
+.hero-highlights span {
+  color: var(--brand-blue);
+  border-color: rgba(18, 70, 143, 0.22);
+  background: #ffffff;
+}
+
+/* Links */
+a,
+.more-link {
+  color: var(--brand-blue);
+}
+
+a:hover,
+.more-link:hover {
+  color: var(--brand-orange);
+}
+
+/* Buttons, if needed */
+.cta-button--outline {
+  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+.cta-button--outline:hover {
+  color: #ffffff;
+  background: var(--brand-blue);
+}
