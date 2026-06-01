@@ -1779,3 +1779,34 @@ a:hover,
   color: #ffffff;
   background: var(--brand-blue);
 }
+
+
+.course-intro-section {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.course-intro-section__image {
+  margin: 0;
+}
+
+.course-intro-section__image img {
+  width: 100%;
+  max-height: 430px;
+  display: block;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+@media (max-width: 760px) {
+  .course-intro-section {
+    grid-template-columns: 1fr;
+  }
+
+  .course-intro-section__image img {
+    max-height: none;
+  }
+}
