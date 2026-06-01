@@ -1192,7 +1192,18 @@ body.home #speaking-home .split__image img {
   width: 60px;
   height: 3px;
   margin: 0 auto 0.45rem;
-  background: linear-gradient(to right, var(--brand), var(--accent));
+
+
+
+background: linear-gradient(
+  to right,
+  var(--turquoise),
+  var(--yellow),
+  var(--accent)
+);
+
+
+   
   border-radius: 2px;
 }
 
@@ -1598,4 +1609,60 @@ table.cal td {
     max-width: 330px;
     text-align: center;
   }
+}
+
+
+
+/* =========================================================
+   FINAL SUMMER ACCENT OVERRIDE
+   Replaces dark blue/coral heading accents with brighter summer accents
+   ========================================================= */
+
+h2::after,
+.hero-light .hero-inner h1::after,
+.hero-copy h1::after {
+  background: linear-gradient(
+    to right,
+    var(--turquoise),
+    var(--yellow),
+    var(--accent)
+  );
+}
+
+/* Optional: make the line slightly brighter and cleaner */
+h2::after {
+  height: 4px;
+  width: 76px;
+}
+
+/* Navigation active underline */
+.navbar a::after,
+.no-link::after {
+  background: linear-gradient(
+    to right,
+    var(--turquoise),
+    var(--yellow),
+    var(--accent)
+  );
+}
+
+/* Hero pills: lighter summer border */
+.hero-highlights span {
+  border-color: rgba(0, 166, 214, 0.22);
+  box-shadow: 0 8px 20px rgba(0, 166, 214, 0.08);
+}
+
+
+h2::after,
+.hero-light .hero-inner h1::after,
+.hero-copy h1::after,
+.navbar a::after,
+.no-link::after {
+  background: linear-gradient(
+    to right,
+    #00a6d6,
+    #00c2a8,
+    #ffd166,
+    #ff7a59
+  );
 }
