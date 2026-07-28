@@ -39,6 +39,10 @@
   --whatsapp: #25d366;
   --whatsapp-dark: #1ebe5d;
 
+  /* Trimester Start/End Colours */
+  --trimester-start: #10b981; /* Emerald Green */
+  --trimester-end: #f59e0b;   /* Amber / Orange */
+
   /* Legacy aliases, kept so older pages still work */
   --navy: var(--brand);
   --red: var(--accent);
@@ -1192,18 +1196,12 @@ body.home #speaking-home .split__image img {
   width: 60px;
   height: 3px;
   margin: 0 auto 0.45rem;
-
-
-
-background: linear-gradient(
-  to right,
-  var(--turquoise),
-  var(--yellow),
-  var(--accent)
-);
-
-
-   
+  background: linear-gradient(
+    to right,
+    var(--turquoise),
+    var(--yellow),
+    var(--accent)
+  );
   border-radius: 2px;
 }
 
@@ -1451,6 +1449,16 @@ table.fees tbody tr:nth-child(odd) th[scope="row"] {
   background: #10b981;
 }
 
+.key--inicio {
+  background: var(--trimester-start);
+  border-color: var(--trimester-start);
+}
+
+.key--fin {
+  background: var(--trimester-end);
+  border-color: var(--trimester-end);
+}
+
 .grid {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -1523,6 +1531,20 @@ table.cal td {
 .d--hoy {
   border-radius: 8px;
   box-shadow: 0 0 0 2px #10b981 inset;
+}
+
+.d--inicio {
+  color: var(--white);
+  font-weight: 700;
+  background: var(--trimester-start);
+  border-radius: 8px;
+}
+
+.d--fin {
+  color: var(--white);
+  font-weight: 700;
+  background: var(--trimester-end);
+  border-radius: 8px;
 }
 
 @media (max-width: 720px) {
@@ -1612,8 +1634,6 @@ table.cal td {
   }
 }
 
-
-
 /* =========================================================
    FINAL SUMMER ACCENT OVERRIDE
    Replaces dark blue/coral heading accents with brighter summer accents
@@ -1653,7 +1673,6 @@ h2::after {
   box-shadow: 0 8px 20px rgba(0, 166, 214, 0.08);
 }
 
-
 h2::after,
 .hero-light .hero-inner h1::after,
 .hero-copy h1::after,
@@ -1667,10 +1686,6 @@ h2::after,
     #ff7a59
   );
 }
-
-
-
-
 
 /* Estilos adicionales para la sección de vocabulario */
 .vocab-grid {
