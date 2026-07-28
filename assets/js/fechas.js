@@ -15,7 +15,7 @@
 
   // ===== Festivos y cierres sueltos =====
   const CIERRES_SUELTOS = [
-    ['2026-09-08', 'Nuestra Señora del Pino (Gran Canaria)'],
+    ['2026-09-08', 'Nuestra Señora del Pino'],
 
     ['2026-10-12', 'Fiesta Nacional de España'],
     ['2026-11-02', 'Todos los Santos'],
