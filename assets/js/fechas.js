@@ -8,7 +8,7 @@
 
   // ===== Vacaciones escolares =====
   const CIERRES_RANGOS = [
-    ['2026-12-23','2027-01-08'], // Navidad
+    ['2026-12-23','2027-01-09'], // Navidad
     ['2027-03-22','2027-03-26'], // Semana Santa
   ];
 
