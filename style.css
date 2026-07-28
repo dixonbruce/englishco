@@ -1443,8 +1443,8 @@ table.fees tbody tr:nth-child(odd) th[scope="row"] {
 }
 
 .key--hito {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--turquoise);
+  border-color: var(--turquoise);
 }
 
 .key--hoy {
@@ -1516,7 +1516,7 @@ table.cal td {
 .d--hito {
   color: var(--white);
   font-weight: 700;
-  background: var(--accent);
+  background: var(--turquoise);
   border-radius: 8px;
 }
 
