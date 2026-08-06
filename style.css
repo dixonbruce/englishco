@@ -1858,3 +1858,13 @@ h2::after,
 
 
 
+
+
+.fees caption{
+    text-align: center;
+}
+
+.fees th,
+.fees td{
+    text-align: center;
+}
