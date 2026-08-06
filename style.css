@@ -1868,3 +1868,20 @@ h2::after,
 .fees td{
     text-align: center;
 }
+
+
+
+
+.d--inicio{
+    background:#2563eb;
+    color:#fff;
+    font-weight:700;
+}
+
+/* End of term */
+
+.d--fin{
+    background:#16a34a;
+    color:#fff;
+    font-weight:700;
+}
