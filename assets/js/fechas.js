@@ -15,7 +15,7 @@
 
   // ===== Festivos y cierres sueltos =====
   const CIERRES_SUELTOS = [
-    ['2026-09-08', 'Nuestra Señora del Pino'],
+
 
     ['2026-10-12', 'Fiesta Nacional de España'],
     ['2026-11-02', 'Todos los Santos'],
@@ -87,16 +87,17 @@
 
   // ===== Hitos =====
 
-  const HITOS_DISPLAY = [
-    adjustBoundaryDate(TERM1[0],true),
-    adjustBoundaryDate(TERM1[1],false),
-
-    adjustBoundaryDate(TERM2[0],true),
-    adjustBoundaryDate(TERM2[1],false),
-
-    adjustBoundaryDate(TERM3[0],true),
-    adjustBoundaryDate(TERM3[1],false),
-  ];
+  const termStarts = new Set([
+    adjustBoundaryDate(TERM1[0], true),
+    adjustBoundaryDate(TERM2[0], true),
+    adjustBoundaryDate(TERM3[0], true),
+  ]);
+  
+  const termEnds = new Set([
+    adjustBoundaryDate(TERM1[1], false),
+    adjustBoundaryDate(TERM2[1], false),
+    adjustBoundaryDate(TERM3[1], false),
+  ]);
 
 
   const hitos = new Set(HITOS_DISPLAY);
@@ -383,9 +384,11 @@
 
         if(closed.has(s))
           span.classList.add('d--cerrado');
-
-        if(hitos.has(s))
-          span.classList.add('d--hito');
+        if(termStarts.has(s))
+          span.classList.add('d--inicio');
+        
+        if(termEnds.has(s))
+          span.classList.add('d--fin');
 
         if(s===todayS)
           span.classList.add('d--hoy');
