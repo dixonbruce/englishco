@@ -1,0 +1,274 @@
+---
+layout: default
+title: "Year 1 (A1) English Portfolio | EnglishCO"
+description: "Track your progress through the Year 1 English Portfolio. Grammar and vocabulary objectives taught using a spiral curriculum."
+section: "portfolio"
+---
+
+<!-- Hero -->
+<section class="hero-light hero-home">
+
+  <div class="hero-inner">
+
+    <h1>Year 1 (A1) English Portfolio</h1>
+
+    <p class="hero-lead">
+      Our Year 1 course follows a <strong>spiral curriculum</strong>.
+      Students revisit grammar and vocabulary throughout the year,
+      gradually building confidence, accuracy and fluency.
+    </p>
+
+    <div class="hero-highlights">
+      <span>29 Grammar Objectives</span>
+      <span>32 Vocabulary Objectives</span>
+      <span>Continuous Assessment</span>
+      <span>Mastery Learning</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Introduction -->
+
+<section class="split">
+
+<div class="split__text">
+
+<h2>How the Portfolio Works</h2>
+
+<p>
+Every grammar and vocabulary objective has its own learning page.
+Students revisit objectives throughout the year until they can use them
+confidently in speaking and writing.
+</p>
+
+<p>
+Rather than working through a traditional coursebook unit by unit,
+we continually recycle previous learning to improve long-term retention.
+</p>
+
+</div>
+
+<div class="split__image">
+
+<img src="/images/portfolio-dashboard.jpg"
+alt="English Portfolio">
+
+</div>
+
+</section>
+
+
+
+<!-- Grammar -->
+
+<section class="portfolio-section">
+
+<div class="container">
+
+<h2>Grammar Objectives</h2>
+
+<div class="objective-grid">
+
+<a class="objective-card" href="/portfolio/year1/grammar/be.html">
+
+<span class="badge">Grammar 01</span>
+
+<h3>Be (am, is, are)</h3>
+
+<p>Introductions, descriptions and basic sentences.</p>
+
+<span class="status">View Objective →</span>
+
+</a>
+
+
+<a class="objective-card disabled">
+
+<span class="badge">Grammar 02</span>
+
+<h3>Subject Pronouns</h3>
+
+<p>Coming soon.</p>
+
+</a>
+
+
+<a class="objective-card disabled">
+
+<span class="badge">Grammar 03</span>
+
+<h3>Articles</h3>
+
+<p>Coming soon.</p>
+
+</a>
+
+
+<a class="objective-card disabled">
+
+<span class="badge">Grammar 04</span>
+
+<h3>Present Simple</h3>
+
+<p>Coming soon.</p>
+
+</a>
+
+
+<a class="objective-card disabled">
+
+<span class="badge">Grammar 05</span>
+
+<h3>Present Continuous</h3>
+
+<p>Coming soon.</p>
+
+</a>
+
+</div>
+
+<p class="portfolio-more">
+
+<a class="more-link" href="#">
+View all Grammar Objectives →</a>
+
+</p>
+
+</div>
+
+</section>
+
+
+
+
+<!-- Vocabulary -->
+
+<section class="portfolio-section portfolio-alt">
+
+<div class="container">
+
+<h2>Vocabulary Objectives</h2>
+
+<div class="objective-grid">
+
+<a class="objective-card"
+href="/portfolio/year1/vocabulary/family.html">
+
+<span class="badge">Vocabulary 01</span>
+
+<h3>Family</h3>
+
+<p>Family members and relationships.</p>
+
+<span class="status">View Objective →</span>
+
+</a>
+
+
+<a class="objective-card disabled">
+
+<span class="badge">Vocabulary 02</span>
+
+<h3>Food & Drink</h3>
+
+<p>Coming soon.</p>
+
+</a>
+
+
+<a class="objective-card disabled">
+
+<span class="badge">Vocabulary 03</span>
+
+<h3>Daily Routines</h3>
+
+<p>Coming soon.</p>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- Features -->
+
+<section class="features">
+
+<div class="features__item">
+
+<h3>Spiral Curriculum</h3>
+
+<p>
+Students revisit every objective several times during the year,
+building confidence and long-term retention.
+</p>
+
+</div>
+
+<div class="features__item">
+
+<h3>Continuous Assessment</h3>
+
+<p>
+Progress is measured through classroom activities,
+speaking and writing—not one final test.
+</p>
+
+</div>
+
+<div class="features__item">
+
+<h3>Mastery Learning</h3>
+
+<p>
+Objectives are only marked as mastered once students
+can use them confidently in real communication.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta-band">
+
+<div class="cta-band__inner">
+
+<h2>Start Exploring</h2>
+
+<p>
+Choose any grammar or vocabulary objective to begin.
+</p>
+
+<div class="cta-row">
+
+<a class="cta-button"
+href="/portfolio/year1/grammar/be.html">
+
+View Grammar
+
+</a>
+
+<a class="cta-button cta-button--outline"
+href="/portfolio/year1/vocabulary/family.html">
+
+View Vocabulary
+
+</a>
+
+</div>
+
+</div>
+
+</section>
