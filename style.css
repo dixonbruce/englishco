@@ -2179,3 +2179,41 @@ grid-template-columns:1fr;
 .portfolio-list li {
     list-style: none;
 }
+
+
+:root {
+  --trimester-start: #2563eb;   /* Blue */
+  --trimester-end:   #16a34a;   /* Green */
+  --today:           #f59e0b;   /* Amber */
+}
+
+
+
+.key--inicio {
+    background: var(--trimester-start);
+    border-color: var(--trimester-start);
+}
+
+.key--fin {
+    background: var(--trimester-end);
+    border-color: var(--trimester-end);
+}
+
+.key--hoy {
+    background: var(--today);
+    border-color: var(--today);
+}
+
+.d--inicio {
+    background: var(--trimester-start);
+    color: #fff;
+}
+
+.d--fin {
+    background: var(--trimester-end);
+    color: #fff;
+}
+
+.d--hoy {
+    box-shadow: 0 0 0 3px var(--today) inset;
+}
