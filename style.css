@@ -2165,3 +2165,17 @@ grid-template-columns:1fr;
 }
 
 }
+
+
+
+.objective-list,
+.portfolio-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.objective-list li,
+.portfolio-list li {
+    list-style: none;
+}
