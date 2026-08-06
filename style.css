@@ -1714,3 +1714,172 @@ h2::after,
 .mt {
   margin-top: 2rem;
 }
+
+
+
+/* =========================================================
+   PORTFOLIO
+   ========================================================= */
+
+.portfolio-section{
+    padding: clamp(2rem,5vw,4rem) 0;
+}
+
+.portfolio-alt{
+    background: rgba(18,70,143,.03);
+}
+
+/* Grid */
+
+.objective-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.5rem;
+    margin-top:2rem;
+}
+
+/* Card */
+
+.objective-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    padding:1.5rem;
+
+    background:#fff;
+    border:1px solid rgba(18,70,143,.12);
+    border-radius:18px;
+
+    box-shadow:var(--shadow-card);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+
+    text-decoration:none;
+}
+
+.objective-card:hover{
+    transform:translateY(-5px);
+
+    border-color:var(--brand);
+
+    box-shadow:var(--shadow-card-hover);
+}
+
+.objective-card h3{
+    margin:.9rem 0 .6rem;
+    color:var(--brand);
+    font-size:1.25rem;
+}
+
+.objective-card p{
+    margin:0 0 1.5rem;
+    color:var(--muted);
+    flex-grow:1;
+}
+
+/* Badge */
+
+.badge{
+    display:inline-block;
+
+    align-self:flex-start;
+
+    padding:.35rem .8rem;
+
+    border-radius:999px;
+
+    background:var(--brand-soft);
+
+    color:var(--brand);
+
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+}
+
+/* Link */
+
+.status{
+    margin-top:auto;
+
+    font-weight:700;
+
+    color:var(--accent);
+
+    transition:padding-left .18s;
+}
+
+.objective-card:hover .status{
+    padding-left:6px;
+}
+
+/* Disabled */
+
+.objective-card.disabled{
+    cursor:default;
+
+    opacity:.72;
+
+    background:#fafafa;
+}
+
+.objective-card.disabled:hover{
+    transform:none;
+
+    border-color:rgba(18,70,143,.12);
+
+    box-shadow:var(--shadow-card);
+}
+
+.objective-card.disabled .status{
+    display:none;
+}
+
+/* View All */
+
+.portfolio-more{
+    text-align:center;
+    margin-top:2.5rem;
+}
+
+/* Small screens */
+
+@media (max-width:700px){
+
+    .objective-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+.badge.grammar{
+    background:rgba(18,70,143,.10);
+    color:var(--brand);
+}
+
+.badge.vocabulary{
+    background:rgba(0,194,168,.12);
+    color:var(--mint-dark);
+}
+
+.badge.mastered{
+    background:#dff8ea;
+    color:#14804a;
+}
+
+.badge.progress{
+    background:#fff3cd;
+    color:#8a6d00;
+}
+
+
+
