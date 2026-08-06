@@ -1885,3 +1885,283 @@ h2::after,
     color:#fff;
     font-weight:700;
 }
+
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:2rem;
+
+    margin:4rem auto;
+
+}
+
+.portfolio-column{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+/* Column headings */
+
+.portfolio-column h2{
+
+    margin:0;
+
+    padding:1.25rem;
+
+    background:#0f4c81;
+
+    color:#fff;
+
+    font-size:1.45rem;
+
+}
+
+
+
+/* Progress */
+
+.progress-card{
+
+    padding:1.25rem;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.progress-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:.7rem;
+
+    font-weight:600;
+
+}
+
+.progress-bar{
+
+    height:10px;
+
+    background:#edf1f5;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    background:#38b000;
+
+}
+
+
+
+/* Legend */
+
+.portfolio-legend{
+
+    margin:2rem auto;
+
+}
+
+.legend{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:2rem;
+
+    flex-wrap:wrap;
+
+}
+
+.legend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.6rem;
+
+    font-weight:600;
+
+}
+
+
+
+/* Objectives */
+
+.objective-list{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.objective-list li{
+
+    border-bottom:1px solid #efefef;
+
+}
+
+.objective-list li:last-child{
+
+    border-bottom:none;
+
+}
+
+.objective-list a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1rem 1.25rem;
+
+    color:#222;
+
+    text-decoration:none;
+
+    transition:.18s;
+
+}
+
+.objective-list a:hover{
+
+    background:#f5fbff;
+
+}
+
+
+
+/* Status */
+
+.status{
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+    font-weight:700;
+
+}
+
+.status.todo{
+
+    background:#eef2f6;
+
+    color:#96a0aa;
+
+}
+
+.status.progress{
+
+    background:#fff1bf;
+
+    color:#c67a00;
+
+}
+
+.status.done{
+
+    background:#d8f5dd;
+
+    color:#15803d;
+
+}
+
+
+
+/* Objective code */
+
+.code{
+
+    background:#0f4c81;
+
+    color:white;
+
+    border-radius:999px;
+
+    padding:.25rem .65rem;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+}
+
+
+
+/* Objective title */
+
+.title{
+
+    flex:1;
+
+    font-weight:500;
+
+}
+
+
+
+/* Hover */
+
+.objective-list a:hover .code{
+
+    background:#1565a9;
+
+}
+
+
+
+/* Mobile */
+
+@media (max-width:900px){
+
+.portfolio-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
