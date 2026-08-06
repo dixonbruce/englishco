@@ -100,7 +100,7 @@
   ]);
 
 
-  const hitos = new Set(HITOS_DISPLAY);
+
 
 
   // ===== Closed days =====
