@@ -1367,7 +1367,7 @@ table.fees caption {
 
 table.fees thead th {
   padding: 0.65rem 0.75rem;
-  text-align: left;
+  text-align: center;
   white-space: nowrap;
   background: var(--surface-soft);
   border-bottom: 1px solid var(--border);
