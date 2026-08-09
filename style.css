@@ -2228,3 +2228,115 @@ grid-template-columns:1fr;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   flex-shrink: 0;
 }
+
+
+
+
+
+/* =========================================================
+   STUDENT PROFILE
+   ========================================================= */
+
+.student-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+
+    background: #fff;
+    border: 1px solid rgba(18, 70, 143, 0.10);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.student-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
+.student-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.student-info h1 {
+    margin: 0 0 0.2rem;
+    color: #164d91;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    line-height: 1.1;
+}
+
+.student-info h2 {
+    margin: 0 0 0.4rem;
+    color: #164d91;
+    font-size: 1.45rem;
+}
+
+.student-info .course-year {
+    margin: 0 0 1.5rem;
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.overall-progress {
+    max-width: 700px;
+}
+
+.overall-progress .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    color: #3f4d63;
+}
+
+.overall-progress .progress-bar {
+    height: 10px;
+    background: #edf1f5;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.overall-progress .progress-fill {
+    height: 100%;
+    background: #38b000;
+    border-radius: 999px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .student-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    .student-info {
+        width: 100%;
+    }
+
+    .overall-progress {
+        max-width: none;
+        text-align: left;
+    }
+
+    .overall-progress .progress-header {
+        font-size: 0.9rem;
+    }
+
+    .student-photo {
+        width: 110px;
+        height: 110px;
+    }
+}
