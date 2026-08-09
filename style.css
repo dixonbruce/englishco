@@ -2340,3 +2340,56 @@ grid-template-columns:1fr;
         height: 110px;
     }
 }
+
+
+
+
+.learning-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pillar {
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(18, 70, 143, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.pillar-icon {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.pillar h3 {
+    margin: 0 0 0.6rem;
+    color: #164d91;
+    font-size: 1.2rem;
+}
+
+.pillar p {
+    margin: 0;
+    color: #5f6f85;
+    line-height: 1.55;
+}
+
+/* Hover */
+.pillar {
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.pillar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .learning-pillars {
+        grid-template-columns: 1fr;
+    }
+}
