@@ -2217,3 +2217,14 @@ grid-template-columns:1fr;
 .d--hoy {
     box-shadow: 0 0 0 3px var(--today) inset;
 }
+
+
+.student-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
