@@ -2666,3 +2666,11 @@ grid-template-columns:1fr;
         font-size: 1.4rem;
     }
 }
+
+
+
+
+.section-heading {
+    width: 100%;
+    box-sizing: border-box;
+}
