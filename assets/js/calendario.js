@@ -3,7 +3,7 @@
   // ===== Trimestres (inicio / fin) =====
   const TERM1 = ['2026-09-09', '2026-12-22'];
   const TERM2 = ['2027-01-11', '2027-03-19'];
-  const TERM3 = ['2027-04-05', '2027-06-30'];
+  const TERM3 = ['2027-03-29', '2027-06-30'];
 
 
   // ===== Vacaciones escolares =====
