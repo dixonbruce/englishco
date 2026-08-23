@@ -28,7 +28,7 @@
     ['2027-02-08', 'Carnaval'],
     ['2027-02-09', 'Carnaval'],
 
-    ['2027-05-01', 'Día del Trabajo'],
+    ['2027-05-01', 'Día del Trabajador'],
     ['2027-05-30', 'Día de Canarias'],
   ];
 
