@@ -1415,6 +1415,19 @@ table.fees tbody tr:nth-child(odd) th[scope="row"] {
   }
 }
 
+
+.fees th[scope="col"] {
+  text-align: center; /* keep header labels centred */
+}
+
+.fees th[scope="row"] {
+  text-align: left;   /* Concepto column stays left-aligned */
+}
+
+.fees td {
+  text-align: right;  /* € amounts right-aligned */
+}
+
 /* =========================================================
    15. IMPORTANT DATES / MINI CALENDAR
    ========================================================= */
