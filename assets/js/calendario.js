@@ -132,29 +132,29 @@
   // Ranges
 
   CIERRES_RANGOS.forEach(([from,to])=>{
-
+  
     let d = makeDate(from);
     const end = makeDate(to);
-
+  
+    const reason =
+      from === '2026-12-23'
+        ? 'Vacaciones de Navidad'
+        : 'Semana Santa';
+  
     while(d<=end){
-
+  
       const s=d2s(d);
-
-      addClosed(
-        s,
-        s>= '2026-12-23' && s<='2027-01-08'
-          ? 'Vacaciones de Navidad'
-          : 'Semana Santa'
-      );
-
+  
+      addClosed(s, reason);
+  
       d=new Date(
         d.getFullYear(),
         d.getMonth(),
         d.getDate()+1
       );
-
+  
     }
-
+  
   });
 
 
