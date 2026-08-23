@@ -25,9 +25,6 @@
     ['2027-01-06', 'Día de Reyes'],
     ['2027-01-20', 'San Sebastián (Agüimes)'],
 
-    ['2027-02-08', 'Carnaval'],
-    ['2027-02-09', 'Carnaval'],
-
     ['2027-05-01', 'Día del Trabajador'],
     ['2027-05-30', 'Día de Canarias'],
   ];
