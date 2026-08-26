@@ -1281,7 +1281,7 @@ body.home #speaking-home .split__image img {
    ========================================================= */
 
 .card {
-  padding: 1rem;
+
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-m);
@@ -2686,4 +2686,10 @@ grid-template-columns:1fr;
 .section-heading {
     width: 100%;
     box-sizing: border-box;
+}
+
+
+ul.plain{
+   margin-bottom: 0;
+  padding-bottom: 0;
 }
