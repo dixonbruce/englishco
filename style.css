@@ -1293,6 +1293,15 @@ body.home #speaking-home .split__image img {
   list-style: none;
 }
 
+
+#lista-cierres,
+#lista-trimestres {
+  margin: 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+
 .mt {
   margin-top: 1rem;
 }
