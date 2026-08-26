@@ -2702,3 +2702,21 @@ ul.plain{
    margin-bottom: 0;
   padding-bottom: 0;
 }
+
+
+
+#main-content h3::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 3px;
+  margin: 0.4rem 0 0;
+  background: linear-gradient(
+    to right,
+    var(--turquoise),
+    var(--mint),
+    var(--yellow),
+    var(--accent)
+  );
+  border-radius: 2px;
+}
