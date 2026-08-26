@@ -1294,8 +1294,8 @@ body.home #speaking-home .split__image img {
 }
 
 
-#lista-cierres,
-#lista-trimestres {
+ul#lista-cierres,
+ul#lista-trimestres {
   margin: 0 0 0;
   padding: 0;
   list-style: none;
