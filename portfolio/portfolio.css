@@ -66,3 +66,32 @@
   .ec-portfolio .pf-content { padding:3px 12px 16px; }
   .ec-portfolio .pf-wordgrid { grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
+
+/* Rich grammar lessons — all selectors scoped to the portfolio. */
+.ec-portfolio .pf-content, .ec-portfolio .pf-study, .ec-portfolio .pf-lesson { min-width:0; }
+.ec-portfolio .pf-lesson { display:grid; gap:12px; }
+.ec-home .ec-portfolio .pf-lesson .pf-lesson-title { font-size:1.16rem; font-weight:750; color:var(--pf-navy); margin:0; letter-spacing:-.015em; }
+.ec-portfolio .pf-table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--pf-line); border-radius:9px; }
+.ec-portfolio .pf-table-wrap:focus-visible { outline:2px solid #067eb1; outline-offset:2px; }
+.ec-portfolio .pf-grammar-table { width:100%; min-width:0; border-collapse:collapse; margin:0; font-size:.91rem; line-height:1.5; background:#fff; }
+.ec-portfolio .pf-grammar-table th, .ec-portfolio .pf-grammar-table td { text-align:left; vertical-align:top; padding:10px 12px; border:0; border-bottom:1px solid var(--pf-line); overflow-wrap:anywhere; }
+.ec-portfolio .pf-grammar-table th { background:#12468f; color:#fff; font-weight:700; }
+.ec-portfolio .pf-grammar-table tbody tr:nth-child(even) { background:#f2f7fc; }
+.ec-portfolio .pf-grammar-table tbody tr:last-child td { border-bottom:0; }
+.ec-portfolio .pf-remember, .ec-portfolio .pf-practise { border-radius:9px; padding:12px 14px; background:#fff5da; }
+.ec-portfolio .pf-practise { background:#e9f7ef; }
+.ec-portfolio .pf-lesson h5 { color:var(--pf-navy); font-size:.9rem; margin:0 0 5px; font-weight:750; }
+.ec-portfolio .pf-answer-toggle { margin-top:10px; padding:8px 13px; border:1px solid #087c42; border-radius:7px; color:#087c42; background:#fff; font:inherit; font-size:.86rem; font-weight:700; cursor:pointer; min-height:40px; }
+.ec-portfolio .pf-answer-toggle:hover { background:#d9f0e2; }
+.ec-portfolio .pf-answer { margin-top:10px; padding:10px 12px; border-radius:6px; background:#fff; }
+@media (max-width:760px) {
+  .ec-portfolio .pf-grammar-table { font-size:.84rem; }
+  .ec-portfolio .pf-grammar-table th, .ec-portfolio .pf-grammar-table td { padding:8px 7px; }
+}
+
+/* HTML curriculum: six skill cards; Movers keeps its original four. */
+@media (min-width:761px) { .ec-portfolio[data-level] .pf-tiles { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+.ec-portfolio .pf-filters button:disabled { opacity:.55; cursor:not-allowed; }
+.ec-portfolio .pf-status[aria-label="Progress unavailable"] { color:#526379; background:#edf1f6; }
+/* Keep full-width shells and form controls within the viewport. */
+.ec-portfolio, .ec-portfolio *, .ec-portfolio *::before, .ec-portfolio *::after { box-sizing:border-box; }
