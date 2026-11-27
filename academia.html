@@ -1,55 +1,77 @@
 ---
-layout: default
-title: "English Co – La academia"
-description: "Las aulas de la academia en Playa de Arinaga"
-section: "academia"
+layout: course
+title: "EnglishCO | La academia de inglés en Playa de Arinaga"
+description: "Conoce las aulas de EnglishCO en Playa de Arinaga (Agüimes): espacios amplios, luminosos y bien ventilados, con proyectores interactivos, audio y tratamiento acústico."
+section: academia
 ---
 
-<main id="main-content">
+<link rel="stylesheet" href="{{ '/academia.css?v=1' | relative_url }}">
 
-  <!-- Hero (consistent with homepage) -->
-  <section class="hero-light">
-    <div class="container hero-inner">
-      <h1>Instalaciones: aulas modernas y confortables</h1>
-      <p>
-        Nuestras aulas son amplias, luminosas y bien ventiladas, diseñadas para ofrecer un entorno de aprendizaje ideal.
-        Contamos con proyectores interactivos, sistema de audio de alta calidad y tratamiento acústico para una comunicación clara.
-      </p>
+<div class="ec-academia-page">
+  <section class="ec-hero ec-facilities-hero" aria-labelledby="academia-title">
+    <div class="ec-shell ec-hero-inner">
+      <div class="ec-hero-copy">
+        <p class="ec-kicker"><a href="{{ '/' | relative_url }}">Inicio</a> <span aria-hidden="true">›</span> La academia</p>
+        <h1 id="academia-title">Un espacio para aprender.<br><em>Un lugar para crecer.</em></h1>
+        <p class="ec-hero-lead">Aulas modernas, amplias, luminosas y bien ventiladas, pensadas para que nuestros alumnos se sientan cómodos, participen y disfruten aprendiendo inglés.</p>
+        <div class="ec-buttons">
+          <a class="ec-btn ec-btn-primary" href="#aulas">Conoce nuestras aulas <span aria-hidden="true">↓</span></a>
+          <a class="ec-btn ec-btn-wa" href="https://wa.me/34646555552" target="_blank" rel="noopener"><img src="{{ '/images/whatsapp.svg' | relative_url }}" alt="" width="21" height="21"> Solicitar una visita</a>
+        </div>
+      </div>
+      <div class="ec-facilities-location">
+        <span class="ec-facilities-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <p class="ec-kicker">Dónde estamos</p>
+        <h2>En Playa de Arinaga.</h2>
+        <address><strong>EnglishCO</strong><br>Calle Gravina, 47 y 49<br>35118 Playa de Arinaga (Agüimes)<br>Gran Canaria</address>
+        <a class="ec-btn ec-btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=English+CO%2C+Calle+Gravina%2C+47+y+49%2C+35118+Playa+de+Arinaga%2C+Ag%C3%BCimes%2C+Espa%C3%B1a&amp;destination_place_id=ChIJAYBvLNGhQAwRMjxWshotRVI" target="_blank" rel="noopener">Cómo llegar <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </section>
 
-  <!-- Aulas / Fotos -->
-  <section id="aulas" class="container" aria-label="Aulas y fotos">
-    <h2>Aulas preparadas para aprender</h2>
-    <p>
-      Cada sala está pensada para favorecer la participación, el juego y la práctica del inglés desde el primer día.
-      Aquí tienes una muestra de nuestras aulas:
-    </p>
-
-    <figure class="classroom" style="margin:1rem 0 2rem">
-      <img src="/secundaria_aula.png" alt="Foto de aula de Secundaria" class="classroom-img" />
-      <figcaption style="margin-top:.5rem">Aula de Secundaria</figcaption>
-    </figure>
-
-    <figure class="classroom" style="margin:1rem 0 2rem">
-      <img src="/primaria_aula.JPEG" alt="Foto de aula de Primaria" class="classroom-img" />
-      <figcaption style="margin-top:.5rem">Aula de Primaria</figcaption>
-    </figure>
-
-    <figure class="classroom" style="margin:1rem 0 2rem">
-      <img src="/infantil_aula.jpg" alt="Foto de aula de Infantil" class="classroom-img" />
-      <figcaption style="margin-top:.5rem">Aula de Infantil</figcaption>
-    </figure>
+  <section class="ec-shell ec-benefits" aria-label="Nuestras instalaciones">
+    <div><span class="ec-benefit-icon ec-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M12 16v5m-5 0h10M8 10l3-3 3 3 2-2"/></svg></span><div><strong>Proyectores interactivos</strong><small>Actividades visuales y participativas</small></div></div>
+    <div><span class="ec-benefit-icon ec-green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5ZM15 9a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></span><div><strong>Audio de alta calidad</strong><small>Escuchar y comunicarse con claridad</small></div></div>
+    <div><span class="ec-benefit-icon ec-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/></svg></span><div><strong>Aulas luminosas y ventiladas</strong><small>Espacios cómodos para aprender</small></div></div>
   </section>
 
-  <!-- CTA -->
-  <section class="container" aria-label="Visitas">
-    <h2>¿Quieres venir a conocerlas?</h2>
-    <p>Pídenos una visita o reserva tu plaza por WhatsApp o teléfono.</p>
-    <p class="cta-row">
-      <a class="cta-button" href="https://wa.me/34646555552" target="_blank" rel="noopener">WhatsApp 646 555 552</a>
-      <a class="cta-button cta-button--outline" href="tel:+34646555552">Llamar: 646 555 552</a>
-    </p>
+  <section id="aulas" class="ec-shell ec-section ec-facilities-gallery" aria-labelledby="aulas-title">
+    <div class="ec-section-heading">
+      <div><p class="ec-kicker">Nuestras instalaciones</p><h2 id="aulas-title">Aulas preparadas para aprender.</h2></div>
+      <p>Conoce los espacios donde nuestros alumnos juegan, participan y practican inglés.</p>
+    </div>
+    <div class="ec-classroom-grid">
+      <figure class="ec-classroom-card ec-age-yellow">
+        <a class="ec-classroom-photo" href="{{ '/infantil_aula.jpg' | relative_url }}" target="_blank" rel="noopener" aria-label="Ampliar foto del aula de Infantil"><img src="{{ '/infantil_aula.jpg' | relative_url }}" alt="Aula de Infantil de EnglishCO" decoding="async"><span class="ec-classroom-zoom" aria-hidden="true">↗</span></a>
+        <figcaption><p class="ec-kicker">3–5 años</p><h3>Aula de Infantil</h3><p>Un espacio para descubrir el inglés a través del juego, las canciones y los cuentos.</p><a class="ec-course-link" href="{{ '/infantil.html' | relative_url }}">Conoce el curso <span aria-hidden="true">→</span></a></figcaption>
+      </figure>
+      <figure class="ec-classroom-card ec-age-green">
+        <a class="ec-classroom-photo" href="{{ '/primaria_aula.JPEG' | relative_url }}" target="_blank" rel="noopener" aria-label="Ampliar foto del aula de Primaria"><img src="{{ '/primaria_aula.JPEG' | relative_url }}" alt="Aula de Primaria de EnglishCO" decoding="async"><span class="ec-classroom-zoom" aria-hidden="true">↗</span></a>
+        <figcaption><p class="ec-kicker">6–11 años</p><h3>Aula de Primaria</h3><p>Un entorno que favorece la participación, las actividades en grupo y la práctica oral.</p><a class="ec-course-link" href="{{ '/primaria.html' | relative_url }}">Conoce el curso <span aria-hidden="true">→</span></a></figcaption>
+      </figure>
+      <figure class="ec-classroom-card ec-age-blue">
+        <a class="ec-classroom-photo" href="{{ '/secundaria_aula.png' | relative_url }}" target="_blank" rel="noopener" aria-label="Ampliar foto del aula de Secundaria"><img src="{{ '/secundaria_aula.png' | relative_url }}" alt="Aula de Secundaria de EnglishCO" decoding="async"><span class="ec-classroom-zoom" aria-hidden="true">↗</span></a>
+        <figcaption><p class="ec-kicker">12–18 años</p><h3>Aula de Secundaria</h3><p>Un espacio para conversar, trabajar estructuras y preparar nuevos retos en inglés.</p><a class="ec-course-link" href="{{ '/secundaria.html' | relative_url }}">Conoce el curso <span aria-hidden="true">→</span></a></figcaption>
+      </figure>
+    </div>
+    <p class="ec-facilities-hint">Pulsa sobre una foto para verla a tamaño completo.</p>
   </section>
 
-</main>
+  <section class="ec-method" aria-labelledby="entorno-title">
+    <div class="ec-shell ec-method-inner">
+      <div><p class="ec-kicker">Un entorno que ayuda a aprender</p><h2 id="entorno-title">Más comodidad.<br><em>Más participación.</em></h2><p>Las instalaciones forman parte de nuestra metodología: queremos que cada alumno pueda escuchar, hablar y participar en un ambiente agradable.</p></div>
+      <div class="ec-method-points">
+        <div><span>01</span><div><h3>Tecnología en el aula</h3><p>Proyectores interactivos para trabajar con imágenes y actividades en clase.</p></div></div>
+        <div><span>02</span><div><h3>Sonido y acústica</h3><p>Sistemas de audio de alta calidad y tratamiento acústico para una comunicación clara.</p></div></div>
+        <div><span>03</span><div><h3>Espacios confortables</h3><p>Aulas amplias, luminosas y bien ventiladas para facilitar el aprendizaje.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ec-contact" id="contacto" aria-labelledby="visitas-title">
+    <div class="ec-shell ec-contact-inner">
+      <div><p class="ec-kicker">Ven a conocernos</p><h2 id="visitas-title">¿Quieres visitar la academia?</h2><p>Escríbenos o llámanos para concertar una visita, conocer nuestras instalaciones o consultar las plazas disponibles.</p></div>
+      <div class="ec-contact-actions"><a class="ec-btn ec-btn-primary" href="https://wa.me/34646555552" target="_blank" rel="noopener">Solicitar una visita por WhatsApp</a><a class="ec-btn ec-btn-wa" href="tel:+34646555552">Llamar: 646 555 552</a></div>
+    </div>
+  </section>
+</div>
