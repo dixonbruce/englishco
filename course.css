@@ -1,0 +1,35 @@
+/* Shared course-page additions. Loaded only by the course layout. */
+.ec-course-page .ec-age-hero { background: linear-gradient(115deg,#fff8e6 0%,#fff 60%,#fff3d4 100%); }
+.ec-course-page .ec-age-hero .ec-hero-inner { padding-block: clamp(30px,4vw,60px); }
+.ec-course-page .ec-age-hero .ec-kicker > span { width: auto; height: auto; flex: none; background: none; }
+.ec-course-page .ec-age-hero h1 em { color: #80600d; }
+.ec-course-page .ec-age-hero .ec-photo-frame { aspect-ratio: 1.65; }
+.ec-course-page .ec-age-section { scroll-margin-top: 85px; }
+.ec-course-page .ec-age-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 15px; }
+.ec-course-page .ec-age-card { min-width: 0; padding: clamp(16px,2vw,24px); border: 1px solid var(--age-border); border-top: 4px solid var(--age-accent); border-radius: 15px; background: var(--age-bg); }
+.ec-age-yellow { --age-bg: #fff7e2; --age-border: #efdfb2; --age-accent: #dca72d; }
+.ec-age-green { --age-bg: #e6f7ef; --age-border: #c5e8d8; --age-accent: #079b79; }
+.ec-age-blue { --age-bg: #e8f1ff; --age-border: #cddff6; --age-accent: #3486d4; }
+.ec-age-coral { --age-bg: #fff0e8; --age-border: #f3d9c9; --age-accent: #e26b38; }
+.ec-age-number { display: inline-grid; place-items: center; width: 35px; height: 35px; border: 1px solid var(--age-border); background: #fff; border-radius: 9px; color: var(--ec-navy); font-size: .85rem; font-weight: 750; margin-bottom: 14px; }
+.ec-course-page .ec-age-card h3,.ec-course-page .ec-family-card h3 { margin-bottom: 8px; font-size: clamp(1.2rem,1.7vw,1.45rem); }
+.ec-course-page .ec-age-card p,.ec-course-page .ec-family-card p:not(.ec-kicker) { font-size: .94rem; line-height: 1.6; }
+.ec-course-page .ec-family-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.ec-course-page .ec-family-card { padding: clamp(18px,2.4vw,28px); background: #f7f9fc; border: 1px solid var(--ec-line); border-radius: 15px; }
+.ec-course-page .ec-family-guide { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 22px; background: #fff7e2; border: 1px solid #efdfb2; padding: clamp(18px,2.4vw,28px); border-radius: 15px; }
+.ec-course-page .ec-family-guide h3 { margin-bottom: 5px; }
+.ec-course-page .ec-course-active { color: var(--ec-blue); border-bottom: 3px solid #00a6d6; }
+.ec-course-page .ec-submenu a[aria-current="page"] { background: #e8f1ff; color: var(--ec-blue); font-weight: 750; }
+/* Keep WhatsApp green regardless of the CTA's original variant. */
+.ec-course-page #main-content a.ec-btn[href^="https://wa.me/"] { background: #087c42; color: #fff; border-color: #087c42; }
+.ec-course-page #main-content a.ec-btn[href^="https://wa.me/"]:hover,.ec-course-page #main-content a.ec-btn[href^="https://wa.me/"]:focus-visible { background: #066637; color: #fff; border-color: #066637; }
+@media (max-width: 1000px) { .ec-course-page .ec-age-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 760px) {
+  .ec-course-page .ec-age-hero .ec-hero-inner { padding-block: 28px 33px; }
+  .ec-course-page .ec-family-grid { grid-template-columns: 1fr; gap: 10px; }
+  .ec-course-page .ec-family-guide { align-items: stretch; flex-direction: column; }
+  .ec-course-page .ec-age-grid { gap: 10px; }
+  .ec-course-page .ec-course-active { border-bottom: 0; }
+  .ec-course-page .ec-age-section { padding-block: 36px; }
+}
+@media (max-width: 360px) { .ec-course-page .ec-age-grid { grid-template-columns: 1fr; } }
