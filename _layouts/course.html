@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title | escape }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <link rel="stylesheet" href="{{ '/style.css?v=29' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/home.css?v=3' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/course.css?v=1' | relative_url }}">
+  <script src="{{ '/home.js?v=2' | relative_url }}" defer></script>
+  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" type="image/x-icon">
+</head>
+<body class="ec-home ec-course-page">
+  {% include home-header.html %}
+  <main class="container" id="main-content">
+    {{ content }}
+  </main>
+  {% include home-footer.html %}
+</body>
+</html>
