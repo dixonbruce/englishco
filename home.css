@@ -1,3 +1,67 @@
+/* EnglishCO homepage only. Loaded after style.css. */
+body.ec-home {
+  --ec-blue: #12468f; --ec-navy: #102e5c; --ec-green: #006f5b;
+  --ec-ink: #223b59; --ec-muted: #526379; --ec-line: #dce5ef;
+  --ec-pad: clamp(18px, 4vw, 40px); --ec-width: 1240px;
+  background: #fff; color: var(--ec-ink);
+}
+.ec-home .ec-shell { width: 100%; max-width: var(--ec-width); margin-inline: auto; padding-inline: var(--ec-pad); }
+.ec-home #main-content { max-width: none; padding: 0; }
+.ec-home h1,.ec-home h2,.ec-home h3 { color: var(--ec-navy); letter-spacing: -.035em; margin: 0; padding: 0; }
+.ec-home h2::after,.ec-home #main-content h3::after { display: none; }
+.ec-home p { color: var(--ec-muted); margin: 0; font-size: 1rem; line-height: 1.65; }
+.ec-home h2 { font-size: clamp(2rem, 3.2vw, 2.85rem); line-height: 1.12; }
+.ec-home h3 { font-size: 1.4rem; line-height: 1.2; }
+.ec-home #main-content a { text-decoration: none; }
+.ec-home :is(a,button,summary):focus-visible { outline: 3px solid #067eb1; outline-offset: 4px; }
+.ec-home #cursos,.ec-home #contacto,.ec-home #main-content { scroll-margin-top: 85px; }
+/* Header */
+.ec-header { position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 1px solid var(--ec-line); }
+.ec-header-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; min-height: 76px; }
+.ec-logo img { width: clamp(150px, 18vw, 220px); height: auto; }
+.ec-nav { display: flex; justify-content: center; align-items: center; gap: clamp(20px, 2.5vw, 36px); color: var(--ec-navy); font-size: .96rem; font-weight: 650; }
+.ec-nav > a,.ec-dropdown > summary { padding: 12px 0; white-space: nowrap; }
+.ec-nav > a[aria-current] { color: var(--ec-blue); border-bottom: 3px solid #00a6d6; }
+.ec-dropdown { position: relative; }
+.ec-dropdown > summary { cursor: pointer; list-style: none; }
+.ec-dropdown > summary::-webkit-details-marker { display: none; }
+.ec-dropdown summary span { margin-left: 4px; }
+.ec-submenu { position: absolute; top: 100%; left: -16px; width: 200px; padding: 8px; background: #fff; border: 1px solid var(--ec-line); border-radius: 12px; box-shadow: 0 12px 32px #102e5c1a; }
+.ec-submenu a { display: block; padding: 10px 12px; border-radius: 6px; }
+.ec-nav a:hover,.ec-dropdown summary:hover { color: var(--ec-green); }
+.ec-submenu a:hover { background: #f0f7fc; }
+.ec-header-contact { display: flex; align-items: center; gap: 12px; color: var(--ec-blue); font-weight: 700; }
+.ec-call { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.ec-wa-icon,.ec-menu-toggle { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--ec-line); border-radius: 50%; background: #fff; color: var(--ec-navy); }
+.ec-menu-toggle { display: none; cursor: pointer; }
+.ec-menu-toggle[hidden] { display: none !important; }
+.ec-skip { position: absolute; left: 12px; top: 8px; background: #fff; padding: 10px; transform: translateY(-160%); z-index: 2; }
+.ec-skip:focus { transform: none; }
+/* Hero */
+.ec-hero { background: linear-gradient(115deg,#f1f8ff 0%,#fff 56%,#fff6df 100%); }
+.ec-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px,5vw,76px); align-items: center; padding-block: clamp(24px,2.1vw,30px); }
+.ec-home .ec-kicker { color: var(--ec-blue); font-size: .77rem; font-weight: 750; letter-spacing: .075em; text-transform: uppercase; line-height: 1.4; margin-bottom: 12px; }
+.ec-hero .ec-kicker { display: flex; align-items: center; gap: 8px; }
+.ec-hero .ec-kicker > span { width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: #00a6d6; }
+.ec-home .ec-hero h1 { font-size: clamp(2.6rem,3.8vw,3.35rem); line-height: 1.035; font-weight: 800; letter-spacing: -.055em; }
+.ec-hero h1 em,.ec-method h2 em { font-style: normal; color: var(--ec-green); }
+.ec-home .ec-hero-lead { max-width: 48ch; font-size: clamp(1rem,1.4vw,1.13rem); margin: 14px 0 18px; }
+.ec-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.ec-home #main-content a.ec-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: .95rem; line-height: 1.3; font-weight: 750; padding: 14px 19px; min-height: 48px; border: 1px solid transparent; border-radius: 10px; transition: background .15s, transform .15s; }
+.ec-home #main-content a.ec-btn-primary { background: var(--ec-blue); color: #fff; }
+.ec-home #main-content a.ec-btn-primary:hover { background: var(--ec-navy); color: #fff; }
+.ec-home #main-content a.ec-btn-wa { color: #17613c; background: #fff; border-color: #b7d9c4; }
+.ec-home #main-content a.ec-btn-wa:hover { background: #e7f7ed; color: #145633; }
+.ec-hero-visual { position: relative; min-width: 0; padding: 9px 13px 15px 0; isolation: isolate; }
+.ec-hero-visual::before { content: ''; position: absolute; z-index: -1; inset: 0 0 0 18px; border-radius: 26px; background: #ffd166; transform: rotate(2deg); }
+.ec-photo-frame { overflow: hidden; border-radius: 22px; background: #e5eef5; aspect-ratio: 1.85; }
+.ec-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.ec-photo-note { position: absolute; left: 20px; bottom: 0; background: #fff; color: var(--ec-navy); border-radius: 10px; box-shadow: 0 8px 24px #102e5c24; padding: 11px 15px; font-size: .9rem; font-weight: 750; }
+.ec-photo-note span { color: #007f69; margin-right: 5px; }
+.ec-photo-dots { position: absolute; right: 0; top: 0; z-index: -1; width: 60px; height: 60px; background-image: radial-gradient(#12468f 1.3px,transparent 1.3px); background-size: 9px 9px; }
+/* Three benefits */
+.ec-benefits { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; padding-block: 13px; border-bottom: 1px solid var(--ec-line); }
+.ec-benefits > div { display: flex; gap: 12px; align-items: center; min-width: 0; }
 .ec-benefit-icon { flex: 0 0 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
 .ec-benefit-icon svg,.ec-course svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .ec-blue { color: #12468f; background: #e7f0ff; }.ec-green { color: #006f5b; background: #e1f6ed; }.ec-orange { color: #9c4e08; background: #fff1d3; }
