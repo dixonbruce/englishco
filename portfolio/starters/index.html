@@ -6,8 +6,8 @@ section: "portfolio"
 permalink: /portfolio/starters/
 ---
 
-<link rel="stylesheet" href="{{ '/portfolio/portfolio.css?v=1' | relative_url }}">
-<div class="ec-portfolio" lang="en" data-curriculum="{{ '/portfolio/data/pre-a1.json' | relative_url }}" data-progress="{{ '/portfolio/data/demo-progress-pre-a1.json' | relative_url }}">
+<link rel="stylesheet" href="{{ '/portfolio/portfolio.css?v=3' | relative_url }}">
+<div class="ec-portfolio" lang="en" data-level="Pre A1" data-label="Pre A1 Starters" data-progress="{{ '/portfolio/data/demo-progress-pre-a1.json' | relative_url }}">
   <div class="ec-shell pf-shell">
     <div class="pf-demo"><span>DEMO · Example student</span><span>Teacher-verified progress · Read only</span></div>
     <section class="pf-hero" aria-labelledby="pf-title">
@@ -21,7 +21,7 @@ permalink: /portfolio/starters/
         <p class="pf-kicker">My progress</p>
         <div class="pf-percent" id="pf-percent">—</div>
         <progress id="pf-progress" max="100" value="0" aria-label="Overall mastery"></progress>
-        <p class="pf-total" id="pf-total">Loading objectives…</p>
+        <p class="pf-total" id="pf-total">Loading progress…</p>
         <p class="pf-small">Every tick is an achievement verified by your teacher.</p>
       </div>
     </section>
@@ -37,12 +37,19 @@ permalink: /portfolio/starters/
       </div>
       <label class="pf-search">Find an objective <input id="pf-search" type="search" placeholder="e.g. animals or present simple"></label>
       <div class="pf-legend"><span><b class="pf-status" aria-hidden="true">✓</b> Achieved</span><span><b class="pf-status pf-pending" aria-hidden="true">○</b> Not yet achieved</span><span>⌄ Open for study materials</span></div>
-      <p class="pf-result" id="pf-result" role="status">Loading…</p>
-      <div id="pf-groups"></div>
-      <noscript><p>Enable JavaScript to view the interactive portfolio.</p></noscript>
+      <p class="pf-result" id="pf-result" role="status">90 learning objectives</p>
+      <div id="pf-groups">
+        {% include_relative grammar.html %}
+        {% include_relative vocabulary.html %}
+        {% include_relative reading.html %}
+        {% include_relative writing.html %}
+        {% include_relative listening.html %}
+        {% include_relative speaking.html %}
+      </div>
+      <noscript><p>You can open the lessons without JavaScript. Enable JavaScript to load your progress and use search and filters.</p></noscript>
     </section>
     <p class="pf-note"><a href="https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/starters/preparation/" target="_blank" rel="noopener">Official Cambridge Starters resources and wordlists</a></p>
     <p class="pf-note">Demonstration only: all student data and achievements are fictional. EnglishCO learning objectives aligned with the paper-based Cambridge Pre A1 Starters syllabus; vocabulary sets are teaching selections, not the complete official wordlist. Emoji illustrations are temporary placeholders. Students cannot edit assessment results.</p>
   </div>
 </div>
-<script src="{{ '/portfolio/portfolio.js?v=1' | relative_url }}" defer></script>
+<script src="{{ '/portfolio/portfolio.js?v=3' | relative_url }}" defer></script>
