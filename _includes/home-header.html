@@ -1,23 +1,23 @@
 <header class="ec-header">
   <a class="ec-skip" href="#main-content">Saltar al contenido</a>
   <div class="ec-shell ec-header-inner">
-    <a class="ec-logo" href="{{ page.url | relative_url }}" aria-label="EnglishCO – Inicio">
+    <a class="ec-logo" href="{{ '/' | relative_url }}" aria-label="EnglishCO – Inicio">
       <img src="{{ '/images/logo-summer.svg' | relative_url }}" alt="EnglishCO" width="220" height="44">
     </a>
     <button class="ec-menu-toggle" type="button" aria-controls="ec-nav" aria-expanded="false" hidden>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span class="vh">Menú</span>
     </button>
     <nav id="ec-nav" class="ec-nav" aria-label="Principal">
-      <a href="{{ page.url | relative_url }}" aria-current="page">Inicio</a>
+      <a href="{{ '/' | relative_url }}" {% if page.url == "/" or page.url == "/index.html" %}aria-current="page"{% endif %}>Inicio</a>
       <details class="ec-dropdown">
-        <summary>Cursos <span aria-hidden="true">⌄</span></summary>
+        <summary{% if page.section == "cursos" %} class="ec-course-active"{% endif %}>Cursos <span aria-hidden="true">⌄</span></summary>
         <div class="ec-submenu">
-          <a href="{{ '/infantil.html' | relative_url }}">Infantil</a>
-          <a href="{{ '/primaria.html' | relative_url }}">Primaria</a>
-          <a href="{{ '/secundaria.html' | relative_url }}">Secundaria</a>
-          <a href="{{ '/adultos.html' | relative_url }}">Adultos</a>
-          <a href="{{ '/speaking.html' | relative_url }}">Speaking Classes</a>
-          <a href="{{ '/intensivos.html' | relative_url }}">Intensivos</a>
+          <a href="{{ '/infantil.html' | relative_url }}" {% if page.url == "/infantil.html" or page.url == "/infantil" %}aria-current="page"{% endif %}>Infantil</a>
+          <a href="{{ '/primaria.html' | relative_url }}" {% if page.url == "/primaria.html" or page.url == "/primaria" %}aria-current="page"{% endif %}>Primaria</a>
+          <a href="{{ '/secundaria.html' | relative_url }}" {% if page.url == "/secundaria.html" or page.url == "/secundaria" %}aria-current="page"{% endif %}>Secundaria</a>
+          <a href="{{ '/adultos.html' | relative_url }}" {% if page.url == "/adultos.html" or page.url == "/adultos" %}aria-current="page"{% endif %}>Adultos</a>
+          <a href="{{ '/speaking.html' | relative_url }}" {% if page.url == "/speaking.html" or page.url == "/speaking" %}aria-current="page"{% endif %}>Speaking Classes</a>
+          <a href="{{ '/intensivos.html' | relative_url }}" {% if page.url == "/intensivos.html" or page.url == "/intensivos" %}aria-current="page"{% endif %}>Intensivos</a>
         </div>
       </details>
       <a href="{{ '/academia.html' | relative_url }}">Academia</a>
