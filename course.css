@@ -40,3 +40,10 @@
 .ec-course-page .ec-age-primaria .ec-hero-visual::before { background: #8edbc3; }
 .ec-course-page .ec-family-guide.ec-age-green { background: var(--age-bg); border-color: var(--age-border); }
 .ec-course-page .ec-primaria-objectives { padding-top: 0; }
+
+/* Secundaria: blue accents, scoped to this course. */
+.ec-course-page .ec-age-hero.ec-age-secundaria { background: linear-gradient(115deg,#e8f1ff 0%,#fff 60%,#eef5ff 100%); }
+.ec-course-page .ec-age-hero.ec-age-secundaria h1 em { color: #12468f; }
+.ec-course-page .ec-age-secundaria .ec-hero-visual::before { background: #a4c9f5; }
+.ec-course-page .ec-family-guide.ec-age-blue { background: var(--age-bg); border-color: var(--age-border); }
+.ec-course-page .ec-secundaria-objectives { padding-top: 0; }
