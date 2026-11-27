@@ -1,0 +1,47 @@
+---
+layout: course
+title: "EnglishCO – My English portfolio (demo)"
+description: "Demostración del portfolio de aprendizaje de inglés de EnglishCO."
+section: "portfolio"
+permalink: /portfolio/
+---
+
+<link rel="stylesheet" href="{{ '/portfolio/portfolio.css?v=1' | relative_url }}">
+<div class="ec-portfolio" lang="en" data-curriculum="{{ '/portfolio/data/a1.json' | relative_url }}" data-progress="{{ '/portfolio/data/demo-progress.json' | relative_url }}">
+  <div class="ec-shell pf-shell">
+    <div class="pf-demo"><span>DEMO · Example student</span><span>Teacher-verified progress · Read only</span></div>
+    <section class="pf-hero" aria-labelledby="pf-title">
+      <div>
+        <p class="pf-kicker">My learning journey · Primaria</p>
+        <h1 id="pf-title">My English<br><em>portfolio.</em></h1>
+        <p id="pf-student">Loading example student…</p>
+        <span class="pf-level" id="pf-level">Target level: A1 Movers</span>
+      </div>
+      <div class="pf-overall">
+        <p class="pf-kicker">My progress</p>
+        <div class="pf-percent" id="pf-percent">—</div>
+        <progress id="pf-progress" max="100" value="0" aria-label="Overall mastery"></progress>
+        <p class="pf-total" id="pf-total">Loading objectives…</p>
+        <p class="pf-small">Every tick is an achievement verified by your teacher.</p>
+      </div>
+    </section>
+    <div class="pf-tiles" id="pf-tiles" aria-label="Progress by skill"></div>
+    <section class="pf-objectives" aria-labelledby="pf-objectives-title">
+      <div class="pf-toolbar">
+        <div><p class="pf-kicker">Learn · practise · achieve</p><h2 id="pf-objectives-title">Learning objectives</h2></div>
+        <div class="pf-filters" role="group" aria-label="Filter objectives">
+          <button type="button" data-pf-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-pf-filter="pending" aria-pressed="false">To achieve</button>
+          <button type="button" data-pf-filter="achieved" aria-pressed="false">Achieved</button>
+        </div>
+      </div>
+      <label class="pf-search">Find an objective <input id="pf-search" type="search" placeholder="e.g. animals or present simple"></label>
+      <div class="pf-legend"><span><b class="pf-status" aria-hidden="true">✓</b> Achieved</span><span><b class="pf-status pf-pending" aria-hidden="true">○</b> Not yet achieved</span><span>⌄ Open for study materials</span></div>
+      <p class="pf-result" id="pf-result" role="status">Loading…</p>
+      <div id="pf-groups"></div>
+      <noscript><p>Enable JavaScript to view the interactive portfolio.</p></noscript>
+    </section>
+    <p class="pf-note">Demonstration only: all student data and achievements are fictional. These are sample EnglishCO learning objectives, not a complete official Cambridge syllabus. Emoji illustrations are temporary placeholders. Students cannot edit assessment results.</p>
+  </div>
+</div>
+<script src="{{ '/portfolio/portfolio.js?v=1' | relative_url }}" defer></script>

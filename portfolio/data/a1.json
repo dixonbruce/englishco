@@ -1,0 +1,302 @@
+{
+  "level": "A1",
+  "label": "A1 Movers",
+  "groups": [
+    {
+      "name": "Grammar",
+      "description": "Use English structures accurately in conversation.",
+      "color": "#12468f",
+      "items": [
+        {
+          "id": "A1-G01",
+          "title": "Present simple – affirmative",
+          "can": "I can talk about my routines and habits.",
+          "example": "I play football. / She plays football.",
+          "lesson": "Use the base verb with I, you, we and they. With he, she and it, usually add -s or -es.",
+          "assessment": "Say three things you do every day, then describe a friend’s routine."
+        },
+        {
+          "id": "A1-G02",
+          "title": "Present simple – negatives",
+          "can": "I can say what people do not do.",
+          "example": "I don’t like fish. / He doesn’t play tennis.",
+          "lesson": "Use don’t or doesn’t before the base verb.",
+          "assessment": "Say three negative sentences about your habits."
+        },
+        {
+          "id": "A1-G03",
+          "title": "Present simple – questions",
+          "can": "I can ask and answer questions about routines.",
+          "example": "Do you play football? / Does she read books?",
+          "lesson": "Do or does comes before the subject. Use the base verb after the subject.",
+          "assessment": "Ask your teacher three questions and answer three questions without reading."
+        },
+        {
+          "id": "A1-G04",
+          "title": "Present continuous",
+          "can": "I can describe actions happening now.",
+          "example": "She is reading. / They are running.",
+          "lesson": "Use am, is or are + verb-ing.",
+          "assessment": "Describe four actions in a picture."
+        },
+        {
+          "id": "A1-G05",
+          "title": "There is / There are",
+          "can": "I can describe what is in a place.",
+          "example": "There is a chair. / There are two windows.",
+          "lesson": "Use there is for singular and there are for plural nouns.",
+          "assessment": "Describe your classroom using both forms."
+        },
+        {
+          "id": "A1-G06",
+          "title": "Past simple – regular verbs",
+          "can": "I can talk about completed past actions.",
+          "example": "Yesterday I played football.",
+          "lesson": "Most regular verbs add -ed in the affirmative past simple.",
+          "assessment": "Say what you did yesterday using three regular verbs."
+        },
+        {
+          "id": "A1-G07",
+          "title": "Comparatives",
+          "can": "I can compare people, animals and objects.",
+          "example": "A giraffe is taller than a zebra.",
+          "lesson": "Short adjectives often take -er + than.",
+          "assessment": "Compare three pairs of animals."
+        }
+      ]
+    },
+    {
+      "name": "Vocabulary",
+      "description": "Recognise, recall and use words in context.",
+      "color": "#00765c",
+      "items": [
+        {
+          "id": "A1-V01",
+          "title": "Animals",
+          "can": "I can name common animals and describe them.",
+          "example": "a lion · a monkey · a crocodile",
+          "assessment": "Name the animals from pictures and describe two of them.",
+          "words": [
+            {
+              "symbol": "🦁",
+              "word": "lion"
+            },
+            {
+              "symbol": "🐒",
+              "word": "monkey"
+            },
+            {
+              "symbol": "🐊",
+              "word": "crocodile"
+            },
+            {
+              "symbol": "🐘",
+              "word": "elephant"
+            },
+            {
+              "symbol": "🦒",
+              "word": "giraffe"
+            },
+            {
+              "symbol": "🐅",
+              "word": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "A1-V02",
+          "title": "Food and drink",
+          "can": "I can name common food and drinks.",
+          "example": "I like apples. / I’d like some water.",
+          "assessment": "Name six foods from pictures and use two in sentences.",
+          "words": [
+            {
+              "symbol": "🍎",
+              "word": "apple"
+            },
+            {
+              "symbol": "🍌",
+              "word": "banana"
+            },
+            {
+              "symbol": "🍞",
+              "word": "bread"
+            },
+            {
+              "symbol": "🥛",
+              "word": "milk"
+            },
+            {
+              "symbol": "🥚",
+              "word": "egg"
+            },
+            {
+              "symbol": "🍚",
+              "word": "rice"
+            }
+          ]
+        },
+        {
+          "id": "A1-V03",
+          "title": "The house",
+          "can": "I can name rooms and everyday furniture.",
+          "example": "The sofa is in the living room.",
+          "assessment": "Name objects and explain where they are.",
+          "words": [
+            {
+              "symbol": "🛏️",
+              "word": "bed"
+            },
+            {
+              "symbol": "🪑",
+              "word": "chair"
+            },
+            {
+              "symbol": "🚪",
+              "word": "door"
+            },
+            {
+              "symbol": "🛁",
+              "word": "bath"
+            },
+            {
+              "symbol": "🪟",
+              "word": "window"
+            },
+            {
+              "symbol": "🛋️",
+              "word": "sofa"
+            }
+          ]
+        },
+        {
+          "id": "A1-V04",
+          "title": "Daily routines",
+          "can": "I can talk about everyday activities.",
+          "example": "I get up at seven.",
+          "lesson": "get up · have breakfast · go to school · do homework · go to bed",
+          "assessment": "Describe your day in order."
+        },
+        {
+          "id": "A1-V05",
+          "title": "Clothes",
+          "can": "I can describe what people are wearing.",
+          "example": "He is wearing a blue shirt.",
+          "assessment": "Name clothes and describe what someone is wearing.",
+          "words": [
+            {
+              "symbol": "👕",
+              "word": "T-shirt"
+            },
+            {
+              "symbol": "👖",
+              "word": "trousers"
+            },
+            {
+              "symbol": "👟",
+              "word": "shoes"
+            },
+            {
+              "symbol": "🧢",
+              "word": "cap"
+            },
+            {
+              "symbol": "🧥",
+              "word": "coat"
+            },
+            {
+              "symbol": "🧦",
+              "word": "socks"
+            }
+          ]
+        },
+        {
+          "id": "A1-V06",
+          "title": "Sports and hobbies",
+          "can": "I can talk about activities I enjoy.",
+          "example": "I like swimming.",
+          "lesson": "football · basketball · tennis · swimming · drawing · reading",
+          "assessment": "Name activities and say which you like."
+        }
+      ]
+    },
+    {
+      "name": "Reading & writing",
+      "description": "Understand short texts and write independently.",
+      "color": "#a65d0a",
+      "items": [
+        {
+          "id": "A1-W01",
+          "title": "Spell familiar words from pictures",
+          "can": "I can write familiar words with the correct spelling.",
+          "example": "cat · school · pencil",
+          "lesson": "Look at a picture, recall the English word and write it without a model.",
+          "assessment": "Write six familiar picture words without copying."
+        },
+        {
+          "id": "A1-W02",
+          "title": "One-word answers",
+          "can": "I can answer simple questions about a picture.",
+          "example": "How many dogs? — Two.",
+          "lesson": "Read the question, identify the answer in the picture and write one word.",
+          "assessment": "Answer five short picture questions in writing."
+        },
+        {
+          "id": "A1-W03",
+          "title": "Complete sentences about pictures",
+          "can": "I can write simple sentences to describe a picture.",
+          "example": "The boy is riding a bike.",
+          "lesson": "Use a subject, verb and the necessary details. Check capitals and full stops.",
+          "assessment": "Write three independent sentences about a picture."
+        },
+        {
+          "id": "A1-W04",
+          "title": "Read a short story",
+          "can": "I can understand the main events in a simple story.",
+          "example": "Who is in the story? What happens?",
+          "lesson": "Read for the main idea, then look back for details.",
+          "assessment": "Read a short text and answer comprehension questions."
+        }
+      ]
+    },
+    {
+      "name": "Speaking & listening",
+      "description": "Understand and communicate in everyday situations.",
+      "color": "#a74e2f",
+      "items": [
+        {
+          "id": "A1-S01",
+          "title": "Personal information",
+          "can": "I can answer questions about myself.",
+          "example": "My name is… / I’m nine.",
+          "lesson": "Practise your name, age, family and interests.",
+          "assessment": "Answer simple personal questions without a script."
+        },
+        {
+          "id": "A1-S02",
+          "title": "Classroom instructions",
+          "can": "I can understand everyday classroom instructions.",
+          "example": "Open your book. / Put the pencil on the table.",
+          "lesson": "Listen for the action word and the object or place.",
+          "assessment": "Follow five spoken instructions without translation."
+        },
+        {
+          "id": "A1-S03",
+          "title": "Describe a picture",
+          "can": "I can describe people, objects and actions.",
+          "example": "There are two children. They are playing.",
+          "lesson": "Look at who, what, where and what is happening.",
+          "assessment": "Describe a new picture using several sentences."
+        },
+        {
+          "id": "A1-S04",
+          "title": "Find differences",
+          "can": "I can explain differences between two pictures.",
+          "example": "Here the bag is red, but there it is blue.",
+          "lesson": "Compare objects, colours, numbers and actions.",
+          "assessment": "Describe three differences between two new pictures."
+        }
+      ]
+    }
+  ]
+}
