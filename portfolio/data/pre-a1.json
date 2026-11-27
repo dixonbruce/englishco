@@ -1,0 +1,160 @@
+"symbol": ""
+            },
+            {
+              "word": "V",
+              "symbol": ""
+            },
+            {
+              "word": "W",
+              "symbol": ""
+            },
+            {
+              "word": "X",
+              "symbol": ""
+            },
+            {
+              "word": "Y",
+              "symbol": ""
+            },
+            {
+              "word": "Z",
+              "symbol": ""
+            }
+          ]
+        },
+        {
+          "id": "PRE-A1-V25",
+          "title": "Spelling first names",
+          "can": "I can recognise familiar names and spell them when I hear the letters.",
+          "example": "My name is Sam. S-A-M.",
+          "lesson": "Practise recognising the spoken word, saying it and reading it. Use the word in a short phrase where possible.",
+          "assessment": "Match familiar spoken names and write five dictated names.",
+          "words": [
+            {
+              "word": "Alex",
+              "symbol": ""
+            },
+            {
+              "word": "Alice",
+              "symbol": ""
+            },
+            {
+              "word": "Anna",
+              "symbol": ""
+            },
+            {
+              "word": "Ben",
+              "symbol": ""
+            },
+            {
+              "word": "Bill",
+              "symbol": ""
+            },
+            {
+              "word": "Dan",
+              "symbol": ""
+            },
+            {
+              "word": "Eva",
+              "symbol": ""
+            },
+            {
+              "word": "Grace",
+              "symbol": ""
+            },
+            {
+              "word": "Hugo",
+              "symbol": ""
+            },
+            {
+              "word": "Jill",
+              "symbol": ""
+            },
+            {
+              "word": "Kim",
+              "symbol": ""
+            },
+            {
+              "word": "Lucy",
+              "symbol": ""
+            },
+            {
+              "word": "Mark",
+              "symbol": ""
+            },
+            {
+              "word": "Matt",
+              "symbol": ""
+            },
+            {
+              "word": "May",
+              "symbol": ""
+            },
+            {
+              "word": "Nick",
+              "symbol": ""
+            },
+            {
+              "word": "Pat",
+              "symbol": ""
+            },
+            {
+              "word": "Sam",
+              "symbol": ""
+            },
+            {
+              "word": "Sue",
+              "symbol": ""
+            },
+            {
+              "word": "Tom",
+              "symbol": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reading & writing",
+      "description": "Read familiar English, spell words and practise all five paper-based Starters tasks.",
+      "color": "#a65d0a",
+      "items": [
+        {
+          "id": "PRE-A1-W01",
+          "title": "Recognise written words",
+          "can": "I can match familiar written words to pictures.",
+          "example": "dog → a picture of a dog",
+          "lesson": "Read the whole word and check the first and last letters.",
+          "assessment": "Match ten written words to pictures."
+        },
+        {
+          "id": "PRE-A1-W02",
+          "title": "Spell familiar words independently",
+          "can": "I can write familiar words without copying.",
+          "example": "cat / pencil / banana",
+          "lesson": "Say the word, think of its sounds and letters, then check your spelling.",
+          "assessment": "Write ten familiar picture words without a model."
+        },
+        {
+          "id": "PRE-A1-W03",
+          "title": "Read and understand simple sentences",
+          "can": "I can understand short sentences about familiar things.",
+          "example": "The cat is on the bed.",
+          "lesson": "Find the person or object, action and other details.",
+          "assessment": "Match six short sentences to pictures."
+        },
+        {
+          "id": "PRE-A1-W04",
+          "title": "Read simple questions",
+          "can": "I can understand questions about a picture.",
+          "example": "What colour is the bag? / Where is the dog?",
+          "lesson": "Look at the question word first to work out what information is needed.",
+          "assessment": "Choose suitable answers to six questions."
+        },
+        {
+          "id": "PRE-A1-W05",
+          "title": "Part 1 – match sentences to pictures",
+          "can": "I can decide whether a short sentence matches a picture.",
+          "example": "These are pencils. → ✓ or ✗",
+          "lesson": "Check the object and whether there is one or more than one.",
+          "assessment": "Complete a five-question Part 1-style task."
